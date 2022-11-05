@@ -77,7 +77,74 @@ li {
     height: auto;
     margin: 0 auto;
     background-color: #f7d9ef;
-    padding-top: 16%;
+    padding-top: 14%;
+}
+.TieuDeGioHang{
+    font-size: 1.2cm;
+    text-align: center;
+    color: #3498db;
+}
+.khungGioHang{
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #f7d9ef;
+    height: auto;
+}
+.khungTieuDeSP{
+    background-color: rgb(198, 248, 248);
+}
+.TieuDeSP{
+    font-size: 0.8cm;
+    margin-left: 180px;
+}
+.khungSP{
+    border-top: white 2px solid;
+    height: 100px;
+    background-color: rgb(198, 248, 248);
+}
+.HinhAnh{
+    float: left;
+    margin-left: 5px;
+    height: 98px;
+    width: 80px;
+    background-color: #3498db;
+}
+.SP{
+    float: left;
+    font-size: 0.5cm;
+    color: black;
+    margin-left: 80px;
+    margin-right: 110px;
+    margin-top: 40px;
+}
+.Style_Tien{
+    float: right;font-size: 0.5cm;
+    color: black;
+    margin-right: 10px;
+}
+.khungTongTien{
+    border-top: white 2px solid;
+    height: 70px;
+    background-color: rgb(198, 248, 248);
+}
+.Khungbtn{
+    height: 80px;
+}
+.btn{
+    margin-top: 10px;
+    font-size: 0.4cm;
+    color: white;
+    margin-right: 20px;
+    float: right;
+    background-color: #f045c5;
+    border-color: white;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+}
+.btn:hover{
+    color: black;
+    background-color: #fcbe94;
 }
 /*-----------------------------FOOTER-----------------------------*/
 .footer-container {
