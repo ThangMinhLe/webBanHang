@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Open+Sans:wght@400;600;800&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+
+}
+
+/*-----------------------------HEADER-----------------------------*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #FFD3B5;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+}
+
+.logo {
+    height: 90px;
+    width: 150px;
+}
+
+.logo img {
+    width: 120%;
+    height: 120%;
+    border-radius: 25px;
+}
+
+.khungSLG {
+    width: 60%;
+}
+
+.SLG {
+    font-size: 2.5rem;
+    color: black;
+    font-style: italic;
+
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem .3rem;
+    color: black;
+    font-size: 1.7rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #fcbe94;
+    border-radius: 35px;
+}
+
+#menu-btn {
+    display: none;
+}
+
+.icon {
+    height: 100%;
+    width: 35px;
+    margin-top: 1rem;
+}
+.icon img{
+    height: 100%;
+    width: 100%;
+}
+
+.icon:hover {
+    background: #fcbe94;
+    border-radius: 35px;
+}
+
+/*-----------------------------BANNER-----------------------------*/
+.slider {
+    background-color: #f7d9ef;
+    padding-bottom: 10px;
+}
+
+.banners {
+    width: 96%;
+    margin: 130px 2%;
+    display: block;
+    position: relative;
+    padding-top: 23%;
+}
+
+.banners img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    top: 0;
+    left: 0;
+}
+
+/*-----------------------------CONTENT-----------------------------*/
+.content {
+    height: auto;
+    margin: 0 auto;
+    background-color: #f7d9ef;
+}
+
+.khungLoai {
+    width: 80%;
+    height: 500px;
+}
+
+.TieuDeLoai {
+    width: 30%;
+    margin-left: 2%;
+    border-bottom: #FFD3B5 4px solid;
+    font-size: 0.5cm;
+}
+
+.khungBannerDanhMuc {
+    background-color: #f7d9ef;
+}
+
+.bannerDanhMuc {
+    height: 100px;
+    width: 18%;
+    margin-left: 20px;
+    border-radius: 25px;
+}
+
+.SP {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 200px;
+    height: 300px;
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    border-radius: 1rem;
+}
+
+.card__img {
+    padding-left: 1.5rem;
+    padding-top: 15px;
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
+}
+.card_NhanDan {
+    padding-top: 15px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    margin-left: 9%;
+    filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
+}
+
+.Hang {
+    padding-left: 1.5rem;
+    font-size: 3em;
+    font-weight: 800;
+    font-size: italic;
+    color: rgb(221, 75, 190);
+    text-shadow: 0px 15px 5px #77325a;
+}
+
+.card__data {
+    transform: translateY(20rem);
+    text-align: center;
+}
+
+.TenSP {
+    font-size: 0.4cm;
+    color: darkslateblue;
+}
+
+.GiaTien {
+    display: inline-block;
+    font-size: 0.4cm;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 1.25rem;
+    color: rgb(7, 0, 0);
+
+}
+.GiaTien::after {
+    content: '.000 VNĐ';
+}
+
+.Buy {
+    padding: 13px;
+    margin-right: 5px;
+    background-color: #F2A20C;
+    color: #E9EAEC;
+    border-radius: .5rem;
+    font-weight: 600;
+    transition: .2s;
+    opacity: 0;
+}
+
+.ChiTiet {
+    padding: 13px;
+    background-color: #F2A20C;
+    color: #E9EAEC;
+    border-radius: .5rem;
+    font-weight: 600;
+    transition: .2s;
+    opacity: 0;
+}
+
+.Buy:hover {
+    box-shadow: 0 18px 40px -12px rgba(242, 152, 12, 0.35);
+}
+
+.card__img,
+.card__data,
+.TenSP,
+.GiaTien {
+    transition: .5s;
+}
+/* -----------Chuyển động khi đưa chuột vào------------------*/
+.SP:hover .card__img {
+    transform: translate(-1.5rem, -9.5rem) rotate(-20deg);
+}
+
+.SP:hover .card__data {
+    transform: translateY(4 rem);
+}
+
+.SP:hover .TenSP {
+    transform: translateX(-2.3rem);
+    margin-bottom: 0;
+}
+
+.SP:hover .GiaTien {
+    transform: translateX(-4.3rem);
+}
+
+.SP:hover .Buy {
+    transition-delay: .2s;
+    opacity: 1;
+}
+
+.SP:hover .ChiTiet {
+    transition-delay: .2s;
+    opacity: 1;
+}
+
+/*-----------------------------FOOTER-----------------------------*/
+.footer-container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.footer {
+    border-top: #FFD3B5 4px solid;
+    clear: both;
+    padding: 70px 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: bold;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
+    background-color: #e91e63;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #333;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    padding-left: 8px;
+    color: green;
+}
+
+.footer-col .social-link a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    background-color: gray;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.footer-col .social-link a:hover {
+    background-color: #3498db;
+}
+
+@media (max-width:767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media (max-width:574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+.cart-noitem {
+    font-size: 27px;
+    text-align: center;
+    line-height: 109px;
+}
+
+#my-bill {
+    width: 100%;
+}

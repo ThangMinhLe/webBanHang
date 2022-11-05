@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Open+Sans:wght@400;600;800&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+
+}
+
+/*-----------------------------HEADER-----------------------------*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #FFD3B5;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+}
+
+.logo {
+    height: 90px;
+    width: 150px;
+}
+
+.logo img {
+    width: 120%;
+    height: 120%;
+    border-radius: 25px;
+}
+
+.khungSLG {
+    width: 60%;
+}
+
+.SLG {
+    font-size: 2.5rem;
+    color: black;
+    font-style: italic;
+
+}
+.icon {
+    height: 100%;
+    width: 35px;
+    margin-top: 1rem;
+}
+.icon img{
+    height: 100%;
+    width: 100%;
+}
+
+.icon:hover {
+    background: #fcbe94;
+    border-radius: 35px;
+}
+/*-----------------------------CONTENT-----------------------------*/
+.content {
+    height: auto;
+    margin: 0 auto;
+    background-color: #f7d9ef;
+    padding-top: 16%;
+}
+/*-----------------------------FOOTER-----------------------------*/
+.footer-container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.footer {
+    border-top: #FFD3B5 4px solid;
+    clear: both;
+    padding: 70px 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: bold;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
+    background-color: #e91e63;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #333;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    padding-left: 8px;
+    color: green;
+}
+
+.footer-col .social-link a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    background-color: gray;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.footer-col .social-link a:hover {
+    background-color: #3498db;
+}
+
+@media (max-width:767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media (max-width:574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+.cart-noitem {
+    font-size: 27px;
+    text-align: center;
+    line-height: 109px;
+}
+
+#my-bill {
+    width: 100%;
+}
