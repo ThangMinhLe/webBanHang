@@ -97,7 +97,7 @@ li {
     left: 0;
 }
 /* --------------------------------- */
-.search-form{
+.form_TimKiem{
     position: absolute;
     top: -115%; 
     right: 2rem;
@@ -109,7 +109,7 @@ li {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
     background: #fff;
 }
-.search-form.active{
+.form_TimKiem.active{
     top:115%;
 }
 form input{
