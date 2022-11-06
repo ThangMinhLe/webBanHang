@@ -59,25 +59,6 @@ li {
 
 }
 
-.btn {
-    margin-top: 1rem;
-    display: inline-block;
-    padding: .8rem .3rem;
-    color: black;
-    font-size: 1.7rem;
-    cursor: pointer;
-    text-align: center;
-}
-
-.btn:hover {
-    background: #fcbe94;
-    border-radius: 35px;
-}
-
-#menu-btn {
-    display: none;
-}
-
 .icon {
     height: 100%;
     width: 35px;
@@ -115,7 +96,41 @@ li {
     top: 0;
     left: 0;
 }
-
+/* --------------------------------- */
+.search-form{
+    position: absolute;
+    top: -115%; 
+    right: 2rem;
+    width: 50rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    height: 5.5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 1);
+    background: #fff;
+}
+.search-form.active{
+    top:115%;
+}
+form input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 1.2rem;
+    font-size: 1.6rem;
+    color:black;
+    text-transform: none;
+}
+form label{
+    font-size: 2.5rem;
+    margin-right: 1.7rem;
+    cursor:pointer;
+    color:black;
+}
+form label:hover{
+    color:green;
+}
 /*-----------------------------CONTENT-----------------------------*/
 .content {
     height: auto;
