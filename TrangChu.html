@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./KhachHang/TrangChu.js"></script>
+    <script src="./KhachHang/ChiTietSP.js"></script>
 
     <style>
 
@@ -77,11 +79,10 @@
     </div>
     <!-------CONTENT-------->
     <div class="content">
-        <div id="csd" class="khungLoai">
-            <div  class="TieuDeLoai"><b>Chăm sóc da</b></div>
+        <div class="khungLoai">
+            <div id="csd" class="TieuDeLoai"><b>Chăm sóc da</b></div>
             <!-- Sản phẩm -->
-            <div class="SP">
-                <!-- <p class="Hang">ICY</p> -->
+            <!-- <div class="SP">
                 <img src="img/MatNa_NRK.png" alt="" class="card__img">
                 <img src="img/NhanDan.png" alt="" class="card_NhanDan">
                 <div class="card__data">
@@ -90,10 +91,30 @@
                     <a href="#" class="Buy">Buy Now</a>
                     <a href="#" class="ChiTiet">Chi tiết</a>
                 </div>
-            </div>
+            </div> -->
+            <script>
+                var DSSP = JSON.parse(localStorage.getItem('DSSP'));
+                for (var i = 0; i < DSSP.length; i++) {
+                    if (DSSP[i].LoaiSP == "Chăm sóc da") {
+                        document.write(
+                            '<div class="SP">' +
+                            '<img src="' + DSSP[i].HinhAnh+ '"' + 'class="card__img">' +
+                            '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
+                            '<div class="card__data">' +
+                            '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
+                            '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
+                            '<a href="./KhachHang/GioHang.html" class="Buy">Buy Now</a>' +
+                             '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet">Chi tiết</a>' +
+                            '</div>' +
+                            '</div>'
+                        );
+                    }
+                }
+            </script>
+
         </div>
         <div class="khungLoai">
-            <div id="cn" class="TieuDeLoai"><b>Chống nắng</b></div>
+            <div id="cn" class="TieuDeLoai" ><b>Chống nắng</b></div>
         </div>
         <div class="khungLoai">
             <div id="lsd" class="TieuDeLoai"><b>Làm sạch da</b></div>
@@ -157,7 +178,6 @@
         </div>
     </div>
 </body>
-
 
 
 </html>

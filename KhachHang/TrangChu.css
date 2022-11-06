@@ -202,7 +202,7 @@ li {
 
 }
 .GiaTien::after {
-    content: '.000 VNĐ';
+    content: ' VNĐ';
 }
 
 .Buy {
