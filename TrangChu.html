@@ -13,7 +13,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./KhachHang/TrangChu.js"></script>
     <script src="./KhachHang/ChiTietSP.js"></script>
-
+    <script src="./KhachHang/GioHang.js"></script>
     <style>
 
     </style>
@@ -40,16 +40,16 @@
         <div href="#" class="icon">
             <img src="./img/DanhMuc.png">
         </div>
-        <div id="timkiem" href="#" class="icon" onclick="TimKiem()">
+        <div class="icon">
             <img src="./img/TimKiem.png">
         </div>
+
         <div href="#" class="icon">
             <img src="./img/GioHang.png">
         </div>
         <div href="#" class="icon">
             <img src="./img/NguoiDung.png">
         </div>
-
     </div>
     <!--------BANNER CHUYỂN ĐỘNG-------->
     <div class="slider">
@@ -82,48 +82,123 @@
         <div class="khungLoai">
             <div id="csd" class="TieuDeLoai"><b>Chăm sóc da</b></div>
             <!-- Sản phẩm -->
-            <!-- <div class="SP">
-                <img src="img/MatNa_NRK.png" alt="" class="card__img">
-                <img src="img/NhanDan.png" alt="" class="card_NhanDan">
-                <div class="card__data">
-                    <h1 class="TenSP">Mặt nạ Naruko</h1>
-                    <span class="GiaTien">30</span>
-                    <a href="#" class="Buy">Buy Now</a>
-                    <a href="#" class="ChiTiet">Chi tiết</a>
-                </div>
-            </div> -->
             <script>
                 var DSSP = JSON.parse(localStorage.getItem('DSSP'));
                 for (var i = 0; i < DSSP.length; i++) {
                     if (DSSP[i].LoaiSP == "Chăm sóc da") {
                         document.write(
                             '<div class="SP">' +
-                            '<img src="' + DSSP[i].HinhAnh+ '"' + 'class="card__img">' +
+                            '<img src="' + DSSP[i].HinhAnh + '"' + 'class="card__img">' +
                             '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
                             '<div class="card__data">' +
                             '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
                             '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
-                            '<a href="./KhachHang/GioHang.html" class="Buy">Buy Now</a>' +
-                             '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet">Chi tiết</a>' +
-                            '</div>' +
+                            '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang('+i+')">Buy Now</a>' +
+                            '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP('+i+')">Chi tiết</a>' +
+                            '</div>'+
                             '</div>'
                         );
+                        
                     }
                 }
             </script>
 
         </div>
         <div class="khungLoai">
-            <div id="cn" class="TieuDeLoai" ><b>Chống nắng</b></div>
+            <div id="cn" class="TieuDeLoai"><b>Chống nắng</b></div>
+            <!-- Sản phẩm -->
+            <script>
+                var DSSP = JSON.parse(localStorage.getItem('DSSP'));
+                for (var i = 0; i < DSSP.length; i++) {
+                    if (DSSP[i].LoaiSP == "Chống nắng") {
+                        document.write(
+                            '<div class="SP">' +
+                            '<img src="' + DSSP[i].HinhAnh + '"' + 'class="card__img">' +
+                            '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
+                            '<div class="card__data">' +
+                            '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
+                            '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
+                            '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang('+i+')">Buy Now</a>' +
+                            '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP('+i+')">Chi tiết</a>' +
+                            '</div>'+
+                            '</div>'
+                        );
+                        
+                    }
+                }
+            </script>
         </div>
         <div class="khungLoai">
             <div id="lsd" class="TieuDeLoai"><b>Làm sạch da</b></div>
+            <!-- Sản phẩm -->
+            <script>
+                var DSSP = JSON.parse(localStorage.getItem('DSSP'));
+                for (var i = 0; i < DSSP.length; i++) {
+                    if (DSSP[i].LoaiSP == "Làm sạch da") {
+                        document.write(
+                            '<div class="SP">' +
+                            '<img src="' + DSSP[i].HinhAnh + '"' + 'class="card__img">' +
+                            '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
+                            '<div class="card__data">' +
+                            '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
+                            '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
+                            '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang('+i+')">Buy Now</a>' +
+                            '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP('+i+')">Chi tiết</a>' +
+                            '</div>'+
+                            '</div>'
+                        );
+                        
+                    }
+                }
+            </script>
         </div>
         <div class="khungLoai">
             <div id="td" class="TieuDeLoai"><b>Trang điểm</b></div>
+            <!-- Sản phẩm -->
+            <script>
+                var DSSP = JSON.parse(localStorage.getItem('DSSP'));
+                for (var i = 0; i < DSSP.length; i++) {
+                    if (DSSP[i].LoaiSP == "Trang điểm") {
+                        document.write(
+                            '<div class="SP">' +
+                            '<img src="' + DSSP[i].HinhAnh + '"' + 'class="card__img">' +
+                            '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
+                            '<div class="card__data">' +
+                            '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
+                            '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
+                            '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang('+i+')">Buy Now</a>' +
+                            '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP('+i+')">Chi tiết</a>' +
+                            '</div>'+
+                            '</div>'
+                        );
+                        
+                    }
+                }
+            </script>
         </div>
         <div class="khungLoai">
             <div id="mpcn" class="TieuDeLoai"><b>Mỹ phẩm chức năng</b></div>
+            <!-- Sản phẩm -->
+            <script>
+                var DSSP = JSON.parse(localStorage.getItem('DSSP'));
+                for (var i = 0; i < DSSP.length; i++) {
+                    if (DSSP[i].LoaiSP == "Mỹ phẩm chức năng") {
+                        document.write(
+                            '<div class="SP">' +
+                            '<img src="' + DSSP[i].HinhAnh + '"' + 'class="card__img">' +
+                            '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
+                            '<div class="card__data">' +
+                            '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
+                            '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
+                            '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang('+i+')">Buy Now</a>' +
+                            '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP('+i+')">Chi tiết</a>' +
+                            '</div>'+
+                            '</div>'
+                        );
+                        
+                    }
+                }
+            </script>
         </div>
     </div>
     <!-------FOOTER-------->

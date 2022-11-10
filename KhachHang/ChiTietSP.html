@@ -44,46 +44,62 @@
         </div>
 
     </div>
-    
+
     <!-------CONTENT-------->
     <div class="content">
         <div class="KhungChiTiet">
-            <div>
+            <div >
                 <script>
-                    var sp = JSON.parse(sessionStorage.getItem('sp'));
+                    var sp = JSON.parse(localStorage.getItem('sp_tam'));
                     document.write(
-                        '<img src=".'+sp.HinhAnh+'" class="HinhAnhSP">'+
-                        '<div class="khungThongTin">'+
-                            '<p style="font-size: 1cm;"><b>'+sp.TenSP+'</b></p><br>'+
-                            '<p style="font-size: 0.6cm;"><b>'+sp.DonViTinh+'</b></p><br>'+
-                            '<p style="font-size: 0.6cm;"><b>Giá:'+sp.GiaBan+'</b></p><br>'+
-                            '<p style="font-size: 0.3cm;"><b>Số lượng:</b></p>'+
-                            '<input type="number" id="soluong" min="0" value="1" style="width: 60px;">'+
-                            '<div class="khungbtnThemVaoGio">'+
-                                '<button class="btnThemVaoGio">Thêm vào giỏ hàng</button>'+
-                            '</div>'+
+                        '<img src=".' + sp[0].HinhAnh + '" class="HinhAnhSP">' +
+                        '<div class="khungThongTin">' +
+                        '<p style="font-size: 1cm;"><b>' + sp[0].TenSP + '</b></p>' +
+                        '<p id="lsp" style="font-size: 0.6cm;"><b>Loại: ' + sp[0].LoaiSP + '</b></p>' +
+                        '<p style="font-size: 0.6cm;"><b>Đơn vị: ' + sp[0].DonViTinh + '</b></p>' +
+                        '<p style="font-size: 0.6cm;"><b>Giá: ' + sp[0].GiaBan + '</b></p>' +
+                        '<p style="font-size: 0.3cm;"><b>Số lượng:</b></p>' +
+                        '<input type="number" id="soluong" min="0" value="1" style="width: 60px;">' +
+                        '<div class="khungbtnThemVaoGio">' +
+                        '<button class="btnThemVaoGio">Thêm vào giỏ hàng</button>' +
+                        '</div>' +
                         '</div>'
                     );
+                    //------Sau khi đọc thì xóa sp_tam-------
+                    localStorage.removeItem('sp_tam');
                 </script>
-                <!-- <img src="../img/MatNa_NRK.png" class="HinhAnhSP">
-                <div class="khungThongTin">
-                    <p style="font-size: 1cm;"><b>Tên SP</b></p><br>
-                    <p style="font-size: 0.6cm;"><b>Đơn vị</b></p><br>
-                    <p style="font-size: 0.6cm;"><b>Giá:</b></p><br>
-                    <p style="font-size: 0.3cm;"><b>Số lượng:</b></p>
-                    <input type="number" id="soluong" min="0" value="1" style="width: 60px;">
-                    <div class="khungbtnThemVaoGio">
-                        <button class="btnThemVaoGio">Thêm vào giỏ hàng</button>
-                    </div>
-                </div> -->
             </div>
             <div class="khungThongTinChiTiet">
                 <a href="" class="DanhMucThongTin">Thành phần</a>
                 <a href="" class="DanhMucThongTin">Hướng dẫn sử dụng</a>
                 <a href="" class="DanhMucThongTin">Cách bảo quản</a>
-                <div class="khungDanhMuc"></div>
-                <div class="khungDanhMuc"></div>
-                <div class="khungDanhMuc"></div>
+                <div class="khungDanhMuc">
+                    <script>
+                        var DSLoaiSP = JSON.parse(localStorage.getItem('DSLoaiSP'));
+                        //Lấy dữ liệu đồng thời xử lý chuỗi chỉ lấy loại sản phẩm
+                        var loai = document.getElementById("lsp").innerHTML.replace("<b>Loại: ","").replace("</b>","");
+                        for (var i = 0; i < DSLoaiSP.length; i++) {
+                            if (DSLoaiSP[i].LoaiSP == loai) {
+                                document.write(
+                                    '<p class="ThongTinChiTiet">- Thành phần : ' + DSLoaiSP[i].ThanhPhan + '</p>' +
+                                    '<p class="ThongTinChiTiet">- Công dụng : ' + DSLoaiSP[i].CongDung + '</p>'
+                                );
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="khungDanhMuc">
+                    <p class="ThongTinChiTiet">- Dùng một liều lượng vừa đủ.</p>
+                    <p class="ThongTinChiTiet">- Nên tẩy trang và rửa mặt sạch trước khi bôi kem.</p>
+                    <p class="ThongTinChiTiet">- Sau khi sử dụng mỹ phẩm chờ 2-3 phút để dưỡng chất ngấm vào da.</p>
+                    <p class="ThongTinChiTiet">- Mỗi ngày chỉ sử dụng 1-2 lần.</p>
+                </div>
+                <div class="khungDanhMuc">
+                    <p class="ThongTinChiTiet">- Nên để mỹ phẩm ở những nơi khô ráo, thoáng mát, tránh ẩm ướt.</p>
+                    <p class="ThongTinChiTiet">- Tránh xa tầm tay trẻ em.</p>
+                    <p class="ThongTinChiTiet">- Sau khi sử dụng nên đóng kín lại mỹ phẩm tránh mất đi dưỡng chất.</p>
+                    <p class="ThongTinChiTiet">- Lau chùi sạch sẽ bàn để mỹ phẩm</p>
+                </div>
             </div>
         </div>
     </div>

@@ -55,13 +55,34 @@
                 <a class="TieuDeSP">Giá</a>
                 <a class="TieuDeSP">Thành tiền</a>
             </div>
-            <div class="khungSP">
+            <!-- Thông tin sp -->
+            <!-- <div class="khungSP">
                 <img class="HinhAnh" src="">
                 <span class="SP">Tên</span>
                 <span class="SP">Số lượng</span>
                 <span class="SP">Giá</span>
                 <span class="Style_Tien" style="margin-top: 40px;">Thành tiền</span>
-            </div>
+            </div> -->
+            <script>
+                var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+                if(GioHang.length!=0){
+                    for(var i=0;i<GioHang.length;i++){
+                        document.write(
+                            '<div class="khungSP">'+
+                            '<img class="HinhAnh" src=".'+GioHang[i].HinhAnh+'">'+
+                            '<span class="SP">'+GioHang[i].TenSP+'</span>'+
+                            '<span class="SP">'+GioHang[i].SoLuongMua+'</span>'+
+                            '<span class="SP">'+GioHang[i].GiaBan+'</span>'+
+                            '<span class="Style_Tien" style="margin-top: 40px;">Thành tiền</span>'+
+                            '</div>'
+                        );
+                    }
+                }else{
+                    document.write(
+                        '<div>Giỏ hàng rỗng</div>'
+                    );
+                }
+            </script>
             <div class="khungTongTien">
                 <span style="float: left;font-size: 0.5cm;color: black;margin-top: 20px;">Tổng tiền:</span>
                 <span class="Style_Tien" style="margin-top: 20px;">Tiền</span>
