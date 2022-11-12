@@ -46,3 +46,37 @@ function LuuThongTinSP_GioHang_o_chiTiet(sp) {
     GioHang.push(x);
     localStorage.setItem("GioHang", JSON.stringify(GioHang));
 }
+function XoaSP(ma){
+    var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+    for(var i=0;i<GioHang.length;i++){
+        if(GioHang[i].MaSP==ma){
+            GioHang.splice(i,1);
+        }
+    }
+}
+function Tru_SL(ma){
+    var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+    for(var i=0;i<GioHang.length;i++){
+        if(GioHang[i].MaSP==ma && GioHang[i].SoLuongMua>1){
+            sl=Number(GioHang[i].SoLuongMua)-Number(1);
+            tien=Number(sl)*Number(GioHang[i].GiaBan);
+            sp={ MaSP: GioHang[i].MaSP, TenSP: GioHang[i].TenSP, GiaBan: GioHang[i].GiaBan, HinhAnh: GioHang[i].HinhAnh, SoLuongMua: sl ,ThanhTien: tien};
+            GioHang.splice(i,1);
+        }
+    }
+    GioHang.push(sp);
+    localStorage.setItem("GioHang", JSON.stringify(GioHang));
+}
+function Cong_SL(ma){
+    var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+    for(var i=0;i<GioHang.length;i++){
+        if(GioHang[i].MaSP==ma){
+            sl=Number(GioHang[i].SoLuongMua)+Number(1);
+            tien=Number(sl)*Number(GioHang[i].GiaBan);
+            sp={ MaSP: GioHang[i].MaSP, TenSP: GioHang[i].TenSP, GiaBan: GioHang[i].GiaBan, HinhAnh: GioHang[i].HinhAnh, SoLuongMua: sl ,ThanhTien: tien};
+            GioHang.splice(i,1);
+        }
+    }
+    GioHang.push(sp);
+    localStorage.setItem("GioHang", JSON.stringify(GioHang));
+}

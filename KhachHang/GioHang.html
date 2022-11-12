@@ -31,7 +31,7 @@
                 </b></a>
         </div>
         <a href=""><div class="icon">
-            <img src="../img/DanhMuc.png">
+            <img src="../img/CaiDat.png">
         </div></a>
         <div class="icon">
             <img src="../img/TimKiem.png">
@@ -63,10 +63,14 @@
                             '<div class="khungSP">' +
                             '<img class="HinhAnh" src=".' + GioHang[i].HinhAnh + '">' +
                             '<span class="TenSP">' + GioHang[i].TenSP + '</span>' +
+                            '<a href="#" class="Tru" onclick="Tru_SL('+GioHang[i].MaSP+')">-</a>'+
                             '<span class="SL">' + GioHang[i].SoLuongMua + '</span>' +
+                            '<a href="#" class="Cong" onclick="Cong_SL('+GioHang[i].MaSP+')">+</a>'+
                             '<span class="Gia">' + GioHang[i].GiaBan + '</span>' +
+                            '<a href="#" class="Xoa" onclick="XoaSP('+GioHang[i].MaSP+')">Xóa</a>'+
                             '<span class="Style_Tien">' + GioHang[i].ThanhTien + '</span>' +
                             '</div>'
+                            
                         );
                     }
                 } else {
