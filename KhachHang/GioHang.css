@@ -107,20 +107,36 @@ li {
     margin-left: 5px;
     height: 98px;
     width: 80px;
-    background-color: #3498db;
 }
-.SP{
+.TenSP{
     float: left;
     font-size: 0.5cm;
     color: black;
     margin-left: 80px;
-    margin-right: 110px;
+    margin-top: 40px;
+    width: 350px;
+}
+.SL{
+    float: left;
+    font-size: 0.5cm;
+    color: black;
+    margin-top: 40px;
+    width: 250px;
+}
+.Gia{
+    float: left;
+    font-size: 0.5cm;
+    color: black;
     margin-top: 40px;
 }
 .Style_Tien{
     float: right;font-size: 0.5cm;
     color: black;
     margin-right: 10px;
+    margin-top: 40px;
+}
+.Style_Tien::after {
+    content: ' VNĐ'; 
 }
 .khungTongTien{
     border-top: white 2px solid;

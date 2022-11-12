@@ -20,9 +20,9 @@
 <body>
     <!-------HEADER-------->
     <div class="header">
-        <div class="logo">
+        <a href="../TrangChu.html"><div class="logo">
             <img src="../img/LOGO.png">
-        </div>
+        </div></a>
         <div class="khungSLG">
             <a class="SLG"><b>
                     <center>Yêu cái đẹp là thưởng thức
@@ -30,18 +30,18 @@
                     </center>
                 </b></a>
         </div>
-        <div href="#" class="icon">
+        <a href=""><div class="icon">
             <img src="../img/DanhMuc.png">
-        </div>
-        <div href="#" class="icon">
+        </div></a>
+        <div class="icon">
             <img src="../img/TimKiem.png">
         </div>
-        <div href="#" class="icon">
+        <a href="./KhachHang/GioHang.html"><div class="icon">
             <img src="../img/GioHang.png">
-        </div>
-        <div href="#" class="icon">
+        </div></a>
+        <a href=""><div class="icon">
             <img src="../img/NguoiDung.png">
-        </div>
+        </div></a>
 
     </div>
 
@@ -59,9 +59,11 @@
                         '<p style="font-size: 0.6cm;"><b>Đơn vị: ' + sp[0].DonViTinh + '</b></p>' +
                         '<p style="font-size: 0.6cm;"><b>Giá: ' + sp[0].GiaBan + '</b></p>' +
                         '<p style="font-size: 0.3cm;"><b>Số lượng:</b></p>' +
-                        '<input type="number" id="soluong" min="0" value="1" style="width: 60px;">' +
+                        '<input type="number" id="soluong" min="1" value="1" style="width: 60px;">' +
                         '<div class="khungbtnThemVaoGio">' +
+                        '<a href="./GioHang.html" onclick="LuuThongTinSP_GioHang_o_chiTiet('+sp+')">'+
                         '<button class="btnThemVaoGio">Thêm vào giỏ hàng</button>' +
+                        '</a>'+
                         '</div>' +
                         '</div>'
                     );

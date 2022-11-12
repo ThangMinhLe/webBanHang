@@ -20,9 +20,9 @@
 <body>
     <!-------HEADER-------->
     <div class="header">
-        <div class="logo">
+        <a href="../TrangChu.html"><div class="logo">
             <img src="../img/LOGO.png">
-        </div>
+        </div></a>
         <div class="khungSLG">
             <a class="SLG"><b>
                     <center>Yêu cái đẹp là thưởng thức
@@ -30,18 +30,18 @@
                     </center>
                 </b></a>
         </div>
-        <div href="#" class="icon">
+        <a href=""><div class="icon">
             <img src="../img/DanhMuc.png">
-        </div>
-        <div href="#" class="icon">
+        </div></a>
+        <div class="icon">
             <img src="../img/TimKiem.png">
         </div>
-        <div href="#" class="icon">
+        <div class="icon">
             <img src="../img/GioHang.png">
         </div>
-        <div href="#" class="icon">
+        <a href=""><div class="icon">
             <img src="../img/NguoiDung.png">
-        </div>
+        </div></a>
 
     </div>
 
@@ -55,41 +55,44 @@
                 <a class="TieuDeSP">Giá</a>
                 <a class="TieuDeSP">Thành tiền</a>
             </div>
-            <!-- Thông tin sp -->
-            <!-- <div class="khungSP">
-                <img class="HinhAnh" src="">
-                <span class="SP">Tên</span>
-                <span class="SP">Số lượng</span>
-                <span class="SP">Giá</span>
-                <span class="Style_Tien" style="margin-top: 40px;">Thành tiền</span>
-            </div> -->
             <script>
                 var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-                if(GioHang.length!=0){
-                    for(var i=0;i<GioHang.length;i++){
+                if (GioHang.length != 0) {
+                    for (var i = 0; i < GioHang.length; i++) {
                         document.write(
-                            '<div class="khungSP">'+
-                            '<img class="HinhAnh" src=".'+GioHang[i].HinhAnh+'">'+
-                            '<span class="SP">'+GioHang[i].TenSP+'</span>'+
-                            '<span class="SP">'+GioHang[i].SoLuongMua+'</span>'+
-                            '<span class="SP">'+GioHang[i].GiaBan+'</span>'+
-                            '<span class="Style_Tien" style="margin-top: 40px;">Thành tiền</span>'+
+                            '<div class="khungSP">' +
+                            '<img class="HinhAnh" src=".' + GioHang[i].HinhAnh + '">' +
+                            '<span class="TenSP">' + GioHang[i].TenSP + '</span>' +
+                            '<span class="SL">' + GioHang[i].SoLuongMua + '</span>' +
+                            '<span class="Gia">' + GioHang[i].GiaBan + '</span>' +
+                            '<span class="Style_Tien">' + GioHang[i].ThanhTien + '</span>' +
                             '</div>'
                         );
                     }
-                }else{
+                } else {
                     document.write(
                         '<div>Giỏ hàng rỗng</div>'
                     );
                 }
             </script>
             <div class="khungTongTien">
-                <span style="float: left;font-size: 0.5cm;color: black;margin-top: 20px;">Tổng tiền:</span>
-                <span class="Style_Tien" style="margin-top: 20px;">Tiền</span>
+                <span style="float: left;font-size: 0.5cm;color: black;margin-top: 20px;">Tổng tiền</span>
+                <span class="Style_Tien" style="margin-top: 20px;">
+                    <script>
+                        var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+                        var sum = 0;
+                        if (GioHang.length != 0) {
+                            for (var i = 0; i < GioHang.length; i++) {
+                                sum = Number(sum) + Number(GioHang[i].ThanhTien);
+                            }
+                            document.write(sum);
+                        }
+                    </script>
+                </span>
             </div>
             <div class="Khungbtn">
-                <button class="btn">Thanh toán</button>
-                <button class="btn">Tiếp tục mua sắm</button>
+                <a href=""><button class="btn">Thanh toán</button></a>
+                <a href="../TrangChu.html"><button class="btn">Tiếp tục mua sắm</button></a>
             </div>
         </div>
     </div>
