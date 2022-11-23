@@ -27,7 +27,7 @@ function LuuThongTinSP_GioHang_o_chiTiet(sp) {
     var SL = document.getElementById("soluong").value;
     if (GioHang == null) {
         GioHang = new Array();
-        var tien=Number(SL)*Number(sp.GiaBan);
+        var tien=Number(SL)*Number(sp[0].GiaBan);
         var x = { MaSP: sp[0].MaSP, TenSP: sp[0].TenSP, GiaBan: sp[0].GiaBan, HinhAnh: sp[0].HinhAnh, SoLuongMua: SL ,ThanhTien: tien};
     } else {
         var SL_tam = 0;
@@ -40,7 +40,7 @@ function LuuThongTinSP_GioHang_o_chiTiet(sp) {
                 SL_tam = SL;
             }
         }
-        var tien=Number(SL_tam)*Number(sp.GiaBan);
+        var tien=Number(SL_tam)*Number(sp[0].GiaBan);
         var x = { MaSP: sp[0].MaSP, TenSP: sp[0].TenSP, GiaBan: sp[0].GiaBan, HinhAnh: sp[0].HinhAnh, SoLuongMua: SL_tam ,ThanhTien: tien};
     }
     GioHang.push(x);

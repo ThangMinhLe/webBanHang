@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="./ChiTietSP.js"></script>
+    <script src="./GioHang.js"></script>
     <style>
 
     </style>
@@ -30,16 +31,16 @@
                     </center>
                 </b></a>
         </div>
-        <a href=""><div class="icon">
+        <!-- <a ><div class="icon">
             <img src="../img/CaiDat.png">
-        </div></a>
+        </div></a> -->
         <div class="icon">
             <img src="../img/TimKiem.png">
         </div>
         <div class="icon">
             <img src="../img/GioHang.png">
         </div>
-        <a href=""><div class="icon">
+        <a ><div class="icon">
             <img src="../img/NguoiDung.png">
         </div></a>
 
@@ -49,7 +50,7 @@
     <div class="content">
         <div class="TieuDeGioHang"><b>Giỏ Hàng</b></div>
         <div class="khungGioHang">
-            <div class="khungTieuDeSP">
+            <div class="khungTieuDeSP" >
                 <a class="TieuDeSP">Tên SP</a>
                 <a class="TieuDeSP">Số lượng</a>
                 <a class="TieuDeSP">Giá</a>
@@ -70,7 +71,6 @@
                             '<a href="#" class="Xoa" onclick="XoaSP('+GioHang[i].MaSP+')">Xóa</a>'+
                             '<span class="Style_Tien">' + GioHang[i].ThanhTien + '</span>' +
                             '</div>'
-                            
                         );
                     }
                 } else {
