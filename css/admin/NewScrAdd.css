@@ -1,0 +1,70 @@
+#background-color-themsanpham {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+#background-themsanpham {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 70%;
+    background-color: rgb(255, 255, 255);
+}
+.ThemSanPhamBox{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.ThemSanPhamBox>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+}
+.Title{
+    text-align: center;
+    font-size: 30px;
+}
+.Input{
+    border-radius: 20px;
+    margin-left: 50px;
+    height: 50px;
+    width: 70%;
+}
+
+.ButtonBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 185px;
+}
+.ButtonBox  button{
+    border-radius: 30px;
+    /* margin-top: 10px; */
+    transition: color 1s, background-color 1s;
+    /* margin-bottom: 20px; */
+}
+Button:hover{
+    color: white;
+    background-color: green;
+}
+.ThemSPButton{
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: color 1s, background-color 1s;
+
+}
+span{
+    font-size: 1.5rem;
+}

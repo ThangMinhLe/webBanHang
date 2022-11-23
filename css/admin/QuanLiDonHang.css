@@ -1,0 +1,25 @@
+table, th, td,tr {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 15px;
+}
+.table{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.grid__col-9--header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.grid__col-9--header>h2{
+    font-size: 30px;
+    margin: 20px ;
+}
+.butom__TKDonhang{
+    transform: translateX(160%);
+}
