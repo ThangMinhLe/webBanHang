@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="./ChiTietSP.js"></script>
     <script src="./GioHang.js"></script>
     <style>
 
@@ -31,9 +30,6 @@
                     </center>
                 </b></a>
         </div>
-        <!-- <a ><div class="icon">
-            <img src="../img/CaiDat.png">
-        </div></a> -->
         <div class="icon">
             <img src="../img/TimKiem.png">
         </div>
@@ -64,18 +60,18 @@
                             '<div class="khungSP">' +
                             '<img class="HinhAnh" src=".' + GioHang[i].HinhAnh + '">' +
                             '<span class="TenSP">' + GioHang[i].TenSP + '</span>' +
-                            '<a href="#" class="Tru" onclick="Tru_SL('+GioHang[i].MaSP+')">-</a>'+
+                            '<a href="./GioHang.html" class="Tru" onclick="Tru_SL('+i+')">-</a>'+
                             '<span class="SL">' + GioHang[i].SoLuongMua + '</span>' +
-                            '<a href="#" class="Cong" onclick="Cong_SL('+GioHang[i].MaSP+')">+</a>'+
+                            '<a href="./GioHang.html" class="Cong" onclick="Cong_SL('+i+')">+</a>'+
                             '<span class="Gia">' + GioHang[i].GiaBan + '</span>' +
-                            '<a href="#" class="Xoa" onclick="XoaSP('+GioHang[i].MaSP+')">Xóa</a>'+
+                            '<a href="./GioHang.html" class="Xoa" onclick="XoaSP('+i+')">Xóa</a>'+
                             '<span class="Style_Tien">' + GioHang[i].ThanhTien + '</span>' +
                             '</div>'
                         );
                     }
                 } else {
                     document.write(
-                        '<div>Giỏ hàng rỗng</div>'
+                        alert("Bạn chưa có sản phẩm nào trong giỏ hàng!")
                     );
                 }
             </script>
