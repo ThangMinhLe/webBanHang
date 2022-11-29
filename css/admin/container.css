@@ -5,6 +5,7 @@
 }
 .grid{
     width: 100%;
+    height: 100%;
     margin-left: 15px;
 
 }
@@ -18,11 +19,13 @@ nav.category {
 }
 .grid__row{
     display: flex;
+    height: 100%;
     margin-left: -12px;
     margin-right: -12px;
 
 }
 .grid__col-3{
+    height: 100%;
     padding-left: 12px;
     padding-right: 12px;
 
@@ -74,4 +77,5 @@ nav.category {
 }
 .grid__col-9{
     width: 100%;
+    height: 100%;
 }
