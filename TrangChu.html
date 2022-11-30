@@ -87,122 +87,41 @@
         <div class="khungLoai">
             <div id="csd" class="TieuDeLoai"><b>Chăm sóc da</b></div>
             <!-- Sản phẩm -->
+            <!-- <div class="khungphantrang">
+                <button id="1" class="phantrang" onclick="phantrang('Chăm sóc da')">1</button>
+                <button id="2" class="phantrang" onclick="phantrang('Chăm sóc da')">2</button>
+            </div> -->
             <script>
-                var DSSP = JSON.parse(localStorage.getItem('DSSP'));
-                for (var i = 0; i < DSSP.length; i++) {
-                    if (DSSP[i].LoaiSP == "Chăm sóc da") {
-                        document.write(
-                            '<div class="SP">' +
-                            '<img src="' + DSSP[i].HinhAnh + '"' + 'class="card__img">' +
-                            '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
-                            '<div class="card__data">' +
-                            '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
-                            '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
-                            '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang('+i+')">Buy Now</a>' +
-                            '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP('+i+')">Chi tiết</a>' +
-                            '</div>'+
-                            '</div>'
-                        );
-                        
-                    }
-                }
+                hienthi_sp("Chăm sóc da");
             </script>
-
+            
         </div>
         <div class="khungLoai">
             <div id="cn" class="TieuDeLoai"><b>Chống nắng</b></div>
             <!-- Sản phẩm -->
             <script>
-                var DSSP = JSON.parse(localStorage.getItem('DSSP'));
-                for (var i = 0; i < DSSP.length; i++) {
-                    if (DSSP[i].LoaiSP == "Chống nắng") {
-                        document.write(
-                            '<div class="SP">' +
-                            '<img src="' + DSSP[i].HinhAnh + '"' + 'class="card__img">' +
-                            '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
-                            '<div class="card__data">' +
-                            '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
-                            '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
-                            '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang('+i+')">Buy Now</a>' +
-                            '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP('+i+')">Chi tiết</a>' +
-                            '</div>'+
-                            '</div>'
-                        );
-                        
-                    }
-                }
+                hienthi_sp("Chống nắng");
             </script>
         </div>
         <div class="khungLoai">
             <div id="lsd" class="TieuDeLoai"><b>Làm sạch da</b></div>
             <!-- Sản phẩm -->
             <script>
-                var DSSP = JSON.parse(localStorage.getItem('DSSP'));
-                for (var i = 0; i < DSSP.length; i++) {
-                    if (DSSP[i].LoaiSP == "Làm sạch da") {
-                        document.write(
-                            '<div class="SP">' +
-                            '<img src="' + DSSP[i].HinhAnh + '"' + 'class="card__img">' +
-                            '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
-                            '<div class="card__data">' +
-                            '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
-                            '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
-                            '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang('+i+')">Buy Now</a>' +
-                            '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP('+i+')">Chi tiết</a>' +
-                            '</div>'+
-                            '</div>'
-                        );
-                        
-                    }
-                }
+                hienthi_sp("Làm sạch da");
             </script>
         </div>
         <div class="khungLoai">
             <div id="td" class="TieuDeLoai"><b>Trang điểm</b></div>
             <!-- Sản phẩm -->
             <script>
-                var DSSP = JSON.parse(localStorage.getItem('DSSP'));
-                for (var i = 0; i < DSSP.length; i++) {
-                    if (DSSP[i].LoaiSP == "Trang điểm") {
-                        document.write(
-                            '<div class="SP">' +
-                            '<img src="' + DSSP[i].HinhAnh + '"' + 'class="card__img">' +
-                            '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
-                            '<div class="card__data">' +
-                            '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
-                            '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
-                            '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang('+i+')">Buy Now</a>' +
-                            '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP('+i+')">Chi tiết</a>' +
-                            '</div>'+
-                            '</div>'
-                        );
-                        
-                    }
-                }
+                hienthi_sp("Trang điểm");
             </script>
         </div>
         <div class="khungLoai">
             <div id="mpcn" class="TieuDeLoai"><b>Mỹ phẩm chức năng</b></div>
             <!-- Sản phẩm -->
             <script>
-                var DSSP = JSON.parse(localStorage.getItem('DSSP'));
-                for (var i = 0; i < DSSP.length; i++) {
-                    if (DSSP[i].LoaiSP == "Mỹ phẩm chức năng") {
-                        document.write(
-                            '<div class="SP">' +
-                            '<img src="' + DSSP[i].HinhAnh + '"' + 'class="card__img">' +
-                            '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
-                            '<div class="card__data">' +
-                            '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
-                            '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
-                            '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang('+i+')">Buy Now</a>' +
-                            '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP('+i+')">Chi tiết</a>' +
-                            '</div>'+
-                            '</div>'
-                        );
-                        
-                    }
-                }
+                hienthi_sp("Mỹ phẩm chức năng");
             </script>
         </div>
         <div style="height: 340px;">
