@@ -14,7 +14,7 @@ function TimKiem() {
             }
         } else {
             for (var i = 0; i < DSSP.length; i++) {
-                if (DSSP[i].MaSP.toLowerCase() == s.toLowerCase() || DSSP[i].TenSP.toLowerCase() == s.toLowerCase() || DSSP[i].LoaiSP.toLowerCase() == s.toLowerCase()) {
+                if (DSSP[i].MaSP.toLowerCase().search(s.toLowerCase())!=-1|| DSSP[i].TenSP.toLowerCase().search(s.toLowerCase())!=-1 || DSSP[i].LoaiSP.toLowerCase().search(s.toLowerCase())!=-1) {
                     DSTKiem.push(DSSP[i]);
                     localStorage.setItem("DSTKiem", JSON.stringify(DSTKiem));
                 }
