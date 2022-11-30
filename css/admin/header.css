@@ -22,7 +22,7 @@ a{
 }
 .header {
     width: 100%;
-    z-index: 1000;
+    /*z-index: 1000;*/
     background: #FFD3B5;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
     display: flex;

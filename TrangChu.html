@@ -22,7 +22,7 @@
 
 <body>
     <!-------HEADER-------->
-    <div class="header">
+    <div id="hea" class="header">
         <div class="logo">
             <img src="./img/LOGO.png">
         </div>
@@ -37,15 +37,15 @@
             <img src="./img/CaiDat.png">
         </div></a>
         <div class="khungS">
-            <input id="tkiem" type="text" class="S">
+            <input id="tkiem" type="text" class="S" placeholder="Nhập sản phẩm cần tìm">
         </div>
-        <div class="icon">
+        <a class="icon" href="./KhachHang/ShowTimKiem.html" onclick="TimKiem()">
             <img src="./img/TimKiem.png">
-        </div>
+        </a>
         <a href="./KhachHang/GioHang.html"><div class="icon">
             <img src="./img/GioHang.png">
         </div></a>
-        <a href=""><div class="icon">
+        <a href="./signin.html"><div class="icon">
             <img src="./img/NguoiDung.png">
         </div></a>
     </div>
@@ -198,6 +198,9 @@
                 }
             </script>
         </div>
+        <div style="height: 340px;">
+            <a href="#hea" style="float: right;margin-right: 10px;margin-top: 300px;font-size: 0.5cm;font-style: italic;"><b>Lên đầu trang</b></a>
+        </div>
     </div>
     <!-------FOOTER-------->
     <div class="footer">
@@ -250,6 +253,9 @@
             </div>
         </div>
     </div>
+<!--    <div class="login"></div>-->
+<!--    <div class="register"></div>-->
+<!--    <script src="KhachHang/TrangChu.js" ></script>-->
 </body>
 
 

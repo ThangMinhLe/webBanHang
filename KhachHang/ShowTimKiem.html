@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ ICY</title>
-    <link rel="stylesheet" href="./GioHang.css">
+    <link rel="stylesheet" href="./TrangChu.css">
     <!-- Link icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="./GioHang.js"></script>
+    <script src="./TrangChu.js"></script>
     <style>
 
     </style>
@@ -20,9 +20,11 @@
 <body>
     <!-------HEADER-------->
     <div class="header">
-        <a href="../TrangChu.html"><div class="logo">
-            <img src="../img/LOGO.png">
-        </div></a>
+        <a href="../TrangChu.html">
+            <div class="logo">
+                <img src="../img/LOGO.png">
+            </div>
+        </a>
         <div class="khungSLG">
             <a class="SLG"><b>
                     <center>Yêu cái đẹp là thưởng thức
@@ -30,70 +32,45 @@
                     </center>
                 </b></a>
         </div>
-        <div class="icon">
-            <img src="../img/TimKiem.png">
-        </div>
-        <div class="icon">
+        <a class="icon" href="./GioHang.html">
             <img src="../img/GioHang.png">
-        </div>
-        <a ><div class="icon">
-            <img src="../img/NguoiDung.png">
-        </div></a>
+        </a>
+        <a>
+            <div class="icon">
+                <img src="../img/NguoiDung.png">
+            </div>
+        </a>
 
     </div>
 
     <!-------CONTENT-------->
     <div class="content">
-        <div class="TieuDeGioHang"><b>Giỏ Hàng</b></div>
-        <div class="khungGioHang">
-            <div class="khungTieuDeSP" >
-                <a class="TieuDeSP">Tên SP</a>
-                <a class="TieuDeSP">Số lượng</a>
-                <a class="TieuDeSP">Giá</a>
-                <a class="TieuDeSP">Thành tiền</a>
-            </div>
+        <div class="khungLoai">
+            <!-- Sản phẩm tìm thấy -->
             <script>
-                var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-                if (GioHang.length != 0) {
-                    for (var i = 0; i < GioHang.length; i++) {
+                var DSTKiem = JSON.parse(localStorage.getItem('DSTKiem'));
+                if (DSTKiem == null) {
+                    document.write(
+                        alert("Không có sản phẩm nào đc tìm thấy!")
+                    );
+                } else {
+                    for (var i = 0; i < DSTKiem.length; i++) {
                         document.write(
-                            '<div class="khungSP">' +
-                            '<img class="HinhAnh" src=".' + GioHang[i].HinhAnh + '">' +
-                            '<span class="TenSP">' + GioHang[i].TenSP + '</span>' +
-                            '<a href="./GioHang.html" class="Tru" onclick="Tru_SL('+i+')">-</a>'+
-                            '<span class="SL">' + GioHang[i].SoLuongMua + '</span>' +
-                            '<a href="./GioHang.html" class="Cong" onclick="Cong_SL('+i+')">+</a>'+
-                            '<span class="Gia">' + GioHang[i].GiaBan + '</span>' +
-                            '<a href="./GioHang.html" class="Xoa" onclick="XoaSP('+i+')">Xóa</a>'+
-                            '<span class="Style_Tien">' + GioHang[i].ThanhTien + '</span>' +
+                            '<div class="SP">' +
+                            '<img src=".' + DSTKiem[i].HinhAnh + '"' + 'class="card__img">' +
+                            '<img src="../img/NhanDan.png" alt="" class="card_NhanDan">' +
+                            '<div class="card__data">' +
+                            '<h1 class="TenSP">' + DSTKiem[i].TenSP + '</h1>' +
+                            '<span class="GiaTien">' + DSTKiem[i].GiaBan + '</span>' +
+                            '<a href="./GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang(' + i + ')">Buy Now</a>' +
+                            '<a href="./ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP(' + i + ')">Chi tiết</a>' +
+                            '</div>' +
                             '</div>'
                         );
                     }
-                } else {
-                    document.write(
-                        alert("Bạn chưa có sản phẩm nào trong giỏ hàng!")
-                    );
                 }
+
             </script>
-            <div class="khungTongTien">
-                <span style="float: left;font-size: 0.5cm;color: black;margin-top: 20px;">Tổng tiền</span>
-                <span class="Style_Tien" style="margin-top: 20px;">
-                    <script>
-                        var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-                        var sum = 0;
-                        if (GioHang.length != 0) {
-                            for (var i = 0; i < GioHang.length; i++) {
-                                sum = Number(sum) + Number(GioHang[i].ThanhTien);
-                            }
-                            document.write(sum);
-                        }
-                    </script>
-                </span>
-            </div>
-            <div class="Khungbtn">
-                <a href=""><button class="btn">Thanh toán</button></a>
-                <a href="../TrangChu.html"><button class="btn">Tiếp tục mua sắm</button></a>
-            </div>
         </div>
     </div>
     <!-------FOOTER-------->

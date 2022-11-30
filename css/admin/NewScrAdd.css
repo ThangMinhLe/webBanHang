@@ -17,19 +17,19 @@
     justify-content: center;
     align-items: center;
     width: 70%;
-    height: 70%;
+    height: 90%;
     background-color: rgb(255, 255, 255);
 }
 .ThemSanPhamBox{
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 50%;
 }
 .ThemSanPhamBox>div{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 5px;
+    margin: 5px 0px;
 }
 .Title{
     text-align: center;
@@ -37,33 +37,44 @@
 }
 .Input{
     border-radius: 20px;
-    margin-left: 50px;
-    height: 50px;
-    width: 70%;
+    padding-left: 9px;
+    height: 40px;
+    width: 60%;
 }
-
-.ButtonBox{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 185px;
+.inputNumber{
+    width: 20%;
 }
-.ButtonBox  button{
-    border-radius: 30px;
-    /* margin-top: 10px; */
-    transition: color 1s, background-color 1s;
-    /* margin-bottom: 20px; */
-}
+/*.ButtonBox{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: wrap;*/
+/*    margin-left: 185px;*/
+/*}*/
+/*.ButtonBox  button{*/
+/*    border-radius: 30px;*/
+/*    !* margin-top: 10px; *!*/
+/*    transition: color 1s, background-color 1s;*/
+/*    !* margin-bottom: 20px; *!*/
+/*}*/
 Button:hover{
-    color: white;
-    background-color: green;
+
 }
 .ThemSPButton{
     border-radius: 5px;
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     transition: color 1s, background-color 1s;
 
+}
+.ThemSPButton:hover{
+    cursor : pointer;
+    color: white;
+    background-color: green;
+}
+.SelectBox{
+    padding: 4px;
+    margin-left: 2rem;
+    font-size: 1.5rem;
 }
 span{
     font-size: 1.5rem;

@@ -1,5 +1,7 @@
 table, th, td,tr {
     border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 1.5rem;
     text-align: center;
     padding: 5px 15px;
 }

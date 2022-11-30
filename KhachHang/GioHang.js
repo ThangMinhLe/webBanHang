@@ -22,13 +22,14 @@ function LuuThongTinSP_GioHang(i) {
     GioHang.push(sp);
     localStorage.setItem("GioHang", JSON.stringify(GioHang));
 }
-function LuuThongTinSP_GioHang_o_chiTiet(sp) {
+function LuuThongTinSP_GioHang_o_chiTiet() {
     var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+    var sp = JSON.parse(localStorage.getItem('sp_tam'));
     var SL = document.getElementById("soluong").value;
     if (GioHang == null) {
         GioHang = new Array();
         var tien=Number(SL)*Number(sp[0].GiaBan);
-        var x = { MaSP: sp[0].MaSP, TenSP: sp[0].TenSP, GiaBan: sp[0].GiaBan, HinhAnh: sp[0].HinhAnh, SoLuongMua: SL ,ThanhTien: tien};
+        tam = { MaSP: sp[0].MaSP, TenSP: sp[0].TenSP, GiaBan: sp[0].GiaBan, HinhAnh: sp[0].HinhAnh, SoLuongMua: SL ,ThanhTien: tien};
     } else {
         var SL_tam = 0;
         for (var j = 0; j < GioHang.length; j++) {
@@ -41,21 +42,36 @@ function LuuThongTinSP_GioHang_o_chiTiet(sp) {
             }
         }
         var tien=Number(SL_tam)*Number(sp[0].GiaBan);
-        var x = { MaSP: sp[0].MaSP, TenSP: sp[0].TenSP, GiaBan: sp[0].GiaBan, HinhAnh: sp[0].HinhAnh, SoLuongMua: SL_tam ,ThanhTien: tien};
+        tam = { MaSP: sp[0].MaSP, TenSP: sp[0].TenSP, GiaBan: sp[0].GiaBan, HinhAnh: sp[0].HinhAnh, SoLuongMua: SL_tam ,ThanhTien: tien};
     }
-    GioHang.push(x);
+    GioHang.push(tam);
     localStorage.setItem("GioHang", JSON.stringify(GioHang));
+    localStorage.removeItem('sp_tam');
 }
-function XoaSP(ma){
+function XoaSP(k){
+    var ma;
+    var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+    for(var j=0;j<GioHang.length;j++){
+        if(j==k){
+            ma=GioHang[j].MaSP;
+        }
+    }
     var GioHang = JSON.parse(localStorage.getItem('GioHang'));
     for(var i=0;i<GioHang.length;i++){
         if(GioHang[i].MaSP==ma){
             GioHang.splice(i,1);
         }
     }
+    localStorage.setItem("GioHang", JSON.stringify(GioHang));
 }
-function Tru_SL(ma){
+function Tru_SL(k){
+    var ma;
     var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+    for(var j=0;j<GioHang.length;j++){
+        if(j==k){
+            ma=GioHang[j].MaSP;
+        }
+    }
     for(var i=0;i<GioHang.length;i++){
         if(GioHang[i].MaSP==ma && GioHang[i].SoLuongMua>1){
             sl=Number(GioHang[i].SoLuongMua)-Number(1);
@@ -67,8 +83,14 @@ function Tru_SL(ma){
     GioHang.push(sp);
     localStorage.setItem("GioHang", JSON.stringify(GioHang));
 }
-function Cong_SL(ma){
+function Cong_SL(k){
+    var ma;
     var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+    for(var j=0;j<GioHang.length;j++){
+        if(j==k){
+            ma=GioHang[j].MaSP;
+        }
+    }
     for(var i=0;i<GioHang.length;i++){
         if(GioHang[i].MaSP==ma){
             sl=Number(GioHang[i].SoLuongMua)+Number(1);
