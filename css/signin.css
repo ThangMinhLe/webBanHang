@@ -1,12 +1,12 @@
-body{
+/* body{
   margin: 0;
   padding: 0;
   font-family:
   overflow hidden;
   background: linear-gradient(120deg, #2e118f, #8875c7);
   height: 100vh;
-}
-.container{
+} */
+.container { 
   position: absolute;
   top: 50%;
   left: 50%;
@@ -14,6 +14,7 @@ body{
   width: 500px;
   background: #fff;
   border-radius: 10px;
+  display: none;
 }
 .container form{
   padding: 0 40px;
