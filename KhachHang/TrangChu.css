@@ -97,8 +97,9 @@ li {
     cursor: pointer;
 }
 
-.icon__show-login:blank .container{
-    display: block;
+.icon__show-login,
+.icon__show-logup {
+    text-decoration: none;
 }
 
 /* --------------Search------------------- */
