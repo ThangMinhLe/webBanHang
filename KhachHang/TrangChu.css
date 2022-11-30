@@ -257,6 +257,17 @@ li {
     opacity: 1;
 }
 
+.khungphantrang{
+    margin-left: 550px;
+    height: 40px;
+}
+.phantrang{
+    margin-right: 10px;
+    font-size: 0.8cm;
+    background-color: #e91e63;
+    height: 40px;
+    width: 30px;
+}
 /*-----------------------------FOOTER-----------------------------*/
 .footer-container {
     max-width: 1170px;
