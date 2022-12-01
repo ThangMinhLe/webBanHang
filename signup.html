@@ -6,6 +6,7 @@
     <meta name="viewport" 
     content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/signin.css">
+    <script src="sign.js"></script>
     <title>Đăng ký - ICY</title>
 </head>
 <body>
@@ -16,27 +17,40 @@
       </a>
       <h1 style="text-align: right; margin: -50px 40px 20px auto;">Đăng ký</h1>
       <hr>
-    <form action="">
-      <div class="txt_field">
-        <input type="text" required>
+    <form id="signup_form" class="form" method="POST">
+      <div id="form-group" class="txt_field">
+        <input id="username" type="text" required>
         <span></span>
-        <label for="">Tên đăng nhập</label>
+        <label for="username">Tên đăng nhập</label>
+        <span class="form-message"></span>
       </div>
-      <div class="txt_field">
-        <input type="text" required>
+      <div id="form-group" class="txt_field">
+        <input id="email" type="text" required>
         <span></span>
         <label for="">Địa chỉ Email</label>
+        <span class="form-message"></span>
       </div>
-      <div class="txt_field">
-        <input type="password" required>
+       <div id="form-group" class="txt_field">
+        <input id="password" type="password" name="password" required>
         <span></span>
-        <label for="">Mật khẩu</label>
+        <label for="password">Mật khẩu</label>
+        <span class="form-message"></span>
       </div>
-      <input type="submit" value="Đăng ký">
+      <input  type="submit" value="Đăng ký">
       <div class="signup_link">
         Đã có tài khoản? <a href="signin.html">Đăng nhập</a>
       </div>
     </form>
    </div>
+   <script>
+    Validator({
+      form : '#signup_form',
+      rules: [
+          Validator.isRequired('#username'),
+          Validator.isPassWord('#password'),
+          Validator.isEmail('#email')
+      ]
+    });
+ </script>
 </body>
 </html>

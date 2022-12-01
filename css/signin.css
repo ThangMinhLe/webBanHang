@@ -1,43 +1,8 @@
-/* HEADER */
-.header {
-  height: 120px;
-  background-image: linear-gradient(0, #ff582e,#f6372a);
+
+
+* {
+  /* font-weight: 500; */
 }
-
-.header__navbar {
-  display: flex;
-  justify-content: space-between;
-}
-
-.header__navbar-list {
-  list-style: none;
-  padding-left: 0;
-  /* margin-top: 4px; */
-}
-
-.header__navbar-item {
-  margin: 0 8px; 
-  position: relative;
-  min-height: 26px;
-}
-
-.header__navbar-item,
-.header__navbar-item-link {
-  display: inline-block;
-  font-size: 1.5rem;
-  color: var(--white-color);
-  text-decoration: none;
-  font-weight: 300;
-}
-
-.header__navbar-item, {
-  display: inline-flex;
-  align-items: center;
-
-}
-
-
-
 /* CONTAINER */
 body{
   margin: 0;
@@ -135,3 +100,8 @@ input[type="submit"]:hover{
     text-decoration: underline;
 }
 
+.form-message{
+  position: absolute;
+  margin-top: 2px;
+  color: red;
+}
