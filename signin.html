@@ -6,48 +6,37 @@
     <meta name="viewport" 
     content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/signin.css">
-    <script src="sign.js"></script>
     <title>Đăng nhập - ICY</title>
 </head>
 <body>
-    <header>
-
-    </header>
-  <div class="container">
-    <a href="TrangChu.html">
-        <img src="img/LOGO.png" alt="Trang chủ ICY" 
-        style="border-radius: 100px; ; max-block-size: 60px; margin: 30px auto 20px 40px;" title="Trang chủ ICY">
-      </a>
-      <h1 style="text-align: right; margin: -50px 40px 20px auto;">Đăng nhập</h1>
-      <hr>
-    <form id="signin_form" class="form" method="POST">
-      <div id="form-group" class="txt_field">
-        <input id="username" type="text" required>
-        <span></span>
-        <label for="username" for="">Tên đăng nhập</label>
-        <span class="form-message"></span>
-      </div>
-      <div id="form-group" class="txt_field">
-        <input id="password" type="password" name="password" required>
-        <span></span>
-        <label for="password">Mật khẩu</label>
-        <span class="form-message"></span>
-      </div>
-      <input type="submit" value="Đăng nhập">
-      <div class="signup_link">
-        Chưa có tài khoản? <a href="signup.html">Đăng ký</a>
-      </div>
-    </form>
-   </div>
-   <script>
-      Validator({
-        form : '#signin_form',
-        rules: [
-            Validator.isRequired('#username'),
-            Validator.isPassWord('#password'),
-        ]
-      });
-   </script>
-
+    <div class="container">
+      <a href="TrangChu.html">
+          <img src="img/LOGO.png" alt="Trang chủ ICY" 
+          style="border-radius: 100px; ; max-block-size: 60px; margin: 30px auto 20px 40px;" title="Trang chủ ICY">
+        </a>
+        <h1 style="text-align: right; margin: -50px 40px 20px auto;">Đăng nhập</h1>
+        <hr>
+      <form id="signup_form" class="form" method="POST">
+        <div id="form-group" class="txt_field">
+          <input onblur="usernameCheck()" id="username" type="text" required>
+          <span></span>
+          <label for="username">Tên đăng nhập</label>
+        </div>
+        <span id="username-err"></span>
+         <div id="form-group" class="txt_field">
+          <input onblur="passCheck()" id="password" type="password" name="password" required>
+          <span></span>
+          <label for="password">Mật khẩu</label>
+        </div>
+        <span id="password-err"></span>
+        <span id="incorectPass"></span>
+      </form>
+      <a class="forget-pass" href="">Quên mật khẩu</a>
+      <input onclick="signinCheck()" type="submit" value="Đăng nhập">
+        <div class="signup_link">
+          Chưa có tài khoản? <a href="signup.html">Đăng ký</a>
+        </div>
+     </div>
+     <script src="Admin/account.js"></script>
 </body>
 </html>

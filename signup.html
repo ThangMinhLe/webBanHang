@@ -6,7 +6,6 @@
     <meta name="viewport" 
     content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/signin.css">
-    <script src="sign.js"></script>
     <title>Đăng ký - ICY</title>
 </head>
 <body>
@@ -19,38 +18,29 @@
       <hr>
     <form id="signup_form" class="form" method="POST">
       <div id="form-group" class="txt_field">
-        <input id="username" type="text" required>
+        <input onblur="usernameCheck()" id="username" type="text" required>
         <span></span>
         <label for="username">Tên đăng nhập</label>
-        <span class="form-message"></span>
       </div>
+      <span id="username-err"></span>
       <div id="form-group" class="txt_field">
-        <input id="email" type="text" required>
+        <input onblur="emailCheck()" id="email" type="text" required>
         <span></span>
         <label for="">Địa chỉ Email</label>
-        <span class="form-message"></span>
       </div>
+      <span id="email-err"></span>
        <div id="form-group" class="txt_field">
-        <input id="password" type="password" name="password" required>
+        <input onblur="passCheck()" id="password" type="password" name="password" required>
         <span></span>
         <label for="password">Mật khẩu</label>
-        <span class="form-message"></span>
       </div>
-      <input  type="submit" value="Đăng ký">
+      <span id="password-err"></span>
+    </form>
+    <input onclick="save()" type="submit" value="Đăng ký">
       <div class="signup_link">
         Đã có tài khoản? <a href="signin.html">Đăng nhập</a>
       </div>
-    </form>
    </div>
-   <script>
-    Validator({
-      form : '#signup_form',
-      rules: [
-          Validator.isRequired('#username'),
-          Validator.isPassWord('#password'),
-          Validator.isEmail('#email')
-      ]
-    });
- </script>
+   <script src="Admin/account.js"></script>
 </body>
 </html>

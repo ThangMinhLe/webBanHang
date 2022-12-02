@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <title>Quản lí đơn hàng</title>
@@ -8,9 +9,10 @@
     <link rel="stylesheet" href="..\css\admin\QuanLiDonHang.css">
     <link rel="stylesheet" href="..\css\admin\footer.css">
     <link rel="stylesheet" href="..\fonts\fontawesome-free-6.2.0-web\css\all.css">
+    <link rel="stylesheet" href="../css/toggleSwitch.css">
 </head>
 
-<body>
+<body onload="renderTable()" >
 <div class="wrap">
     <div class="header">
         <nav class="header_navbar"></nav>
@@ -57,28 +59,14 @@
                 <div class="grid__col-9">
                     <div class="grid__col-9--header">
                         <h2>Duyệt đơn hàng</h2>
-<!--                        <div class="butom__TKDonhang">-->
-<!--                            <button> <label style="font-size: 15px">Thông kê đơn hàng </label></button>-->
-<!--                        </div>-->
+                       <!-- <div class="butom__TKDonhang">
+                           <button> <label style="font-size: 15px">Thông kê đơn hàng </label></button>
+                         </div> -->
                     </div>
-                    <div class="table">
-                        <table id="myTable" width="1200" border="1" cellpading="0">
-                            <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Mã đơn hàng</th>
-                                <th>Tên khách hàng</th>
-                                <th>Thời gian đặt đơn</th>
-                                <th>Trạng thái</th>
-                                <th>Xem chi tiết</th>
-                                <th>Tổng tiền</th>
-                                <th>Tác vụ</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                    <div id="table">
+                        <table on id="myTable" width="1100">
 
-                            </tbody>
-                        </table>
+                        </table> 
                     </div>
                 </div>
 
@@ -138,6 +126,6 @@
     </div>
 
 </div>
+    <script src="../js/browseCart.js"></script>
 </body>
-
 </html>

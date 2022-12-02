@@ -31,7 +31,7 @@ body{
 form .txt_field{
   position: relative;
   border-bottom: 2px solid #adadad;
-  margin: 30px 0;
+  margin-top: 15px;
 }
 .txt_field input{
   width: 100%;
@@ -77,8 +77,10 @@ form .txt_field{
   text-decoration: underline;
 }
 input[type="submit"]{
-  width: 100%;
+  width: 80%;
   height: 50px;
+  margin: 0 50px;
+  text-align: center;
   border: 1px solid;
   border-radius: 30px;
   background: #169045;
@@ -87,6 +89,7 @@ input[type="submit"]{
   color: white;
   font-weight: 700;
   font-size: 20px;
+  margin-top: 10px;
 }
 input[type="submit"]:hover{
     background-color: #b8a5a3;
@@ -104,4 +107,13 @@ input[type="submit"]:hover{
   position: absolute;
   margin-top: 2px;
   color: red;
+}
+
+.forget-pass{
+  margin: 20px 45px;
+}
+
+span {
+  color: red;
+  margin-bottom: 5px;
 }
