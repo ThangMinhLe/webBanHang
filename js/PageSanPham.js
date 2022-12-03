@@ -127,8 +127,8 @@ function addSP(){
                 listDSLoaiSP.push(chitietSP);
                 render();
                 clear();
-                // localStorage.setItem('DSSP',JSON.stringify(listDSSP));
-                // localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
+                localStorage.setItem('DSSP',JSON.stringify(listDSSP));
+                localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
 
             }
         })
@@ -138,6 +138,8 @@ function removeSP(iD) {
         for (let i = 0; i < listDSSP.length; i++)
             if (listDSSP[i].MaSP === iD) {
                 listDSSP.splice(i, 1);
+                localStorage.setItem('DSSP',JSON.stringify(listDSSP));
+                localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
                 render();
             }
     }
@@ -160,47 +162,35 @@ function showSP(iD){
             let HinhAnh = fileInpToTextInp(event);
             document.getElementById('buttonThemSP').style.display="none";
             document.getElementById('buttonCapNhap').style.display="inline-block";
-            // console.log(listDSSP[i]);
-            // listDSSP[i]= {
-            //     MaSP: MaSP,
-            //     TenSP:TenSP,
-            //     HinhAnh:HinhAnh,
-            //     LoaiSP:LoaiSP,
-            //     SoLuong:SoLuong,
-            //     DonViTinh:DungTich,
-            //     GiaBan:GiaBan,
-            //     CongDung:CongDung,
-            //     ThanhPhan:ThanhPhan
-            // };
-            // console.log(listDSSP[i]);
-            // Validator({
-            //     form: '#form-id',
-            //     formGroupSelector: '.form-group',
-            //     errorSelector: '.form-massage',
-            //     rules: [
-            //         Validator.isRequired('#masp','Vui lòng nhập mã sản phẩm' ),
-            //         // Validator.isEditIDProduct('#masp',function () {
-            //         //     return document.querySelector('#index').value;
-            //         // },'Mã sản phẩm trùng lặp với mã khác'),
-            //         Validator.isRequired('#tensanpham','Vui lòng nhập tên sản phẩm'),
-            //         Validator.isRequired('#giatien', 'Vui lòng nhập giá tiền'),
-            //         Validator.isRequired('#soluong',' Vui lòng nhập số lượng'),
-            //         Validator.isRequired('#dungtich',' Vui lòng nhập dung tích'),
-            //         Validator.isRequired('#congdung','Vui lòng nhập công dụng'),
-            //         Validator.isRequired('#thanhphan','Vui lòng nhập những thành phần'),
-            //     ],
-            //     onSubmit: function () {
-            //
-            //         let sanpham = new SanPham(MaSP,TenSP,HinhAnh,LoaiSP,SoLuong,DungTich,GiaBan,ThanhPhan,CongDung);
-            //         let chitietSP= new ChiTietSP(LoaiSP,CongDung,ThanhPhan);
-            //
-            //         render();
-            //         clear();
-            //         // localStorage.setItem('DSSP',JSON.stringify(listDSSP));
-            //         // localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
-            //
-            //     }
-            // });
+            console.log(listDSSP[i]);
+            Validator({
+                form: '#form-id',
+                formGroupSelector: '.form-group',
+                errorSelector: '.form-massage',
+                rules: [
+                    Validator.isRequired('#masp','Vui lòng nhập mã sản phẩm' ),
+                    // Validator.isEditIDProduct('#masp',function () {
+                    //     return document.querySelector('#index').value;
+                    // },'Mã sản phẩm trùng lặp với mã khác'),
+                    Validator.isRequired('#tensanpham','Vui lòng nhập tên sản phẩm'),
+                    Validator.isRequired('#giatien', 'Vui lòng nhập giá tiền'),
+                    Validator.isRequired('#soluong',' Vui lòng nhập số lượng'),
+                    Validator.isRequired('#dungtich',' Vui lòng nhập dung tích'),
+                    Validator.isRequired('#congdung','Vui lòng nhập công dụng'),
+                    Validator.isRequired('#thanhphan','Vui lòng nhập những thành phần'),
+                ],
+                onSubmit: function () {
+
+                    let sanpham = new SanPham(MaSP,TenSP,HinhAnh,LoaiSP,SoLuong,DungTich,GiaBan,ThanhPhan,CongDung);
+                    let chitietSP= new ChiTietSP(LoaiSP,CongDung,ThanhPhan);
+
+                    render();
+                    clear();
+                    // localStorage.setItem('DSSP',JSON.stringify(listDSSP));
+                    // localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
+
+                }
+            });
 
         }
 
@@ -224,6 +214,8 @@ function changeSP(){
             CongDung: document.getElementById('congdung').value,
             ThanhPhan: document.getElementById('thanhphan').value
         }
+        localStorage.setItem('DSSP',JSON.stringify(listDSSP));
+        localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
         render();
         clear();
     }

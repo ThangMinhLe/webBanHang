@@ -1,0 +1,28 @@
+.grid__col-9{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.grid__col-9--header>h2{
+    font-size: 30px;
+    margin: 20px;
+}
+table, th, td,tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 5px 10px;
+}
+.grid__col-9--mid, .grid__col-9--header,
+.grid__col-9--bottom{
+    margin: 2rem 0;
+}
+.grid__col-9--mid{
+    width: 100%;
+}
+.KhachHangBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
