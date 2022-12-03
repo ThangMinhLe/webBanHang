@@ -66,7 +66,8 @@ function render(){
             <td>${listDSSP[i].LoaiSP}</td>
             <td>${listDSSP[i].SoLuong}</td>
             <td>${listDSSP[i].DonViTinh}</td>
-            <td>${listDSSP[i].GiaBan}</td>
+            <td>${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(listDSSP[i].GiaBan)
+        }</td>
             <td>
                 <a href="#form-id"><i class="fa-solid fa-pen-to-square" onclick="showSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i></a>
                 <i class="fa-solid fa-xmark" onclick="removeSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i>

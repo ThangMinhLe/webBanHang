@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
+<script>
+    function handleHA(event) {
+        let haElem = document.getElementById('hinhanh');
+        haElem.value = event.target.value;
+    }
+</script>
+
 <body>
 <div class="wrap">
     <div class="header">
@@ -80,9 +87,11 @@
 
                                         <div class="form-group" id="form-img">
                                             <label for="hinhanh">Hình ảnh </label>
+                                            <input class="InputIMG Input" type="text" id="hinhanh">
+                                            <label for="hinhanhDỉr" style="font-size: 2rem">...</label>
                                             <input class="InputIMG" type="file"
-                                                   id="hinhanh" name="hinhanh"
-                                                   accept="image/gif, image/png, image/jpeg">
+                                                   id="hinhanhDỉr" name="hinhanh" style="visibility: hidden"
+                                                   accept="image/gif, image/png, image/jpeg" onchange="handleHA(event)">
                                             <span class="form-massage"></span>
                                         </div>
 

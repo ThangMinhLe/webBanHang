@@ -224,9 +224,6 @@ li {
     color: rgb(7, 0, 0);
 
 }
-.GiaTien::after {
-    content: ' VNĐ';
-}
 
 .Buy {
     padding: 13px;

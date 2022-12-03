@@ -8,7 +8,8 @@ function hienthi_sp(danhmuc){
                 '<img src="img/NhanDan.png" alt="" class="card_NhanDan">' +
                 '<div class="card__data">' +
                 '<h1 class="TenSP">' + DSSP[i].TenSP + '</h1>' +
-                '<span class="GiaTien">' + DSSP[i].GiaBan + '</span>' +
+                '<span class="GiaTien">' + new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(Number(DSSP[i].GiaBan))
+             + '</span>' +
                 '<a href="./KhachHang/GioHang.html" class="Buy" onclick="LuuThongTinSP_GioHang(' + i + ')">Buy Now</a>' +
                 '<a href="./KhachHang/ChiTietSP.html" class="ChiTiet" onclick="LuuThongTin_ChiTiet_SP(' + i + ')">Chi tiết</a>' +
                 '</div>' +
