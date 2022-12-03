@@ -1,4 +1,5 @@
-let Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
+var Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
+
 function user(MaKH,name,username,password,email,dayRegi,telephone){
     this.MaKH= MaKH;
     this.name= name;
@@ -25,7 +26,7 @@ function user(MaKH,name,username,password,email,dayRegi,telephone){
     for (i = 0; i < Accounts.length; i++)
         table += `<tr>
             <td>${i + 1}</td>
-            <td>${Accounts[i].iduser}</td>
+            <td>${Accounts[i].MaKH}</td>
             <td>${Accounts[i].name}</td>
             <td>${Accounts[i].username}</td>
             <td>${Accounts[i].password}</td>

@@ -1,56 +1,40 @@
-function showRegister(){
+var Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
+function showLogin(){
     document.getElementById('formLoginRegister').innerHTML= `
     <div class="background-color-login" id="background-color-login">
-          <div class="background-login" id="background-login" style="height: 95%">
-              <div class="heading" style="margin-bottom: 1rem">
-                  <a href="TrangChu.html">
-                      <img src="img/LOGO.png" alt="Trang chủ ICY"
-                           style="border-radius: 100px; ; max-block-size: 7rem; margin: 30px auto 20px 40px;" title="Trang chủ ICY">
-                  </a>
-                  <div class="heading-space"></div>
-                  <h1 style="font-size: 3rem">Đăng ký</h1>
-                  <hr>
-              </div>
-                  <form id="signup_form" class="form" method="POST">
-                      <div class="txt_field">
-                          <input onblur="nameCheck()" id="name" type="text" required>
-                          <span></span>
-                          <label for="name">Họ và tên</label>
-                      </div>
-                      <span id="name-err"></span>
-                      <div class="txt_field">
-                          <input onblur="usernameCheck()" id="username" type="text" required>
-                          <span></span>
-                          <label for="username">Tên đăng nhập</label>
-                      </div>
-                      <span id="username-err"></span>
-                      <span id="sameUsername-err"></span>
-                      <div class="txt_field">
-                          <input onblur="telephoneCheck()" id="telephone" type="text" required>
-                          <span></span>
-                          <label for="telephone">Số điện thoại</label>
-                      </div>
-                      <span id="telephone-err"></span>
-                      <div class="txt_field">
-                          <input onblur="emailCheck()" id="email" type="text" required>
-                          <span></span>
-                          <label for="email">Địa chỉ Email</label>
-                      </div>
-                      <span id="email-err"></span>
-                      <div class="txt_field">
-                          <input onblur="passCheck()" id="password" type="password" name="password" required>
-                          <span></span>
-                          <label for="password">Mật khẩu</label>
-                      </div>
-                      <span id="password-err"></span>
-
-                  <input onclick="save()" type="submit" style="height: 5rem;" value="Đăng ký">
-                  </form>
-                    <div class="signup_link">
-                      <label style="font-size: 1.5rem">Đã có tài khoản?</label>  <button onclick="showLogin()" class="icon__login" id="loginInRegister">Đăng nhập</button>
-                    </div>
+        <div class="background-login" id="background-login">
+      <form id="signup_form" class="form" method="POST">
+          <div class="heading">
+          <a href="TrangChu.html">
+              <img src="img/LOGO.png" alt="Trang chủ ICY"
+                   style="border-radius: 100px; ; max-block-size: 7rem; margin: 30px auto 20px 40px;" title="Trang chủ ICY">
+          </a>
+              <div class="heading-space"></div>
+          <h1 style="font-size: 3rem" >Đăng nhập</h1>
+          <hr>
           </div>
-      </div>
+        <div  class="txt_field">
+          <input onblur="usernameCheck()" id="username" type="text" required>
+          <span></span>
+          <label for="username">Tên đăng nhập</label>
+        </div>
+        <span id="username-err"></span>
+         <div class="txt_field">
+          <input onblur="passCheck()" id="password" type="password" name="password" required>
+          <span></span>
+          <label for="password">Mật khẩu</label>
+        </div>
+        <span id="password-err"></span>
+        <span id="incorectPass"></span>
+      </form>
+      <a class="forget-pass"  style="font-size: 1.5rem">Quên mật khẩu</a>
+      <input onclick="DangNhap()" type="submit" value="Đăng nhập">
+        <div class="signup_link">
+          <label style="font-size: 1.5rem">Chưa có tài khoản?</label>  
+          <button onclick="showRegister()" class="icon__register" id="registerInLogin">Đăng ký</button>
+        </div>
+     </div>
+    </div>
 `
     let UnDo = document.getElementById("background-color-login");
     UnDo.onclick = function(e) {
@@ -58,4 +42,29 @@ function showRegister(){
             UnDo.remove();
         }
     }
+}
+
+function DangNhap(){
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    let temp=0;
+    if (usernameCheck() && passCheck()) {
+        for (let i = 0; i < Accounts.length; i++) {
+            if (username === Accounts[i].username && password === Accounts[i].password) {
+                localStorage.setItem('UserLogin',JSON.stringify(Accounts[i]));
+
+                return true;
+            } else if (username === Accounts[i].username && password !== Accounts[i].password) {
+                document.getElementById('incorectPass').innerHTML =
+                    'Mật khẩu không đúng yêu cầu nhập lại!';
+                return false;
+            }
+            else if (username !== Accounts[i].username)
+                temp++;
+        }
+        if (temp===Accounts.length)
+            document.getElementById('username-err').innerHTML=`Tên đăng nhập không tồn tại!`;
+    }
+    else
+        return false;
 }
