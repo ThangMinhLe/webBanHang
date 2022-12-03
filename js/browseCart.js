@@ -6,16 +6,19 @@ function renderTable() {
     }
     document.getElementById('myTable').style.display = 'block';
     let tableContent = `
-    <tr>
-        <th>STT</th>
-        <th>Mã đơn hàng</th>
-        <th>Tên khách hàng</th>
-        <th>Thời gian đặt đơn</th>
-        <th>Trạng thái</th>
-        <th>Xem chi tiết</th>
-        <th>Tổng tiền</th>
-        <th>Tác vụ</th>
-    </tr>`;
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Mã đơn hàng</th>
+            <th>Tên khách hàng</th>
+            <th>Thời gian đặt đơn</th>
+            <th>Trạng thái</th>
+            <th>Xem chi tiết</th>
+            <th>Tổng tiền</th>
+            <th>Tác vụ</th>
+        </tr>
+    </thead>
+    <tbody>`;
     Carts.forEach((Cart, index) => {
         index++;
         let tongTien = Cart.GiaBan*Cart.SoLuongMua;
@@ -34,11 +37,17 @@ function renderTable() {
         <span class="slider round"></span>
       </label></th>
     </tr>`;
-
     })
+    tableContent +=`</tbody>`;
     document.getElementById('myTable').innerHTML = tableContent;
 }
 
-function acceptCart() {
-    return true;
+
+function randomNum(a, b) {
+    const randon = Math.random() * (9999 - 1000);
+    if
 }
+
+let DuyetDonHang = [{
+    
+}]
