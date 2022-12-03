@@ -398,3 +398,7 @@ li {
 #my-bill {
     width: 100%;
 }
+.icon__show-login, .icon__show-logup{
+    background-color: Rgb(247,217,239);
+    border: Rgb(247,217,239);
+}

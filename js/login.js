@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" 
-    content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/signin.css">
-    <title>Đăng nhập - ICY</title>
-</head>
-<body>
-    <div class="container">
-
-
-
-    <div class="background-color-login">
-        <div class="backgroundd-login">
+// let Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
+document.getElementById("login-btn").onclick = function () {
+    document.getElementById('login').innerHTML= `
+    <div class="background-color-login" id="background-color-login">
+        <div class="background-login" id="background-login">
       <form id="signup_form" class="form" method="POST">
           <div class="heading">
           <a href="TrangChu.html">
               <img src="img/LOGO.png" alt="Trang chủ ICY"
                    style="border-radius: 100px; ; max-block-size: 7rem; margin: 30px auto 20px 40px;" title="Trang chủ ICY">
           </a>
-
+              <div class="heading-space"></div>
           <h1 >Đăng nhập</h1>
           <hr>
           </div>
@@ -46,11 +34,11 @@
         </div>
      </div>
     </div>
-
-
-
-
-    </div>
-     <script src="js/account.js"></script>
-</body>
-</html>
+`
+    let UnDo = document.getElementById("background-color-login");
+    UnDo.onclick = function(e) {
+        if (e.target.matches("#background-color-login")) {
+            UnDo.remove();
+        }
+    }
+}
