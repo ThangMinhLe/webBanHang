@@ -1,6 +1,5 @@
 let Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
 
-localStorage.setItem('AdminAccount', )
 function save() {
     let username = document.getElementById('username').value;
     let email = document.getElementById('email').value;
