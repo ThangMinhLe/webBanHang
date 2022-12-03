@@ -51,15 +51,14 @@ function signinDone(username, password) {
 function checkSameUser() {
     let username = document.getElementById('username').value;
     for(var i = 0; i < Accounts.length; i++) {
-        console.log(Accounts[i].username);
         if(username === Accounts[i].username) {
             console.log(Accounts[i].username);
-            document.getElementById('username-err').innerHTML =
+            document.getElementById('sameUsername-err').innerHTML =
             'Tên người dùng đã tồn tại';
             return false;
         }
         else{
-            document.getElementById('username-err').innerHTML = '';
+            document.getElementById('sameUsername-err').innerHTML = '';
         }
     }
     return true;
