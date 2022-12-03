@@ -1,0 +1,71 @@
+
+body {
+   margin: 0;
+}
+#background-color-chiTiet {
+   background-color: rgba(0, 0, 0, 0.6);
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+   align-items: center;
+   height: 100%;
+   width: 100%;
+}
+#background-chiTiet {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 20px;
+   text-align: center;
+   width: 1000px;
+   background-color: rgb(255, 255, 255);
+}
+.chiTietBox{
+   display: flex;
+   flex-direction: column;
+   width: 1500px;
+}
+.Title{
+   text-align: center;
+   font-size: 30px;
+   margin: 30px;
+}
+.Input{
+   border-radius: 20px;
+   margin-left: 50px;
+   height: 30px;
+}
+.SelectBox{
+   margin-left: 110px;
+}
+.DateBox{
+   margin-left: 87px;
+}
+.ButtonBox{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   margin-left: 185px;
+}
+.ButtonBox  button{
+   /* margin-top: 10px; */
+   transition: color 1s, background-color 1s;
+   /* margin-bottom: 20px; */
+}
+Button:hover{
+   color: white;
+   background-color: black;
+}
+.CapTKButton{
+   border-radius: 3px;
+   transition: color 1s, background-color 1s;
+}
+.tag-cv {
+   margin-right: 5px;
+   margin-top: 5px;
+}
