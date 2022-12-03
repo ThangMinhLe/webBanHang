@@ -1,5 +1,17 @@
 let Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
-
+function user(iduser,name,username,password,email,telephone){
+    this.iduser= iduser;
+    this.name= name;
+    this.username = username;
+    this.password= password;
+    this.email= email;
+    this.telephone=telephone;
+}
+if(Accounts.length===0){
+    let admin = new user('admin','admin','admin','admin','admin@gmail.com','admin');
+    Accounts.push(admin);
+    localStorage.setItem('Accounts',JSON.stringify(Accounts));
+}
 function save() {
     let username = document.getElementById('username').value;
     let email = document.getElementById('email').value;
@@ -8,20 +20,19 @@ function save() {
     let emChecked = emailCheck();
     let psChecked = passCheck();
     let oldUsChecked = checkSameUser();
-    if(usChecked && emChecked && psChecked && oldUsChecked) {
-        let Account = {
-            username: username,
-            password: password,
-            email: email,
-            name:'Chưa có thông tin',
-            telephone: 'Chưa có thông tin',
-            address: 'Chưa có thông tin',
-        }
+    if(Accounts.length===0){
+        let admin = new user('admin','admin','admin','admin','admin@gmail.com','admin');
+        Accounts.push(admin);
+        localStorage.setItem('Accounts',JSON.stringify(Accounts));
+    }
+    else if (usChecked && emChecked && psChecked && oldUsChecked) {
+        let Account = new user('iduser','name',username ,password,email,'phone')
         Accounts.push(Account);
         localStorage.setItem('Accounts',JSON.stringify(Accounts));
         console.log(Accounts);
         resetForm();
-        alert('Đăng ký tài khoản thành công');
+        if(confirm('Đăng ký tài khoản thành công'));
+        //     location.replace("C:\\Users\\Administrator\\Desktop\\WebsiteSellingConsmetics\\TrangChu.html");
     }
 }
 function signinCheck() {
