@@ -164,7 +164,7 @@ function renderTable2() {
         </td>
         <td>${`${duyet.tongTien}`+" VNĐ"}</td>
         <td><label class="switch">
-        <input  type="checkbox">
+        <input value="1" type="checkbox">
         <span class="slider round"></span>
       </label></td>
     </tr>`;
@@ -173,7 +173,7 @@ function renderTable2() {
     document.getElementById('myTable').innerHTML = tableContent;
 }
 function xemChiTiet(maDonHang){
-    let tongTien;
+    let tongTien = 0;
     document.getElementById('newScreen').innerHTML = `
     <div id="background-color-chiTiet">
     <div style="border-radius: 10px;" id="background-chiTiet">
@@ -195,9 +195,7 @@ function xemChiTiet(maDonHang){
             <th>Mã sản phẩm</th>
             <th>Tên sản phẩm</th>
             <th>Hình ảnh</th>
-            <th>Loại SP</th>
             <th>Số lượng</th>
-            <th>Đơn vị</th>
             <th>Giá bán</th>
             <th>Thành tiền</th>
         </tr>
@@ -207,17 +205,16 @@ function xemChiTiet(maDonHang){
 
         if(duyet.maDonHang === maDonHang) {
             (DuyetDonHang[index].chiTiet).forEach((ct, dem) => {
-                tongTien+=(ct.GiaBan*ct.SoLuong);
+                tongTien += ct.ThanhTien;
+                console.log(ct);
                 tableContent += `<tr>
                 <td>${dem + 1}</td>
                 <td>${ct.MaSP}</td>
                 <td>${ct.TenSP}</td>
-                <td><img src="${ct.HinhAnh}" alt="Ảnh sản phẩm" width="40" height="40"></td>
-                <td>${ct.LoaiSP}</td>
+                <td><img src="${fileInpToTextInp(ct.HinhAnh)}" alt="Ảnh sản phẩm" width="40" height="40"></td>
                 <td>${ct.SoLuongMua}</td>
-                <td>${ct.DonViTinh}</td>
                 <td>${`${ct.GiaBan}`+" VNĐ"}</td>
-                <td>${ct.GiaBan*ct.SoLuongMua}</td>
+                <td>${`${ct.ThanhTien}`+ " VNĐ"}</td>
             </label></td>
             </tr>`;
             })
@@ -226,9 +223,15 @@ function xemChiTiet(maDonHang){
     })
     tableContent +=`
     <tr>
-        <td colspan="8">TỔNG TIỀN</td>
-        <td>${tongTien}</td>
+        <td colspan="6">TỔNG TIỀN</td>
+        <td>${tongTien} VNĐ</td>
     </tr>
         </tbody>`;
     document.getElementById('chiTietDonHang').innerHTML = tableContent;
+    console.log(tongTien);
+}
+
+function fileInpToTextInp(event) {
+    let fileChuk = event.split("\\");
+    return '../img/' + fileChuk[fileChuk.length - 1];
 }
