@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Quản lí sản phẩm</title>
-    <link rel="stylesheet" href="..\css\admin\NewScrAdd.css">
-    <link rel="stylesheet" href="..\css\admin\header.css">
-    <link rel="stylesheet" href="..\css\admin\container.css">
-    <link rel="stylesheet" href="..\css\admin\QuanLiSanPham.css">
-    <link rel="stylesheet" href="..\css\admin\footer.css">
-    <link rel="stylesheet" href="..\fonts\fontawesome-free-6.2.0-web\css\all.css">
+    <link rel="stylesheet" href="../css/admin/NewScrAdd.css">
+    <link rel="stylesheet" href="../css/admin/header.css">
+    <link rel="stylesheet" href="../css/admin/container.css">
+    <link rel="stylesheet" href="../css/admin/QuanLiSanPham.css">
+    <link rel="stylesheet" href="../css/admin/footer.css">
+    <link rel="stylesheet" href="../fonts/fontawesome-free-6.2.0-web/css/all.css">
 </head>
 
 <body>
@@ -61,7 +61,79 @@
                         <h2>Sản phẩm</h2>
                     </div>
                     <div class="grid__col-9--mid">
-                        <button id="themSP" class="buttonThemSP">Thêm sản phẩm</button>
+<!--                        <div id="background-color-themsanpham">-->
+<!--                            <div style="border-radius: 20px;" id="background-themsanpham">-->
+                                <div class="ThemSanPhamBox" id="ThemSanPhamnBox">
+                                    <form action="" id="form-id" class="form" onsubmit="return false">
+                                        <div class="Title" style="margin-left: 0">Thêm sản phẩm</div>
+                                        <div class="form-group">
+                                            <label for="masp">Mã sản phẩm</label>
+                                            <input placeholder="Mã sản phẩm" id="masp" class="Input" type="text">
+                                            <span class="form-massage"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tensanpham">Tên sản phẩm</label>
+                                            <input class="Input" type="text" id="tensanpham" name="tensanpham"
+                                                   placeholder="Tên sản phẩm">
+                                            <span class="form-massage"></span>
+                                        </div>
+
+                                        <div class="form-group" id="form-img">
+                                            <label for="hinhanh">Hình ảnh </label>
+                                            <input class="InputIMG" type="file"
+                                                   id="hinhanh" name="hinhanh"
+                                                   accept="image/gif, image/png, image/jpeg">
+                                            <span class="form-massage"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="phanloai">Phân loại</label>
+                                            <select class="SelectBox" name="phanLoai" id="phanloai">
+                                                <option value="Chăm sóc da">Chăm sóc da</option>
+                                                <option value="Chống nắng">Chống nắng</option>
+                                                <option value="Làm sạch da">Làm sạch da</option>
+                                                <option value="Trang điểm">Trang điểm</option>
+                                                <option value="Mỹ phẩm chức năng">Mỹ phẩm chức năng</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="soluong">Số lượng </label>
+                                            <input class="Input inputNumber" type="number" id="soluong" name="soluong" placeholder="Só lượng">
+                                            <span class="form-massage"></span>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="dungtich" >Dung tích (ML) </label>
+                                            <input class="Input inputNumber" type="text" id="dungtich" name="dungtich" placeholder=" Dung tích" >
+                                            <span class="form-massage"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="congdung">Công dụng</label>
+                                            <input class="Input" type="text" id="congdung" name="condung" placeholder="Công dụng">
+                                            <span class="form-massage"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="thanhphan">Thành Phần</label>
+                                            <input class="Input" type="text" id="thanhphan" name="thanhphan" placeholder="Thành phần">
+                                            <span class="form-massage"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="giatien">Giá tiền</label>
+                                            <input type="text" id="giatien" name="giatien" placeholder="Giá tiền" class="Input">
+                                            <span class="form-massage"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="index" style="display: none">
+                                        </div>
+                                        <div id="div_buttonThemSP"  class="form-group" style="justify-content: center; margin-left: 0;">
+                                            <input type="submit"  onclick='addSP()' id="buttonThemSP" class="ThemSPButton" value="Thêm sản phẩm">
+                                            <input type="submit" style="display: none"  onclick='changeSP()' id="buttonCapNhap" class="ThemSPButton" value="Cập nhập">
+                                        </div>
+                                    </form>
+
+                                </div>
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
                     <div class="grid__col-9--bottom">
                         <table id="myTable">
@@ -77,7 +149,6 @@
                                 <th>Thành phần</th>
                                 <th>Công dụng</th>
                                 <th>Giá tiền</th>
-                                <th>Khuyến mãi</th>
                                 <th>Tác vụ</th>
                             </tr>
                             </thead>
@@ -142,8 +213,23 @@
             </div>
         </div>
     </div>
-    <div id="NewScrAdd"></div>
-    <script src="..\js\PageSanPham.js" >
+    <script src="../js/Validator.js" ></script>
+    <script src="../js/PageSanPham.js" ></script>
+    <script>
+        Validator({
+            form: '#form-id',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-massage',
+            rules: [
+                Validator.isRequired('#masp','Vui lòng nhập mã sản phẩm' ),
+                Validator.isRequired('#tensanpham','Vui lòng nhập tên sản phẩm'),
+                Validator.isRequired('#giatien', 'Vui lòng nhập giá tiền'),
+                Validator.isRequired('#soluong',' Vui lòng nhập số lượng'),
+                Validator.isRequired('#dungtich',' Vui lòng nhập dung tích'),
+                Validator.isRequired('#congdung','Vui lòng nhập công dụng'),
+                Validator.isRequired('#thanhphan','Vui lòng nhập những thành phần'),
+            ]
+        });
     </script>
 </div>
 </body>

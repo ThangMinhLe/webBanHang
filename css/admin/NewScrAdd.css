@@ -23,7 +23,7 @@
 .ThemSanPhamBox{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
 }
 .ThemSanPhamBox>div{
     display: flex;
@@ -36,28 +36,22 @@
     font-size: 30px;
 }
 .Input{
-    border-radius: 20px;
+    border-radius: 2rem;
+    margin-right: 2px;
     padding-left: 9px;
-    height: 40px;
+    height: 6rem;
     width: 60%;
+    border: 1px solid #b3b3b3;
+    font-size: 1.7rem;
+}
+.InputIMG{
+    font-size: 1.7rem;
+    width: 30%;
+    margin: 2rem 2rem 2rem 0;
+
 }
 .inputNumber{
     width: 20%;
-}
-/*.ButtonBox{*/
-/*    display: flex;*/
-/*    flex-direction: row;*/
-/*    flex-wrap: wrap;*/
-/*    margin-left: 185px;*/
-/*}*/
-/*.ButtonBox  button{*/
-/*    border-radius: 30px;*/
-/*    !* margin-top: 10px; *!*/
-/*    transition: color 1s, background-color 1s;*/
-/*    !* margin-bottom: 20px; *!*/
-/*}*/
-Button:hover{
-
 }
 .ThemSPButton{
     border-radius: 5px;
@@ -73,9 +67,43 @@ Button:hover{
 }
 .SelectBox{
     padding: 4px;
-    margin-left: 2rem;
-    font-size: 1.5rem;
+    margin: 2rem 2rem 2rem 0;
+    font-size: 1.7rem;
 }
 span{
     font-size: 1.5rem;
 }
+.form-group>label{
+    margin-left: 3px;
+    width: 15%;
+    font-size: 2rem;
+}
+.form-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 1.5rem;
+}
+.form-massage{
+    margin-left: 2px;
+ }
+.form-group.invalid .Input{
+    border-color: #f33a58;
+}
+.form-group.invalid .form-massage{
+    color: #f33a58;
+}
+/*.ButtonBox{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: wrap;*/
+/*    margin-left: 185px;*/
+/*}*/
+/*.ButtonBox  button{*/
+/*    border-radius: 30px;*/
+/*    !* margin-top: 10px; *!*/
+/*    transition: color 1s, background-color 1s;*/
+/*    !* margin-bottom: 20px; *!*/
+/*}*/
