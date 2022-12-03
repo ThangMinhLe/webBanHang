@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <title>Quản lí đơn hàng</title>
@@ -10,9 +9,10 @@
     <link rel="stylesheet" href="..\css\admin\footer.css">
     <link rel="stylesheet" href="..\fonts\fontawesome-free-6.2.0-web\css\all.css">
     <link rel="stylesheet" href="../css/toggleSwitch.css">
+    <link rel="stylesheet" href="../css/chiTietDH.css">
 </head>
 
-<body onload="renderTable()" >
+<body onload="renderTable2()" >
 <div class="wrap">
     <div class="header">
         <nav class="header_navbar"></nav>
@@ -64,9 +64,14 @@
                          </div> -->
                     </div>
                     <div id="table">
-                        <table on id="myTable" width="1100">
-
+                        <table id="myTable" width="1250">
                         </table> 
+                    </div>
+                    <div id="newScreen">
+                        <table id="chiTietDonHang">
+                        </table>
+                    </div>
+                    <div id="newScreen">
                     </div>
                 </div>
 
@@ -74,7 +79,7 @@
 
         </div>
     </div>
-    <div class="footer">
+    <!-- <div class="footer">
         <div class="footer-container">
             <div class="row">
                 <div class="footer-col">
@@ -117,13 +122,12 @@
                             <li><a href=""><i class="fab fa-facebook"></i></a></li>
                             <li><a href=""><i class="fab fa-instagram"></i></a></li>
                             <li><a href=""><i class="fab fa-twitter"></i></a></li>
-
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </div>
     <script src="../js/browseCart.js"></script>
