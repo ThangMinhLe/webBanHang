@@ -68,7 +68,7 @@ function render(){
             <td>${listDSSP[i].DonViTinh}</td>
             <td>${listDSSP[i].GiaBan}</td>
             <td>
-                <a href="#grid__col-9"><i class="fa-solid fa-pen-to-square" onclick="showSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i></a>
+                <a href="#form-id"><i class="fa-solid fa-pen-to-square" onclick="showSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i></a>
                 <i class="fa-solid fa-xmark" onclick="removeSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i>
             </td>
         </tr>
@@ -158,6 +158,7 @@ function showSP(iD){
             document.getElementById('dungtich').value=listDSSP[i].DonViTinh;
             document.getElementById('congdung').value=listDSSP[i].CongDung;
             document.getElementById('thanhphan').value = listDSSP[i].ThanhPhan;
+            document.getElementById('hinhanh').value = listDSSP[i].HinhAnh;
             let event = document.getElementById('hinhanh').value;
             let HinhAnh = fileInpToTextInp(event);
             document.getElementById('buttonThemSP').style.display="none";
