@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/signin.css">
     <script src="./KhachHang/TrangChu.js"></script>
     <script src="./KhachHang/ChiTietSP.js"></script>
@@ -47,11 +48,11 @@
             <img src="./img/GioHang.png">
         </div></a>
         <div class="icon">
-            <img src="./img/NguoiDung.png" alt="Người dùng">
+            <img class="icon__NguoiDung" src="./img/NguoiDung.png" alt="Người dùng">
             <!-- SHOW LOGIN/LOGUP -->
             <div class="icon__show">
-                <button class="icon__show-login" id="login-btn">Đăng nhập</button>
-                <button class="icon__show-logup" id="register-btn">Đăng ký</button>
+                <button onclick="showLogin()" class="icon__show-login" id="login-btn">Đăng nhập</button>
+                <button onclick="showRegister()" class="icon__show-logup" id="register-btn">Đăng ký</button>
             </div>
         </div>
     </div>
@@ -180,9 +181,10 @@
             </div>
         </div>
     </div>
-    <div id="login"></div>
-    <div id="register"></div>
+    <div id="formLoginRegister"></div>
     <script src="js/login.js" ></script>
+    <script src="js/logup.js" ></script>
+    <script src="js/account.js"></script>
 </body>
 
 

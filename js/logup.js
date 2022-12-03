@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" 
-    content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/signin.css">
-    <title>Đăng nhập - ICY</title>
-</head>
-<body>
-    <div class="container">
-
-
-
-    <div class="background-color-login">
-        <div class="backgroundd-login">
+// let Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
+function showLogin(){
+    document.getElementById('formLoginRegister').innerHTML= `
+    <div class="background-color-login" id="background-color-login">
+        <div class="background-login" id="background-login">
       <form id="signup_form" class="form" method="POST">
           <div class="heading">
           <a href="TrangChu.html">
               <img src="img/LOGO.png" alt="Trang chủ ICY"
                    style="border-radius: 100px; ; max-block-size: 7rem; margin: 30px auto 20px 40px;" title="Trang chủ ICY">
           </a>
-
-          <h1 >Đăng nhập</h1>
+              <div class="heading-space"></div>
+          <h1 style="font-size: 3rem" >Đăng nhập</h1>
           <hr>
           </div>
         <div  class="txt_field">
@@ -39,18 +27,23 @@
         <span id="password-err"></span>
         <span id="incorectPass"></span>
       </form>
-      <a class="forget-pass" href="">Quên mật khẩu</a>
+      <a class="forget-pass"  style="font-size: 1.5rem">Quên mật khẩu</a>
       <input onclick="signinCheck()" type="submit" value="Đăng nhập">
         <div class="signup_link">
-          Chưa có tài khoản? <a href="signup.html">Đăng ký</a>
+          <label style="font-size: 1.5rem">Chưa có tài khoản?</label>  
+          <button onclick="showRegister()" class="icon__register" id="registerInLogin">Đăng ký</button>
         </div>
      </div>
     </div>
+`
+        let UnDo = document.getElementById("background-color-login");
+        UnDo.onclick = function(e) {
+            if (e.target.matches("#background-color-login")) {
+                UnDo.remove();
+            }
+        }
+    }
 
 
 
 
-    </div>
-     <script src="js/account.js"></script>
-</body>
-</html>

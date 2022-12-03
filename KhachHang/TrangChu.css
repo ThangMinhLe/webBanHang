@@ -6,7 +6,6 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    text-transform: capitalize;
 
 }
 
@@ -401,4 +400,17 @@ li {
 .icon__show-login, .icon__show-logup{
     background-color: Rgb(247,217,239);
     border: Rgb(247,217,239);
+}
+.icon__login, .icon__register{
+    cursor: pointer;
+    background-color: rgb(255,211,181);
+    border: rgb(255,211,181);
+}
+.icon__login, .icon__register:hover{
+    font-size: 1.5rem;
+    color: rgba(111, 111, 111, 0.9);
+    cursor: pointer;
+}
+.icon__NguoiDung:hover{
+    cursor: pointer;
 }

@@ -68,7 +68,7 @@ function render(){
             <td>${listDSSP[i].DonViTinh}</td>
             <td>${listDSSP[i].GiaBan}</td>
             <td>
-                <i class="fa-solid fa-pen-to-square" onclick="showSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i>
+                <a href="#grid__col-9"><i class="fa-solid fa-pen-to-square" onclick="showSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i></a>
                 <i class="fa-solid fa-xmark" onclick="removeSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i>
             </td>
         </tr>

@@ -1,10 +1,12 @@
-let Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
-function user(iduser,name,username,password,email,telephone){
-    this.iduser= iduser;
+var Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
+var iDUsers = localStorage.getItem('iDUsers') ? JSON.parse(localStorage.getItem('iDUsers')) : [];
+function user(MaKH,name,username,password,email,dayRegi,telephone){
+    this.MaKH= MaKH;
     this.name= name;
     this.username = username;
     this.password= password;
     this.email= email;
+    this.dayRegi = dayRegi;
     this.telephone=telephone;
 }
 if(Accounts.length===0){
@@ -12,27 +14,47 @@ if(Accounts.length===0){
     Accounts.push(admin);
     localStorage.setItem('Accounts',JSON.stringify(Accounts));
 }
+function getiD(){
+    return Math.floor(Math.random() * 1000000) + 1;
+}
+function testID(){
+    let idtest = getiD();
+    for (let i=0;i<iDUsers.length;i++) {
+        if (iDUsers.length === 0) {
+            iDUsers.push(idtest)
+            localStorage.setItem('iDUsers',JSON.stringify(iDUsers));
+            return idtest;
+        }
+        else if (idtest === iDUsers[i]) {
+            idtest = getiD();
+            i = -1;
+        }
+    }
+    return idtest;
+}
 function save() {
+    let name = document.getElementById('name').value;
     let username = document.getElementById('username').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
+    let telephone = document.getElementById('telephone').value;
     let usChecked = usernameCheck();
     let emChecked = emailCheck();
     let psChecked = passCheck();
     let oldUsChecked = checkSameUser();
-    if(Accounts.length===0){
-        let admin = new user('admin','admin','admin','admin','admin@gmail.com','admin');
-        Accounts.push(admin);
-        localStorage.setItem('Accounts',JSON.stringify(Accounts));
-    }
-    else if (usChecked && emChecked && psChecked && oldUsChecked) {
-        let Account = new user('iduser','name',username ,password,email,'phone')
+    let phoneCheck = telephoneCheck();
+    let nCheck = nameCheck();
+    let today = new Date();
+    let iduser = 'KHICY' + testID();
+    var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+    if ( nCheck && usChecked && emChecked && psChecked && oldUsChecked && phoneCheck) {
+        let Account = new user(iduser,name,username ,password,email,date,telephone)
         Accounts.push(Account);
         localStorage.setItem('Accounts',JSON.stringify(Accounts));
         console.log(Accounts);
         resetForm();
-        if(confirm('Đăng ký tài khoản thành công'));
-        //     location.replace("C:\\Users\\Administrator\\Desktop\\WebsiteSellingConsmetics\\TrangChu.html");
+        if(alert('Đăng ký tài khoản thành công'));
+            window.location.reload();
     }
 }
 function signinCheck() {
@@ -103,7 +125,7 @@ function resetForm() {
 
 function usernameCheck() {
     let username = document.getElementById('username').value;
-    if(username == '') {
+    if(username === '') {
         document.getElementById('username-err').innerHTML =
         'Vui lòng nhập tên người dùng';
         return false;
@@ -115,6 +137,40 @@ function usernameCheck() {
     }
     else {
         document.getElementById('username-err').innerHTML ='';
+    }
+    return true;
+}
+function nameCheck(){
+    let name = document.getElementById('name').value;
+    if(name === '') {
+        document.getElementById('name-err').innerHTML =
+            'Vui lòng nhập thông tin vào';
+        return false;
+    }
+    else {
+        document.getElementById('name-err').innerHTML ='';
+    }
+    return true;
+}
+function telephoneCheck(){
+    let telephone = document.getElementById('telephone').value;
+    var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+    if(telephone !== '') {
+        if (vnf_regex.test(telephone)== false) {
+            document.getElementById('telephone-err').innerHTML =
+                'Số điện thoại không hợp lệ';
+            return false;
+        }
+        else {
+            document.getElementById('telephone-err').innerHTML =
+                '';
+            return true;
+        }
+    }
+    if(telephone==''){
+        document.getElementById('telephone-err').innerHTML =
+            'Vui lòng nhập thông tin vào';
+        return false;
     }
     return true;
 }
@@ -135,7 +191,7 @@ function emailCheck(){
 
 function passCheck() {
     let password = document.getElementById('password').value;
-    if(password == '') {
+    if(password === '') {
         document.getElementById('password-err').innerHTML =
         'Vui lòng nhập mật khẩu';
         return false;

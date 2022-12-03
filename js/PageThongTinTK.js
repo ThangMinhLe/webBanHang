@@ -1,13 +1,13 @@
 let Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
-function user(MaKH,name,username,password,email,telephone){
+function user(MaKH,name,username,password,email,dayRegi,telephone){
     this.MaKH= MaKH;
     this.name= name;
     this.username = username;
     this.password= password;
     this.email= email;
+    this.dayRegi = dayRegi;
     this.telephone=telephone;
 }
-function render() {
     table = `<tr>
                 <th>STT</th>
                 <th>Mã Khách hàng</th>
@@ -15,8 +15,9 @@ function render() {
                 <th>Tài khoản</th>
                 <th>Mật khẩu</th>
                 <th>E-mail</th>
+                <th>Số điện thoại</th>
                 <th>Ngày đăng kí</th>
-                <th>Số đơn hàng</th>
+                <th>Số đơn hàng đã thanh toán</th>
                 <th>Tác vụ</th>
             </tr>
     `
@@ -24,13 +25,14 @@ function render() {
     for (i = 0; i < Accounts.length; i++)
         table += `<tr>
             <td>${i + 1}</td>
-            <td>${Accounts}</td>
-            <td></td>
-            <td></td>
-            <td>/td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>${Accounts[i].iduser}</td>
+            <td>${Accounts[i].name}</td>
+            <td>${Accounts[i].username}</td>
+            <td>${Accounts[i].password}</td>
+            <td>${Accounts[i].email}</td>
+            <td>${Accounts[i].telephone}</td>
+            <td>${Accounts[i].dayRegi}</td>
+            <td>${'Number'}</td>
             <td>
                 <i class="fa-solid fa-pen-to-square" onclick="showSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i>
                 <i class="fa-solid fa-xmark" onclick="removeSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i>
@@ -39,4 +41,5 @@ function render() {
     `
     document.getElementById('myTable').innerHTML = table;
 
-}
+
+// document.getElementById('myTable').innerHTML=render();
