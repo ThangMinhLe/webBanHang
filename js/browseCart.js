@@ -162,6 +162,7 @@ function renderTable2() {
         <td>
             <a style="color: blue;" href='#' onclick="xemChiTiet('${duyet.maDonHang}')">Xem chi tiet</a> 
         </td>
+<<<<<<< Updated upstream
         <td>${`${duyet.tongTien}`+" VNĐ"}</td>
         <td><label class="switch">
         <input  type="checkbox">
@@ -171,6 +172,34 @@ function renderTable2() {
     })
     tableContent +=`</tbody>`;
     document.getElementById('myTable').innerHTML = tableContent;
+=======
+        <td>${tienVN(duyet.tongTien)}</td>`;
+        if(duyet.trangThai == 'Chưa duyệt') {
+            tableContent += `
+            <td style="color: red"><b>${duyet.trangThai}</b></td>
+            <td>
+                <label class="switch">
+                    <input onclick="checkDH(this)" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </td>`;
+        } else {
+            tableContent += `
+            <td style="color: blue"><b>${duyet.trangThai}</b></td>
+            <td>
+                <label class="switch">
+                    <input onclick="checkDH(this)" type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </td>`;
+        }
+        tableContent += `</tr></tbody>`;
+        
+    document.getElementById('myTable').innerHTML = tableContent;
+    })
+
+    console.log(tableContent);
+>>>>>>> Stashed changes
 }
 function xemChiTiet(maDonHang){
     let tongTien;
@@ -207,7 +236,11 @@ function xemChiTiet(maDonHang){
 
         if(duyet.maDonHang === maDonHang) {
             (DuyetDonHang[index].chiTiet).forEach((ct, dem) => {
+<<<<<<< Updated upstream
                 tongTien+=(ct.GiaBan*ct.SoLuong);
+=======
+                tongTien += Number(ct.GiaBan)*Number(ct.SoLuongMua);
+>>>>>>> Stashed changes
                 tableContent += `<tr>
                 <td>${dem + 1}</td>
                 <td>${ct.MaSP}</td>
@@ -231,4 +264,38 @@ function xemChiTiet(maDonHang){
     </tr>
         </tbody>`;
     document.getElementById('chiTietDonHang').innerHTML = tableContent;
+<<<<<<< Updated upstream
 }
+=======
+}
+function fileInpToTextInp(event) {
+    let fileChuk = event.split("\\");
+    return '../img/' + fileChuk[fileChuk.length - 1];
+}
+
+function tienVN(giaTri){
+    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(giaTri);
+}
+
+function checkDH(e) {
+   let row = e.parentElement.parentElement.parentElement;
+   let id =  row.cells[1].innerText;
+   DuyetDonHang.forEach((dh) => {
+        if(dh.maDonHang === id) {
+            if(dh.trangThai === "Đã duyệt")
+            {
+                dh.trangThai = "Chưa duyệt";
+                row.cells[6].innerHTML = `<p style="color: red;"><b>Chưa duyệt</b></p>`;
+            } else if( dh.trangThai === "Chưa duyệt"){
+                dh.trangThai = "Đã duyệt";
+                row.cells[6].innerHTML = `<p style="color: blue;"><b>Đã duyệt</b></p>`;
+            }
+        }
+   })
+}
+
+function toggleSwitch(e) {
+    let row = e.parentElement.parentElement.parentElement;
+
+}
+>>>>>>> Stashed changes
