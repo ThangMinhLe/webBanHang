@@ -219,6 +219,7 @@ function xemChiTiet(maDonHang){
         if(duyet.maDonHang === maDonHang) {
             (DuyetDonHang[index].chiTiet).forEach((ct, dem) => {
                 tongTien += Number(ct.GiaBan)*Number(ct.SoLuongMua);
+
                 tableContent += `<tr>
                 <td>${dem + 1}</td>
                 <td>${ct.MaSP}</td>
@@ -249,6 +250,7 @@ function tienVN(giaTri){
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(giaTri);
 }
 
+
 function checkDH(e) {
    let row = e.parentElement.parentElement.parentElement;
    let id =  row.cells[1].innerText;
@@ -270,3 +272,4 @@ function toggleSwitch(e) {
     let row = e.parentElement.parentElement.parentElement;
 
 }
+
