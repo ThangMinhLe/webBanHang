@@ -136,17 +136,19 @@ function TimKiemDH() {
     var s = document.getElementById("tkiem").value;
     localStorage.removeItem('DSTimDH');
     DSTimDH = new Array();
-    if (s != null || s != "") {
+    if (s !== "") {
         if (!isNaN(s) && s > 0) {
             for (var i = 0; i < DSSP.length; i++) {
-                if (DSSP[i].GiaBan <= Number(s)) {
+                if (DuyetDonHang[i]. <= Number(s)) {
                     DSTKiem.push(DSSP[i]);
                     localStorage.setItem("DSTKiem", JSON.stringify(DSTKiem));
                 }
             }
         } else {
             for (var i = 0; i < DSSP.length; i++) {
-                if (DSSP[i].MaSP.toLowerCase().search(s.toLowerCase()) != -1 || DSSP[i].TenSP.toLowerCase().search(s.toLowerCase()) != -1 || DSSP[i].LoaiSP.toLowerCase().search(s.toLowerCase()) != -1) {
+                if (DSSP[i].MaSP.toLowerCase().search(s.toLowerCase()) != -1 || 
+                DSSP[i].TenSP.toLowerCase().search(s.toLowerCase()) != -1 || 
+                DSSP[i].LoaiSP.toLowerCase().search(s.toLowerCase()) != -1) {
                     DSTKiem.push(DSSP[i]);
                     localStorage.setItem("DSTKiem", JSON.stringify(DSTKiem));
                 }
