@@ -1,11 +1,3 @@
-<<<<<<< Updated upstream
-function laysoluongsp ()
-{ 
-    var DSSP = JSON.parse(localStorage.getItem('DSSP'));
-    var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-   alert("check");
-}
-=======
 function updata()
 {  var z=0;
     var GioHang = JSON.parse(localStorage.getItem('GioHang'));
@@ -14,11 +6,19 @@ function updata()
     var exits= document.getElementsByName('solg');
     for (var i = 0; i < exits.length; i++)  
     if (exits[i].checked)
-       {    z++;
+       {    
           giohangduyet[z]=GioHang[i];
-         // XoaSP(i)
+          z++;
+         
+         
+          
        }
-   tam={MaDonHangmaDonHang: randomkeyDH(),tenKH: 'Nguyễn Phú Thịnh',thoiGianDat: today(),trangThai: 'Chưa duyệt',chiTiet: giohangduyet,maKH: 'KHICY1000',tongTien: 150000,}
+       for (var i = exits.length-1; i>=0; i--)  
+       if (exits[i].checked)
+       XoaSP(i);
+       alert("da duyet don hang");
+       location.reload();
+   tam={maDonHang: randomkeyDH(),tenKH: 'Nguyễn Phú Thịnh',thoiGianDat: today(),trangThai: 'Chưa duyệt',chiTiet: giohangduyet,maKH: 'KHICY1000',tongTien: 150000,}
  DuyetDonHangtam.push(tam);
  localStorage.setItem("DuyetDonHang", JSON.stringify(DuyetDonHangtam));
 }
@@ -48,4 +48,3 @@ function today() {
     window.year = today.getFullYear();
     return today;
 }
->>>>>>> Stashed changes

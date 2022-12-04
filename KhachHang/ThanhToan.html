@@ -87,8 +87,6 @@
           margin-top: 20px;
           color: blue;
      }
-<<<<<<< Updated upstream
-=======
      .thanhtoanbutton
      {
              width: 200px;
@@ -112,7 +110,6 @@
      }
 
      
->>>>>>> Stashed changes
       </style>
 <html lang="en" id="background" >
 <head>
@@ -128,14 +125,6 @@
                                                                                           <script> 
                                                                                            
                                                                                           var a=0;  
-<<<<<<< Updated upstream
-                                                                                              
-                                                                                                     
-                                                                                           function taohoadon()
-                                                                                                      {   var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-                                                                                                        var exits= document.getElementsByName('solg')
-                                                                                                         a=0;
-=======
                                                                                             var x=0;  
                                                                                                      
                                                                                            function taohoadon()
@@ -143,18 +132,14 @@
                                                                                                         var exits= document.getElementsByName('solg');
                                                                                                          a=0;
                                                                                                          x=0;
->>>>>>> Stashed changes
                                                                                                          var pix=0;
+                                                                                                         alert(exits.length)
                                                                                                       for (var i = 0; i < exits.length; i++)  
                                                                                                       if (exits[i].checked)
                                                                                                    {a++; 
                                                                                                       
                                                                                                     document.getElementById('sol'+exits[i].value).value=  GioHang[i].TenSP;
-<<<<<<< Updated upstream
-                                                                                                            
-=======
                                                                                                             x=x+parseInt(GioHang[i].GiaBan)*GioHang[i].SoLuongMua;
->>>>>>> Stashed changes
                                                                                                    }
                                                                                                       else{
                                                                                                       document.getElementById('sol'+exits[i].value).value=''; 
@@ -162,13 +147,9 @@
                                                                                                       
                                                                                                        
                                                                                                        document.getElementById('soluongsp').value=a;
-<<<<<<< Updated upstream
-                                                                                                     
-=======
                                                                                                        if (x!=0)
                                                                                                        document.getElementById('Tongtien').value=x;
                                                                                                        else document.getElementById('Tongtien').value=0;
->>>>>>> Stashed changes
                                                                                                       }
                                                                                                 
                                                                                                   
@@ -188,11 +169,7 @@
         <div class="giohang">
              <script>
                 var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-<<<<<<< Updated upstream
-                 alert(GioHang[0].HinhAnh);
-=======
                 
->>>>>>> Stashed changes
                   var SL=GioHang.length;
                        for (var i=0;i<SL;i++)
                        document.write('<div id="the_san_pham">'+
@@ -236,27 +213,19 @@
            <script>
               var GioHang = JSON.parse(localStorage.getItem('GioHang'));
                   var SL=GioHang.length;
-                   for (var i=0;i<=10;i++)
+                   for (var i=0;i<SL;i++)
                     document.write('<div class="the_San_Pham"  > <output id="sol'+i+'"></output> </div>')
                    
            </script>
            <div style="float:right ;"> 
-<<<<<<< Updated upstream
-            <div style="margin-right: 10px ;"> tổng tiền</div>
-=======
             <div style="margin-right: 10px ;"> Tổng Tiền <output id="Tongtien"></output> VNĐ</div>
->>>>>>> Stashed changes
             <div> soluong <output id="soluongsp"></output>  </div>
             </div>
             <div style="margin-top: 50px;"> 
                <div > </div>
                <div >date</div>
             </div>
-<<<<<<< Updated upstream
-            
-=======
             <div class="thanhtoanbutton" onclick="updata()" > Thanh toan</div>
->>>>>>> Stashed changes
           </div>
       </div>
      <script src="./ThanhToan.js"></script>
