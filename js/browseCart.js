@@ -130,6 +130,7 @@ let DuyetDonHang = [
         tongTien: 150000,
     },
 ];
+localStorage.setItem('DuyetDonHang',JSON.stringify(DuyetDonHang));
 function renderTable2() {
     // let Carts = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
     // if(Carts.length === 0) {
