@@ -44,7 +44,7 @@ function ChiTietSP(LoaiSP,CongDung,ThanhPhan){
     this.ThanhPhan=ThanhPhan;
 }
 function render(){
-    table=`<tr>
+    let table=`<tr>
             <th>STT</th>
             <th>Mã sản phẩm</th>
             <th>Tên sản phẩm</th>
@@ -220,6 +220,27 @@ function changeSP(){
         localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
         render();
         clear();
+    }
+}
+function search(){
+    let valueSearchInput = document.getElementById('search').value;
+    let nameSearch = listDSSP.filter(value=>{
+        let arrName = value.TenSP.toUpperCase().includes(valueSearchInput.toUpperCase());
+        let arrID = value.MaSP.toUpperCase().includes(valueSearchInput.toUpperCase());
+        let arrGia = value.GiaBan.toUpperCase().includes(valueSearchInput.toUpperCase());
+        let arrPL = value.LoaiSP.toUpperCase().includes(valueSearchInput.toUpperCase());
+
+    })
+}
+function removeDuplicates(array1,array2){
+    let array=array2;
+    let count=[];
+    for (let i=0; i<array1.length;i++) {
+        for (let j = 0; j < array2.length; j++) {
+            if (array1[i] === array2[j])
+                count+=j;
+
+        }
     }
 }
 

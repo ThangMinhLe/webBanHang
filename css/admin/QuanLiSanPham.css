@@ -21,3 +21,8 @@ table, th, td,tr {
 .grid__col-9--mid{
     width: 100%;
 }
+.SearchBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

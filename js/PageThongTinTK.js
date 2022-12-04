@@ -9,7 +9,9 @@ function user(MaKH,name,username,password,email,dayRegi,telephone){
     this.dayRegi = dayRegi;
     this.telephone=telephone;
 }
-    table = `<tr>
+renderTK();
+function renderTK() {
+    var table = `<tr>
                 <th>STT</th>
                 <th>Mã Khách hàng</th>
                 <th>Tên Khách hàng</th>
@@ -35,12 +37,13 @@ function user(MaKH,name,username,password,email,dayRegi,telephone){
             <td>${Accounts[i].dayRegi}</td>
             <td>${'Number'}</td>
             <td>
-                <i class="fa-solid fa-pen-to-square" onclick="showSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i>
-                <i class="fa-solid fa-xmark" onclick="removeSP(listDSSP[${i}].MaSP)" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-pen-to-square" onclick="showTK(Accounts[${i}].MaSP)" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-xmark" onclick="removeTK(Accounts[${i}].MaSP)" style="cursor: pointer;"></i>
             </td>
         </tr>
     `
     document.getElementById('myTable').innerHTML = table;
+}
 
 
 // document.getElementById('myTable').innerHTML=render();
