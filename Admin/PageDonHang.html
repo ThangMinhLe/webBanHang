@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/toggleSwitch.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="../css/chiTietDH.css">
+    <link rel="stylesheet" href="../css/admin/tiemKiemDH.css">
 </head>
 <body onload="renderTable2()" >
 <div class="wrap">
@@ -26,13 +27,15 @@
                 </center>
             </b></a>
         </div>
-        <div >
-            <input style="height: 40px;" id="tkiem" type="text" placeholder="Nhập nội dung cần tìm">
+        <div class="reload">
+            <i onclick="Reload()" title="Load lại" class="fa-solid fa-rotate-right"></i>
         </div>
-        <a href="TimKiemDonHang.html" onclick="TimKiem()">
-            <img style="width: 40px; height: 40px;" src="../img/TimKiem.png">
-        </a>
-        <div href="#" class="icon">
+        <div >
+            <input for="search" name="search" 
+            style="height: 40px; font-size: 20px;" id="tkiem" type="text" placeholder="Nhập nội dung cần tìm">
+        </div>
+            <img onclick="TimKiemDH()" class="timKiemDH" src="../img/TimKiem.png" title="Tìm kiếm">
+        <div class="icon">
             <i class="fa-solid fa-user"></i>
         </div>
     </div>

@@ -41,6 +41,6 @@ function randomkeyDH() {
 }
 function today() {
     var today = new Date();
-    window.year = today.getFullYear();
+    window.year = today.getTimezoneOffset();
     return today;
 }

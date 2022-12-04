@@ -1,4 +1,142 @@
-let DuyetDonHang = localStorage.getItem('DuyetDonHang') ? JSON.parse(localStorage.getItem('DuyetDonHang')) : [];
+function renderTable() {
+    let Carts = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
+    if(Carts.length === 0) {
+        document.getElementById('myTable').style.display = 'none';
+        return false; 
+    }
+    document.getElementById('myTable').style.display = 'block';
+    let tableContent = `
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Mã đơn hàng</th>
+            <th>Tên khách hàng</th>
+            <th>Thời gian đặt đơn</th>
+            <th>Trạng thái</th>
+            <th>Xem chi tiết</th>
+            <th>Tổng tiền</th>
+            <th>Tác vụ</th>
+        </tr>
+    </thead>
+    <tbody>`;
+    Carts.forEach((Cart, index) => {
+        index++;
+        let tongTien = Cart.GiaBan*Cart.SoLuongMua;
+        let SoLuong = Cart.SoLuongMua;
+        tableContent += `
+        <tr>
+            <td>${index}</td>
+            <td>${Cart.LoaiSP}</td>
+            <td>${Cart.MaSP}</td>
+            <td>${SoLuong}</td>
+            <td>${Cart.TenSP}</td>
+            <td>${Cart.GiaBan}</td>
+            <td>${`${tongTien}`+" VNĐ"}</td>
+            <td>
+                <label class="switch">
+                <input onclick="acceptCart()" type="checkbox">
+                <span class="slider round"></span>
+                </label>
+            </td>
+        </tr>`;
+    })
+    tableContent +=`</tbody>`;
+    document.getElementById('myTable').innerHTML = tableContent;
+}
+function randomkeyDH() {
+    const random = Math.random() * (9999 - 1000);
+    let key = 'DHICY' + Math.round(random);
+    return key;
+}
+function today() {
+    var today = new Date();
+    let time = today.getHours();
+    let minute = today.getMinutes();
+    let second = today.getSeconds();
+    let day = today.getDate();
+    let month = today.getMonth();
+    let year = today.getFullYear();
+    return `${time}:${minute}:${second}, ${day}/${month}/${year}`;
+}
+// let dsGioHang = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
+// let DuyetDonHang = [
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Chưa duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 150000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Đã duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 200000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Đã duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 1500000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Đã duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 350000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Chưa duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 300000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Chưa duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 450000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Đã duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 500000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Chưa duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 150000,
+//     },
+// ];
+
+// console.log(DuyetDonHang);
+// localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
+let DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
 function renderTable2() {
     let tableContent = `
     <thead>
@@ -48,8 +186,6 @@ function renderTable2() {
         
     document.getElementById('myTable').innerHTML = tableContent;
     })
-
-    console.log(tableContent);
 }
 function xemChiTiet(maDonHang){
     let tongTien = 0;
@@ -129,35 +265,77 @@ function checkDH(e) {
             }
         }
    })
+   localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
 }
 
 function TimKiemDH() {
     var DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
-    var s = document.getElementById("tkiem").value;
-    localStorage.removeItem('DSTimDH');
-    DSTimDH = new Array();
-    if (s !== "") {
-        if (!isNaN(s) && s > 0) {
-            for (var i = 0; i < DSSP.length; i++) {
-                if (DuyetDonHang[i]. <= Number(s)) {
-                    DSTKiem.push(DSSP[i]);
-                    localStorage.setItem("DSTKiem", JSON.stringify(DSTKiem));
+    let input = document.getElementById('tkiem').value;
+    console.log(input);
+    let tableContent = `
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Mã đơn hàng</th>
+            <th>Tên khách hàng</th>
+            <th>Thời gian đặt đơn</th>
+            <th>Xem chi tiết</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Tác vụ</th>
+        </tr>
+    </thead>
+    <tbody>`;
+    if (input != "") {
+        DuyetDonHang.forEach((duyet, index) => {
+            if ( 
+                Number(duyet.tongTien) <= Number(input) ||
+                duyet.maDonHang.toLowerCase().search(input.toLowerCase()) != -1 ||
+                duyet.maKH.toLowerCase().search(input.toLowerCase()) != -1 ||
+                duyet.tenKH.toLowerCase().search(input.toLowerCase()) != -1 ||
+                duyet.thoiGianDat.toLowerCase().search(input.toLowerCase()) != -1 ||
+                duyet.trangThai.toLowerCase().search(input.toLowerCase()) != -1 ) {
+                index++;
+                tableContent += `<tr>
+                <td>${index}</td>
+                <td>${duyet.maDonHang}</td>
+                <td>${duyet.tenKH}</td>
+                <td>${duyet.thoiGianDat}</td>
+                <td>
+                    <a style="color: blue;" href='#' onclick="xemChiTiet('${duyet.maDonHang}')">Xem chi tiet</a> 
+                </td>
+                <td>${tienVN(duyet.tongTien)}</td>`;
+                if(duyet.trangThai == 'Chưa duyệt') {
+                    tableContent += `
+                    <td style="color: red"><b>${duyet.trangThai}</b></td>
+                    <td>
+                        <label class="switch">
+                            <input onclick="checkDH(this)" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </td>`;
+                } else {
+                    tableContent += `
+                    <td style="color: blue"><b>${duyet.trangThai}</b></td>
+                    <td>
+                        <label class="switch">
+                            <input onclick="checkDH(this)" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>`;
                 }
+                tableContent += `</tr></tbody>`;
+                document.getElementById('myTable').innerHTML = tableContent;
             }
-        } else {
-            for (var i = 0; i < DSSP.length; i++) {
-                if (DSSP[i].MaSP.toLowerCase().search(s.toLowerCase()) != -1 || 
-                DSSP[i].TenSP.toLowerCase().search(s.toLowerCase()) != -1 || 
-                DSSP[i].LoaiSP.toLowerCase().search(s.toLowerCase()) != -1) {
-                    DSTKiem.push(DSSP[i]);
-                    localStorage.setItem("DSTKiem", JSON.stringify(DSTKiem));
-                }
-            }
-        }
-    } else {
-        document.write(
-            alert("Bạn chưa nhập nội dung tìm kiếm!")
-        );
+        })   
+    }
+    else {
+        
+            alert("Bạn chưa nhập nội dung tìm kiếm!");
     }
     document.getElementById('tkiem').value = "";
+} 
+
+function Reload() {
+    location.reload();
 }
