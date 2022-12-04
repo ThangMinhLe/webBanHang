@@ -272,6 +272,7 @@ function TimKiemDH() {
     var DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
     let input = document.getElementById('tkiem').value;
     console.log(input);
+    let index = 1;
     let tableContent = `
     <thead>
         <tr>
@@ -287,7 +288,7 @@ function TimKiemDH() {
     </thead>
     <tbody>`;
     if (input != "") {
-        DuyetDonHang.forEach((duyet, index) => {
+        DuyetDonHang.forEach((duyet) => {
             if ( 
                 Number(duyet.tongTien) <= Number(input) ||
                 duyet.maDonHang.toLowerCase().search(input.toLowerCase()) != -1 ||
@@ -295,7 +296,6 @@ function TimKiemDH() {
                 duyet.tenKH.toLowerCase().search(input.toLowerCase()) != -1 ||
                 duyet.thoiGianDat.toLowerCase().search(input.toLowerCase()) != -1 ||
                 duyet.trangThai.toLowerCase().search(input.toLowerCase()) != -1 ) {
-                index++;
                 tableContent += `<tr>
                 <td>${index}</td>
                 <td>${duyet.maDonHang}</td>
@@ -325,17 +325,16 @@ function TimKiemDH() {
                     </td>`;
                 }
                 tableContent += `</tr></tbody>`;
+                index++;
                 document.getElementById('myTable').innerHTML = tableContent;
             }
         })   
     }
-    else {
-        
-            alert("Bạn chưa nhập nội dung tìm kiếm!");
+    else if (input == ""){
+        alert("Bạn chưa nhập nội dung tìm kiếm!");
+    }
+    else{
+        alert("Mục bạn muốn tìm không tồn tại!");
     }
     document.getElementById('tkiem').value = "";
 } 
-
-function Reload() {
-    location.reload();
-}
