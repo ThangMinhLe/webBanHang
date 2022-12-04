@@ -43,8 +43,6 @@ function renderTable() {
     tableContent +=`</tbody>`;
     document.getElementById('myTable').innerHTML = tableContent;
 }
-
-
 function randomkeyDH() {
     const random = Math.random() * (9999 - 1000);
     let key = 'DHICY' + Math.round(random);
@@ -61,7 +59,7 @@ let DuyetDonHang = [
         maDonHang: randomkeyDH(),
         tenKH: 'Nguyễn An Thuận',
         thoiGianDat: today(),
-        trangThai: 'Chua duyet',
+        trangThai: 'Chưa duyệt',
         chiTiet: dsGioHang,
         maKH: 'KHICY1000',
         tongTien: 150000,
@@ -70,7 +68,7 @@ let DuyetDonHang = [
         maDonHang: randomkeyDH(),
         tenKH: 'Nguyễn An Thuận',
         thoiGianDat: today(),
-        trangThai: 'Chua duyet',
+        trangThai: 'Đã duyệt',
         chiTiet: dsGioHang,
         maKH: 'KHICY1000',
         tongTien: 200000,
@@ -79,7 +77,7 @@ let DuyetDonHang = [
         maDonHang: randomkeyDH(),
         tenKH: 'Nguyễn An Thuận',
         thoiGianDat: today(),
-        trangThai: 'Chua duyet',
+        trangThai: 'Đã duyệt',
         chiTiet: dsGioHang,
         maKH: 'KHICY1000',
         tongTien: 1500000,
@@ -88,7 +86,7 @@ let DuyetDonHang = [
         maDonHang: randomkeyDH(),
         tenKH: 'Nguyễn An Thuận',
         thoiGianDat: today(),
-        trangThai: 'Chua duyet',
+        trangThai: 'Đã duyệt',
         chiTiet: dsGioHang,
         maKH: 'KHICY1000',
         tongTien: 350000,
@@ -97,7 +95,7 @@ let DuyetDonHang = [
         maDonHang: randomkeyDH(),
         tenKH: 'Nguyễn An Thuận',
         thoiGianDat: today(),
-        trangThai: 'Chua duyet',
+        trangThai: 'Chưa duyệt',
         chiTiet: dsGioHang,
         maKH: 'KHICY1000',
         tongTien: 300000,
@@ -106,7 +104,7 @@ let DuyetDonHang = [
         maDonHang: randomkeyDH(),
         tenKH: 'Nguyễn An Thuận',
         thoiGianDat: today(),
-        trangThai: 'Chua duyet',
+        trangThai: 'Chưa duyệt',
         chiTiet: dsGioHang,
         maKH: 'KHICY1000',
         tongTien: 450000,
@@ -115,7 +113,7 @@ let DuyetDonHang = [
         maDonHang: randomkeyDH(),
         tenKH: 'Nguyễn An Thuận',
         thoiGianDat: today(),
-        trangThai: 'Chua duyet',
+        trangThai: 'Đã duyệt',
         chiTiet: dsGioHang,
         maKH: 'KHICY1000',
         tongTien: 500000,
@@ -124,7 +122,7 @@ let DuyetDonHang = [
         maDonHang: randomkeyDH(),
         tenKH: 'Nguyễn An Thuận',
         thoiGianDat: today(),
-        trangThai: 'Chua duyet',
+        trangThai: 'Chưa duyệt',
         chiTiet: dsGioHang,
         maKH: 'KHICY1000',
         tongTien: 150000,
@@ -144,9 +142,9 @@ function renderTable2() {
             <th>Mã đơn hàng</th>
             <th>Tên khách hàng</th>
             <th>Thời gian đặt đơn</th>
-            <th>Trạng thái</th>
             <th>Xem chi tiết</th>
             <th>Tổng tiền</th>
+            <th>Trạng thái</th>
             <th>Tác vụ</th>
         </tr>
     </thead>
@@ -158,7 +156,6 @@ function renderTable2() {
         <td>${duyet.maDonHang}</td>
         <td>${duyet.tenKH}</td>
         <td>${duyet.thoiGianDat}</td>
-        <td>${duyet.trangThai}</td>
         <td>
             <a style="color: blue;" href='#' onclick="xemChiTiet('${duyet.maDonHang}')">Xem chi tiet</a> 
         </td>
@@ -190,7 +187,7 @@ function renderTable2() {
     console.log(tableContent);
 }
 function xemChiTiet(maDonHang){
-    let tongTien;
+    let tongTien = 0;
     document.getElementById('newScreen').innerHTML = `
     <div id="background-color-chiTiet">
     <div style="border-radius: 10px;" id="background-chiTiet">
@@ -212,16 +209,13 @@ function xemChiTiet(maDonHang){
             <th>Mã sản phẩm</th>
             <th>Tên sản phẩm</th>
             <th>Hình ảnh</th>
-            <th>Loại SP</th>
             <th>Số lượng</th>
-            <th>Đơn vị</th>
             <th>Giá bán</th>
             <th>Thành tiền</th>
         </tr>
     </thead>
     <tbody>`;
     DuyetDonHang.forEach((duyet, index) => {
-
         if(duyet.maDonHang === maDonHang) {
             (DuyetDonHang[index].chiTiet).forEach((ct, dem) => {
                 tongTien += Number(ct.GiaBan)*Number(ct.SoLuongMua);
@@ -229,22 +223,19 @@ function xemChiTiet(maDonHang){
                 <td>${dem + 1}</td>
                 <td>${ct.MaSP}</td>
                 <td>${ct.TenSP}</td>
-                <td><img src="${ct.HinhAnh}" alt="Ảnh sản phẩm" width="40" height="40"></td>
-                <td>${ct.LoaiSP}</td>
+                <td><img src="${fileInpToTextInp(ct.HinhAnh)}" alt="Ảnh sản phẩm" width="40" height="40"></td>
                 <td>${ct.SoLuongMua}</td>
-                <td>${ct.DonViTinh}</td>
-                <td>${`${ct.GiaBan}`+" VNĐ"}</td>
-                <td>${ct.GiaBan*ct.SoLuongMua}</td>
+                <td>${tienVN(ct.GiaBan)}</td>
+                <td>${tienVN(ct.GiaBan*ct.SoLuongMua)}</td>
             </label></td>
             </tr>`;
             })
         }
-        index++;
     })
     tableContent +=`
     <tr>
-        <td colspan="8">TỔNG TIỀN</td>
-        <td>${tongTien}</td>
+        <td colspan="6">TỔNG TIỀN</td>
+        <td>${tienVN(tongTien)}</td>
     </tr>
         </tbody>`;
     document.getElementById('chiTietDonHang').innerHTML = tableContent;
