@@ -105,14 +105,15 @@
                                                                                               
                                                                                                      
                                                                                            function taohoadon()
-                                                                                                      {  var exits= document.getElementsByName('solg')
+                                                                                                      {   var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+                                                                                                        var exits= document.getElementsByName('solg')
                                                                                                          a=0;
                                                                                                          var pix=0;
                                                                                                       for (var i = 0; i < exits.length; i++)  
                                                                                                       if (exits[i].checked)
                                                                                                    {a++; 
                                                                                                       
-                                                                                                    document.getElementById('sol'+exits[i].value).value=  "sanpham"+(i+1);
+                                                                                                    document.getElementById('sol'+exits[i].value).value=  GioHang[i].TenSP;
                                                                                                             
                                                                                                    }
                                                                                                       else{
