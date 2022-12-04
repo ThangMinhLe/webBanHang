@@ -162,17 +162,6 @@ function renderTable2() {
         <td>
             <a style="color: blue;" href='#' onclick="xemChiTiet('${duyet.maDonHang}')">Xem chi tiet</a> 
         </td>
-<<<<<<< Updated upstream
-        <td>${`${duyet.tongTien}`+" VNĐ"}</td>
-        <td><label class="switch">
-        <input  type="checkbox">
-        <span class="slider round"></span>
-      </label></td>
-    </tr>`;
-    })
-    tableContent +=`</tbody>`;
-    document.getElementById('myTable').innerHTML = tableContent;
-=======
         <td>${tienVN(duyet.tongTien)}</td>`;
         if(duyet.trangThai == 'Chưa duyệt') {
             tableContent += `
@@ -199,7 +188,6 @@ function renderTable2() {
     })
 
     console.log(tableContent);
->>>>>>> Stashed changes
 }
 function xemChiTiet(maDonHang){
     let tongTien;
@@ -236,11 +224,7 @@ function xemChiTiet(maDonHang){
 
         if(duyet.maDonHang === maDonHang) {
             (DuyetDonHang[index].chiTiet).forEach((ct, dem) => {
-<<<<<<< Updated upstream
-                tongTien+=(ct.GiaBan*ct.SoLuong);
-=======
                 tongTien += Number(ct.GiaBan)*Number(ct.SoLuongMua);
->>>>>>> Stashed changes
                 tableContent += `<tr>
                 <td>${dem + 1}</td>
                 <td>${ct.MaSP}</td>
@@ -264,9 +248,6 @@ function xemChiTiet(maDonHang){
     </tr>
         </tbody>`;
     document.getElementById('chiTietDonHang').innerHTML = tableContent;
-<<<<<<< Updated upstream
-}
-=======
 }
 function fileInpToTextInp(event) {
     let fileChuk = event.split("\\");
@@ -298,4 +279,3 @@ function toggleSwitch(e) {
     let row = e.parentElement.parentElement.parentElement;
 
 }
->>>>>>> Stashed changes
