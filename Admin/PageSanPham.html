@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/admin/NewScrAdd.css">
     <link rel="stylesheet" href="../css/admin/header.css">
     <link rel="stylesheet" href="../css/admin/container.css">
-    <link rel="stylesheet" href="../css/admin/QuanLiThongTin.css">
+    <link rel="stylesheet" href="../css/admin/QuanLiSanPham.css">
     <link rel="stylesheet" href="../css/admin/footer.css">
     <link rel="stylesheet" href="../fonts/fontawesome-free-6.2.0-web/css/all.css">
 </head>
@@ -141,22 +141,26 @@
                                     </form>
 
                                 </div>
-<!--                            </div>-->
-<!--                        </div>-->
+                        <div class="SearchBox" id="SearchBox">
+                            <select class="SelectBox" style="height: 5rem" id="selectSearch">
+                                <option value="MaSP">Mã sản phẩm</option>
+                                <option value="TenSP">Tên sản phẩm</option>
+                                <option value="LoaiSP">Phân Loại</option>
+                            </select>
+                            <label for="search"></label>
+                            <input type="text" oninput="search()" placeholder="Tìm kiếm" class="search Input" id="search" style="width: 30%">
+                        </div>
                     </div>
                     <div class="grid__col-9--bottom">
                         <table id="myTable">
                             <thead>
                             <tr>
-                                <th>STT</th>
                                 <th>Mã sản phẩm</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Hình ảnh</th>
                                 <th>Phân loại</th>
                                 <th>Số lượng</th>
                                 <th>Dung tích</th>
-                                <th>Thành phần</th>
-                                <th>Công dụng</th>
                                 <th>Giá tiền</th>
                                 <th>Tác vụ</th>
                             </tr>

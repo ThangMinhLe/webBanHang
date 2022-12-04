@@ -1,6 +1,6 @@
 var Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
 var iDUsers = localStorage.getItem('iDUsers') ? JSON.parse(localStorage.getItem('iDUsers')) : [];
-function user(MaKH,name,username,password,email,dayRegi,telephone){
+function user(MaKH,name,username,password,email,dayRegi,telephone,DHang){
     this.MaKH= MaKH;
     this.name= name;
     this.username = username;
@@ -8,9 +8,10 @@ function user(MaKH,name,username,password,email,dayRegi,telephone){
     this.email= email;
     this.dayRegi = dayRegi;
     this.telephone=telephone;
+    this.DHang= DHang;
 }
 if(Accounts.length===0){
-    let admin = new user('admin','admin','admin','admin','admin@gmail.com','admin');
+    let admin = new user('admin','admin','admin','admin','admin@gmail.com','admin','0974975656','admin');
     Accounts.push(admin);
     localStorage.setItem('Accounts',JSON.stringify(Accounts));
 }

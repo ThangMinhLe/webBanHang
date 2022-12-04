@@ -250,6 +250,7 @@ function search() {
     `
     var i;
     for ( i=0; i < nameSearch.length ;i++) {
+        console.log(nameSearch[i]);
         table += `<tr>
             <td>${nameSearch [i].MaSP}</td>
             <td>${nameSearch [i].TenSP}</td>
@@ -261,8 +262,8 @@ function search() {
         }</td>
             <td>
                 //Fix
-                <a href="#form-id"><i class="fa-solid fa-pen-to-square" onclick="showSP(nameSearch[i].MaSP)" style="cursor: pointer;"></i></a>
-                <i class="fa-solid fa-xmark" onclick="removeSP(nameSearch[i].MaSP)" style="cursor: pointer;"></i>
+                <a href="#form-id"><i class="fa-solid fa-pen-to-square" onclick="showSP('${nameSearch[i].MaSP}')" style="cursor: pointer;"></i></a>
+                <i class="fa-solid fa-xmark" onclick="removeSP('${nameSearch[i].MaSP}')" style="cursor: pointer;"></i>
             </td>
         </tr>
     `
