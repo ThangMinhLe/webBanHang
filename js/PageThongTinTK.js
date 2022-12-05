@@ -8,6 +8,7 @@ function user(MaKH,name,username,password,email,dayRegi,telephone){
     this.email= email;
     this.dayRegi = dayRegi;
     this.telephone=telephone;
+    this.DHang= DHang;
 }
 renderTK();
 function renderTK() {
@@ -35,15 +36,23 @@ function renderTK() {
             <td>${Accounts[i].email}</td>
             <td>${Accounts[i].telephone}</td>
             <td>${Accounts[i].dayRegi}</td>
-            <td>${'Number'}</td>
+            <td>${Accounts[i].DHang}</td>
             <td>
-                <i class="fa-solid fa-pen-to-square" onclick="showTK(Accounts[${i}].MaSP)" style="cursor: pointer;"></i>
-                <i class="fa-solid fa-xmark" onclick="removeTK(Accounts[${i}].MaSP)" style="cursor: pointer;"></i>
+                <i class="fa-solid fa-xmark" onclick="removeTK(Accounts[${i}].MaKH)" style="cursor: pointer;"></i>
             </td>
         </tr>
     `
     document.getElementById('myTable').innerHTML = table;
 }
 
-
+function removeTK(iD) {
+    if (confirm('Bạn có muốn xoá không?')) {
+        for (let i = 0; i < Accounts.length; i++)
+            if (Accounts[i].MaKH === iD) {
+                Accounts.splice(i, 1);
+                localStorage.setItem('Accounts',JSON.stringify(Accounts));
+                renderTK();
+            }
+    }
+}
 // document.getElementById('myTable').innerHTML=render();

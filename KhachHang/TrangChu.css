@@ -76,6 +76,7 @@ li {
 /* SHOW SIGNIN/SIGNUP */
 .icon__show {
     background-color: #fff;
+    border-radius: 1rem;
     width: 90px;
     margin-left: -20px;
     font-size: 1.4rem;

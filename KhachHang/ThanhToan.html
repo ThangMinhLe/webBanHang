@@ -143,13 +143,130 @@
 }
       </style>
 <html lang="en" id="background" >
+=======
+<style>
+  #the_thonhtin_khach {
+    border-style: solid;
+    /* border-color: rgb(234, 16, 16); */
+    width: inherit;
+    height: fit-content;
+    border-radius: 3px;
+    margin: auto;
+    color: cornsilk;
+    background-color: teal;
+    text-align: center;
+    font-size: 50px;
+  }
+
+  #header {
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  #background {
+    background-color: #f7d9ef;
+  }
+
+  #the_san_pham {
+    border-style: solid;
+    width: 800px;
+    height: 100px;
+    margin-top: 10px;
+    margin-left: 7px;
+
+  }
+
+  .editsanpham {
+    border-style: dotted;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .thong_tin_the {
+    display: flex;
+    width: 710px;
+    height: 90px;
+
+  }
+
+  .x {
+    float: left;
+    height: 100px;
+    width: 70px;
+    /* border-style: solid;*/
+  }
+
+  .giohang {
+    border-style: solid;
+    width: 820px;
+    height: fit-content;
+    float: left;
+  }
+
+  .hinhanh {
+    width: 80px;
+    height: 95px;
+    float: left;
+
+  }
+
+  .hoa_don {
+    float: left;
+    font-size: 20px;
+    width: 653px;
+    height: fit-content;
+    border: solid;
+    margin-left: 8px;
+  }
+
+  .head_hoa_don {
+    font-size: 40px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .the_San_Pham {
+    margin-top: 20px;
+    color: blue;
+  }
+
+  .thanhtoanbutton {
+    width: 200px;
+    height: 30px;
+    border: 2px;
+    border-style: groove;
+    background-color: rgb(172, 46, 166);
+    margin-left: 390px;
+    text-align: center;
+    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 34px;
+  }
+
+  .thanhtoanbutton:hover {
+    background-color: rgba(85, 227, 15, 0.8);
+
+  }
+</style>
+<html lang="en" id="background">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
+
   <div  class="header">
     <div class="logo">
       <a href="../TrangChu.html"><img src="../img/LOGO.png" style="width: 100%;height: 100% ;"></a>
@@ -252,7 +369,7 @@
             </script>   
            </div>     
                                                                                                             <!-- <div class="giohang">
-                                                                                                        <div id="the_san_pham">
+                                                                                         <div id="the_san_pham">
                                                                                                         
                                                                                                         <div class="x"> 
                                                                                                         <div class="editsanpham"><input type="checkbox" name="solg" value="1" onclick="taohoadon()"> </div> 
@@ -269,6 +386,7 @@
                                                                                                        </div>
                                                                                                       
                                                                                                       </div>     -->
+
        <div class="hoa_don" > <div class="head_hoa_don">HÓA ĐƠN</div>   
             
            <script>
@@ -298,5 +416,29 @@
      <script src="./ThanhToan.js"></script>
 
      
+
+    <div class="hoa_don">
+      <div class="head_hoa_don">HÓA ĐƠN</div>
+
+      <script>
+        var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+        var SL = GioHang.length;
+        for (var i = 0; i < SL; i++)
+          document.write('<div class="the_San_Pham"  > <output id="sol' + i + '"></output> </div>')
+
+      </script>
+      <div style="float:right ;">
+        <div style="margin-right: 10px ;"> Tổng Tiền <output id="Tongtien"></output> VNĐ</div>
+        <div> soluong <output id="soluongsp"></output> </div>
+      </div>
+      <div style="margin-top: 50px;">
+        <div> </div>
+        <div>date</div>
+      </div>
+      <div class="thanhtoanbutton" onclick="updata()"> Thanh toan</div>
+    </div>
+  </div>
+  <script src="./ThanhToan.js"></script>
 </body>
+
 </html>

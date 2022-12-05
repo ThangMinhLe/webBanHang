@@ -5,9 +5,11 @@
     <title>ADMIN</title>
     <link rel="stylesheet" href="..\css\admin\header.css">
     <link rel="stylesheet" href="..\css\admin\container.css">
+    <link rel="stylesheet" href="..\css\admin.css">
     <link rel="stylesheet" href="..\css\admin\footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="fonts\fontawesome-free-6.2.0-web\css\all.css">
+    <script src="js/admin.js"></script>
 </head>
 
 <body>
@@ -34,8 +36,16 @@
         <div href="#" class="icon">
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
-        <div href="#" class="icon">
-            <i class="fa-solid fa-user"></i>
+        <div href="#" class="icon" id="icon-user">
+            <div class="UserDir">
+                <i class="fa-solid fa-user"></i>
+                <span id="NameAdmin" style="color: #333333; font-size: 1.5rem; margin-left: 2px">Welcome Admin</span>
+            </div>
+
+            <div class="icon__show" id="icon__show-logout" >
+                <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
+                <button onclick="DangXuatAdmin()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -56,7 +66,31 @@
                     </nav>
                 </div>
                 <div class="grid__col-9">
+                    <div class="grid__col-top"><h3>Chào mừng bạn đến với trang ADMIN</h3></div>
+                    <div class="grid__col-mid">
+                        <div class="grid__col-mid-1">
+                        <table id="myTable">
+                            <thead>
+                            <tr>
+                                <th>Mã sản phẩm</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Hình ảnh</th>
+                                <th>Phân loại</th>
+                                <th>Số lượng đã bán</th>
+                                <th>Giá tiền</th>
+                                <th>Tổng tiền</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
+                            </tbody>
+                        </table>
+                        </div>
+                        <div class="grid__col-mid-2">
+
+                        </div>
+                    </div>
                 </div>
             </div>
 

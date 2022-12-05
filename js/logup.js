@@ -1,5 +1,10 @@
 // let Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
 function showRegister(){
+    if(Accounts.length===0){
+        let admin = new user('admin','admin','admin','admin','admin@gmail.com','admin','0974975656','admin');
+        Accounts.push(admin);
+        localStorage.setItem('Accounts',JSON.stringify(Accounts));
+    }
     document.getElementById('formLoginRegister').innerHTML= `
     <div class="background-color-login" id="background-color-login">
           <div class="background-login" id="background-login" style="height: 95%">
