@@ -22,7 +22,6 @@ function updata()
        }
        for (var i = exits.length-1; i>=0; i--)  
        if (exits[i].checked)
-       XoaSP(i);
              XoaSP(i);
        alert("da duyet don hang");
        
