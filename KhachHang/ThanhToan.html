@@ -1,358 +1,360 @@
 <!DOCTYPE html>
 <style>
-  #the_thonhtin_khach {
-    border-style: solid;
-    /* border-color: rgb(234, 16, 16); */
-    width: inherit;
-    height: fit-content;
-    border-radius: 3px;
-    margin: auto;
-    color: cornsilk;
-    background-color: teal;
-    text-align: center;
-    font-size: 50px;
-  }
+    #the_thonhtin_khach {
+        border-style: solid;
+        /* border-color: rgb(234, 16, 16); */
+        width: inherit;
+        height: fit-content;
+        border-radius: 3px;
+        margin: auto;
+        color: cornsilk;
+        background-color: teal;
+        text-align: center;
+        font-size: 50px;
+    }
 
-  #header {
-    text-align: right;
-    margin-right: 20px;
-  }
+    #header {
+        text-align: right;
+        margin-right: 20px;
+    }
 
-  #background {
-    background-color: #f7d9ef;
-  }
+    #background {
+        background-color: #f7d9ef;
+    }
 
-  #the_san_pham {
-    border-style: solid;
-    width: 800px;
-    height: 100px;
-    margin-top: 10px;
-    margin-left: 7px;
+    #the_san_pham {
+        border-style: solid;
+        width: 800px;
+        height: 100px;
+        margin-top: 10px;
+        margin-left: 7px;
 
-  }
+    }
 
-  .editsanpham {
-    border-style: dotted;
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
-    margin-left: 5px;
-    font-size: 30px;
-    text-align: center;
-  }
+    .editsanpham {
+        border-style: dotted;
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 5px;
+        font-size: 30px;
+        text-align: center;
+    }
 
-  .thong_tin_the {
-    display: flex;
-    width: 710px;
-    height: 90px;
+    .thong_tin_the {
+        display: flex;
+        width: 710px;
+        height: 90px;
 
 
-  }
+    }
 
-  .x {
-    float: left;
-    height: 100px;
-    width: 70px;
-    padding-bottom: 10px;
-    /* border-style: solid;*/
-  }
+    .x {
+        float: left;
+        height: 100px;
+        width: 70px;
+        padding-bottom: 10px;
+        /* border-style: solid;*/
+    }
 
-  .giohang {
-    border-style: solid;
-    width: 820px;
-    height: fit-content;
-    float: left;
-  }
+    .giohang {
+        border-style: solid;
+        width: 820px;
+        height: fit-content;
+        float: left;
+    }
 
-  .hinhanh {
-    width: 80px;
-    height: 95px;
-    float: left;
+    .hinhanh {
+        width: 80px;
+        height: 95px;
+        float: left;
 
-  }
+    }
 
-  .hoa_don {
-    float: left;
-    font-size: 20px;
-    width: 653px;
-    height: fit-content;
-    border: solid;
-    margin-left: 8px;
-  }
+    .hoa_don {
+        float: left;
+        font-size: 20px;
+        width: 653px;
+        height: fit-content;
+        border: solid;
+        margin-left: 8px;
+    }
 
-  .head_hoa_don {
-    font-size: 40px;
-    padding: 10px;
-    text-align: center;
-    text-decoration: underline;
-  }
+    .head_hoa_don {
+        font-size: 40px;
+        padding: 10px;
+        text-align: center;
+        text-decoration: underline;
+    }
 
-  .the_San_Pham {
-    margin-top: 20px;
-    color: blue;
-  }
+    .the_San_Pham {
+        margin-top: 20px;
+        color: blue;
+    }
 
-  .thanhtoanbutton {
-    width: 200px;
-    height: 30px;
-    border: 2px;
-    border-style: groove;
-    background-color: rgb(172, 46, 166);
-    margin-left: 390px;
-    text-align: center;
-    padding: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 34px;
-  }
+    .thanhtoanbutton {
+        width: 200px;
+        height: 30px;
+        border: 2px;
+        border-style: groove;
+        background-color: rgb(172, 46, 166);
+        margin-left: 390px;
+        text-align: center;
+        padding: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 34px;
+    }
 
-  .thanhtoanbutton:hover {
-    background-color: rgba(85, 227, 15, 0.8);
+    .thanhtoanbutton:hover {
+        background-color: rgba(85, 227, 15, 0.8);
 
-  }
+    }
 
-  .the_404_sp {
-    text-align: center;
-    font-size: 50px;
-    font: icon;
-  }
+    .the_404_sp {
+        text-align: center;
+        font-size: 50px;
+        font: icon;
+    }
 
-  .header {
-    top: 0;
-    left: 0;
-    right: 0;
-    width: auto;
-    z-index: 1000;
-    background: #FFD3B5;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem 5%;
-  }
+    .header {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        z-index: 1000;
+        background: #FFD3B5;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 5%;
+    }
 
-  .logo {
-    height: 90px;
-    width: 150px;
-  }
+    .logo {
+        height: 90px;
+        width: 150px;
+    }
 
-  .khungSLG {
-    width: 60%;
-  }
+    .khungSLG {
+        width: 60%;
+    }
 
-  .icon {
-    height: 100%;
-    width: 35px;
-    margin-top: 1rem;
+    .icon {
+        height: 100%;
+        width: 35px;
+        margin-top: 1rem;
 
-    
-}
 
-      </style>
+    }
+
+</style>
 <html lang="en" id="background" >
 
 <style>
-  #the_thonhtin_khach {
-    border-style: solid;
-    /* border-color: rgb(234, 16, 16); */
-    width: inherit;
-    height: fit-content;
-    border-radius: 3px;
-    margin: auto;
-    color: cornsilk;
-    background-color: teal;
-    text-align: center;
-    font-size: 50px;
-  }
-
-  #header {
-    text-align: right;
-    margin-right: 20px;
-  }
-
-  #background {
-    background-color: #f7d9ef;
-  }
-
-  #the_san_pham {
-    border-style: solid;
-    width: 800px;
-    height: 100px;
-    margin-top: 10px;
-    margin-left: 7px;
-
-  }
-
-  .editsanpham {
-    border-style: dotted;
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
-    margin-left: 5px;
-    font-size: 30px;
-    text-align: center;
-  }
-
-  .thong_tin_the {
-    display: flex;
-    width: 710px;
-    height: 90px;
-
-  }
-
-  .x {
-    float: left;
-    height: 100px;
-    width: 70px;
-    /* border-style: solid;*/
-  }
-
-  .giohang {
-    border-style: solid;
-    width: 820px;
-    height: fit-content;
-    float: left;
-  }
-
-  .hinhanh {
-    width: 80px;
-    height: 95px;
-    float: left;
-
-  }
-
-  .hoa_don {
-    float: left;
-    font-size: 20px;
-    width: 653px;
-    height: fit-content;
-    border: solid;
-    margin-left: 8px;
-  }
-
-  .head_hoa_don {
-    font-size: 40px;
-    padding: 10px;
-    text-align: center;
-    text-decoration: underline;
-  }
-
-  .the_San_Pham {
-    margin-top: 20px;
-    color: blue;
-  }
-
-  .thanhtoanbutton {
-    width: 200px;
-    height: 30px;
-    border: 2px;
-    border-style: groove;
-    background-color: rgb(172, 46, 166);
-    margin-left: 390px;
-    text-align: center;
-    padding: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 34px;
-  }
-
-  .thanhtoanbutton:hover {
-    background-color: rgba(85, 227, 15, 0.8);
-
-  }
-  
-  .footer-container {
-    max-width: 1270px;
-
-    margin: auto;
-}
-
-.footer {
-    border-top: #FFD3B5 4px solid;
-    clear: both;
-    padding: 60px 0;
-    background-color: azure;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.footer-col {
-    width: 25%;
-    padding: 0 0px;
-}
-
-.footer-col h4 {
-    font-size: 18px;
-    text-transform: capitalize;
-    margin-bottom: 35px;
-    font-weight: bold;
-    position: relative;
-}
-
-.footer-col h4::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    height: 2px;
-    background-color: #e91e63;
-    box-sizing: border-box;
-    width: 50px;
-}
-
-.footer-col ul li:not(:last-child) {
-    margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-    font-size: 16px;
-    text-transform: capitalize;
-    color: #333;
-    text-decoration: none;
-    font-weight: 300;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover {
-    padding-left: 8px;
-    color: green;
-}
-
-.footer-col .social-link a {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    margin: 0 10px 10px 0;
-    text-align: center;
-    line-height: 40px;
-    background-color: gray;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.footer-col .social-link a:hover {
-    background-color: #3498db;
-}
-@media (max-width:767px) {
-    .footer-col {
-        width: 50%;
-        margin-bottom: 30px;
+    #the_thonhtin_khach {
+        border-style: solid;
+        /* border-color: rgb(234, 16, 16); */
+        width: inherit;
+        height: fit-content;
+        border-radius: 3px;
+        margin: auto;
+        color: cornsilk;
+        background-color: teal;
+        text-align: center;
+        font-size: 50px;
     }
 
-}
-
-@media (max-width:574px) {
-    .footer-col {
-        width: 100%;
+    #header {
+        text-align: right;
+        margin-right: 20px;
     }
+
+    #background {
+        background-color: #f7d9ef;
+    }
+
+    #the_san_pham {
+        border-style: solid;
+        width: 800px;
+        height: 100px;
+        margin-top: 10px;
+        margin-left: 7px;
+
+    }
+
+    .editsanpham {
+        border-style: dotted;
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 5px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .thong_tin_the {
+        display: flex;
+        width: 710px;
+        height: 90px;
+
+    }
+
+    .x {
+        float: left;
+        height: 100px;
+        width: 70px;
+        /* border-style: solid;*/
+    }
+
+    .giohang {
+        border-style: solid;
+        width: 820px;
+        height: fit-content;
+        float: left;
+    }
+
+    .hinhanh {
+        width: 80px;
+        height: 95px;
+        float: left;
+
+    }
+
+    .hoa_don {
+        float: left;
+        font-size: 20px;
+        width: 653px;
+        height: fit-content;
+        border: solid;
+        margin-left: 8px;
+    }
+
+    .head_hoa_don {
+        font-size: 40px;
+        padding: 10px;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    .the_San_Pham {
+        margin-top: 20px;
+        color: blue;
+    }
+
+    .thanhtoanbutton {
+        width: 200px;
+        height: 30px;
+        border: 2px;
+        border-style: groove;
+        background-color: rgb(172, 46, 166);
+        margin-left: 390px;
+        text-align: center;
+        padding: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-size: 34px;
+    }
+
+    .thanhtoanbutton:hover {
+        background-color: rgba(85, 227, 15, 0.8);
+
+    }
+
+    .footer-container {
+        max-width: 1270px;
+
+        margin: auto;
+    }
+
+    .footer {
+        border-top: #FFD3B5 4px solid;
+        clear: both;
+        padding: 60px 0;
+        background-color: azure;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer-col {
+        width: 25%;
+        padding: 0 0px;
+    }
+
+    .footer-col h4 {
+        font-size: 18px;
+        text-transform: capitalize;
+        margin-bottom: 35px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .footer-col h4::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        height: 2px;
+        background-color: #e91e63;
+        box-sizing: border-box;
+        width: 50px;
+    }
+
+    .footer-col ul li:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #333;
+        text-decoration: none;
+        font-weight: 300;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+        padding-left: 8px;
+        color: green;
+    }
+
+    .footer-col .social-link a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        margin: 0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        background-color: gray;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .footer-col .social-link a:hover {
+        background-color: #3498db;
+    }
+    @media (max-width:767px) {
+        .footer-col {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+
+    }
+
+    @media (max-width:574px) {
+        .footer-col {
+            width: 100%;
+        }
+    }
+
 }
 .SLG {
     font-size: 2.5rem;
@@ -360,35 +362,39 @@
     font-style: italic;
 
 }
+
 </style>
 <html lang="en" >
 
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Đơn Thanh Toán</title>
+
 </head>
 
 <body>
 
-  <div  class="header">
+<div  class="header">
 
     <div class="logo">
-      <a href="../TrangChu.html"><img src="../img/LOGO.png" style="width: 100%;height: 100% ;"></a>
+        <a href="../TrangChu.html"><img src="../img/LOGO.png" style="width: 100%;height: 100% ;"></a>
 
     </div>
     <div class="khungSLG">
-      <a class="SLG"><b>
-          <center>Yêu cái đẹp là thưởng thức
-            <br> &emsp;&emsp; Tạo ra cái đẹp là nghệ thuật</br>
-          </center>
+        <a class="SLG"><b>
+            <center>Yêu cái đẹp là thưởng thức
+                <br> &emsp;&emsp; Tạo ra cái đẹp là nghệ thuật</br>
+            </center>
         </b></a>
     </div>
     <div class="khungS">
     </div>
-                                    
+
     <div class="icon">
+
       <img class="icon__NguoiDung" src="../img/NguoiDung.png" alt="Người dùng" style="width: 50px ;height: 30px;"> 
       <!-- SHOW LOGIN/LOGUP -->
        <output id="NameUser" style="margin-left: 15px;"></output>
@@ -397,123 +403,124 @@
         var name=user.name
         document.getElementById('NameUser').value=name;
 </script>
+
     </div>
 
 </div>
-    
-      
-                                                   
-                                                                                          <script> 
-                                                                                           
-                                                                                          var a=0;  
-                                                                                            var x=0;  
-                                                                                                     
-                                                                                           function taohoadon()
-                                                                                                      {   var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-                                                                                                        var exits= document.getElementsByName('solg');
-                                                                                                         a=0;
-                                                                                                         x=0;
-                                                                                                         var pix=0;
-                                                                                                         
-                                                                                                      for (var i = 0; i < exits.length; i++)  
-                                                                                                      if (exits[i].checked)
-                                                                                                   {a++; 
-                                                                                                      
-                                                                                                    document.getElementById('sol'+exits[i].value).value=  GioHang[i].TenSP;
-                                                                                                            x=x+parseInt(GioHang[i].GiaBan)*GioHang[i].SoLuongMua;
-                                                                                                   }
-                                                                                                      else{
-                                                                                                      document.getElementById('sol'+exits[i].value).value=''; 
-                                                                                                       }
-                                                                                                      
-                                                                                                       
-                                                                                                       document.getElementById('soluongsp').value=a;
-                                                                                                       if (x!=0)
-                                                                                                       document.getElementById('Tongtien').value= x;
-                                                                                                       else document.getElementById('Tongtien').value=0;
-                                                                                                      }
-                                                                                                
-                                                                                                  
-                                                                                                   
-                                                                                                   
-                                                                                            
-                                                                                            
-                                                                                                 
-                                                                                          </script>
-        <title>Giỏ hàng </title>
-        <div id="header"> </div>
-      <div id="the_thonhtin_khach" > 
-            Đơn hàng
-      
-        </div>
-         <div > 
-        <div class="giohang">
-          <div class="head_hoa_don"><a href="GioHang.html">GIỎ HÀNG</a>
-          <script>
-             var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-             if(GioHang.length==0)
-             {
-              document.write('<div> hiện không có sản phẩm !</div>');
-             document.write('<div><a href="../TrangChu.html">Click vào đây để quay về trang chủ ! </a></div>');
-            document.write(' <div> <a href="../TrangChu.html"><img src="../img/meme1.png" style="padding-left: 40px ;"> </a> </div>')}
-          </script> </div>
-          
-             <script>
+
+
+
+<script>
+
+    var a=0;
+    var x=0;
+
+    function taohoadon()
+    {   var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+        var exits= document.getElementsByName('solg');
+        a=0;
+        x=0;
+        var pix=0;
+
+        for (var i = 0; i < exits.length; i++)
+            if (exits[i].checked)
+            {a++;
+
+                document.getElementById('sol'+exits[i].value).value=  GioHang[i].TenSP;
+                x=x+parseInt(GioHang[i].GiaBan)*GioHang[i].SoLuongMua;
+            }
+            else{
+                document.getElementById('sol'+exits[i].value).value='';
+            }
+
+
+        document.getElementById('soluongsp').value=a;
+        if (x!=0)
+            document.getElementById('Tongtien').value= x;
+        else document.getElementById('Tongtien').value=0;
+    }
+
+
+
+
+
+
+
+</script>
+<title>Giỏ hàng </title>
+<div id="header"> </div>
+<div id="the_thonhtin_khach" >
+    Đơn hàng
+
+</div>
+<div >
+    <div class="giohang">
+        <div class="head_hoa_don"><a href="GioHang.html">GIỎ HÀNG</a>
+            <script>
                 var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-                
-                  var SL=GioHang.length;
-                       for (var i=0;i<SL;i++)
-                       document.write('<div id="the_san_pham">'+
-        
-        '<div class="x"> '+
-        ' <div class="editsanpham"><input type="checkbox" name="solg" value="'+i+'" onclick="taohoadon()"> </div>'+
-      
-                                      '</div>'+
-        
-        '<div class="thong_tin_the">'+
-                '<div class="hinhanh"> <img src="'+'.'+GioHang[i].HinhAnh+'" style="width:80px;height:95px;"></div>'+ 
-                '<div style="margin: -3px 10px;font-size: 30px; ">'+GioHang[i].TenSP+
-                 '<div style="font-size:10px; margin-top:5px  ;">Giá tiền:'+GioHang[i].GiaBan+' </div> '+
-                 '<div style="font-size: 10px ;margin-top:5px ;">Số Lượng'+GioHang[i].SoLuongMua+' </div>'+
-                                     '</div>'+     
-        '</div>'+
-      '</div>  '
-        )
-            </script>   
-           </div>     
-                                                                                                            <!-- <div class="giohang">
-                                                                                         <div id="the_san_pham">
-                                                                                                        
-                                                                                                        <div class="x"> 
-                                                                                                        <div class="editsanpham"><input type="checkbox" name="solg" value="1" onclick="taohoadon()"> </div> 
-                                                                                                                                      </div>
-                                                                                                        
-                                                                                                        <div class="thong_tin_the"> 
-                                                                                                              <div class="hinhanh"> hinh anh</div> 
-                                                                                                              <div style=" float: left;margin: -3px 10px;font-size: 30px; ">sasas 
-                                                                                                                <div style="font-size:10px; margin:5px 5px  ;"> gia </div> 
-                                                                                                                <div style="font-size: 10px ;margin:5px 5px ;"> so luong </div>
-                                                                                                                                     </div>     
-                                                                                                              
-                                                                                                        </div>
-                                                                                                       </div>
-                                                                                                      
-                                                                                                      </div>     -->
+                if(GioHang.length==0)
+                {
+                    document.write('<div> hiện không có sản phẩm !</div>');
+                    document.write('<div><a href="../TrangChu.html">Click vào đây để quay về trang chủ ! </a></div>');
+                    document.write(' <div> <a href="../TrangChu.html"><img src="../img/meme1.png" style="padding-left: 40px ;"> </a> </div>')}
+            </script> </div>
 
-       <div class="hoa_don" > <div class="head_hoa_don"> HÓA ĐƠN</div>   
-            
-           <script>
-              var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-                  var SL=GioHang.length;
-                   for (var i=0;i<SL;i++)
-                    document.write('<div class="the_San_Pham"  > <output id="sol'+i+'"></output> </div>');
-                   
-           </script>
-
-           <script>
+        <script>
             var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-             if (GioHang.length!=0)
-               { document.write('<div style="float:right ;">'   + 
+
+            var SL=GioHang.length;
+            for (var i=0;i<SL;i++)
+                document.write('<div id="the_san_pham">'+
+
+                    '<div class="x"> '+
+                    ' <div class="editsanpham"><input type="checkbox" name="solg" value="'+i+'" onclick="taohoadon()"> </div>'+
+
+                    '</div>'+
+
+                    '<div class="thong_tin_the">'+
+                    '<div class="hinhanh"> <img src="'+'.'+GioHang[i].HinhAnh+'" style="width:80px;height:95px;"></div>'+
+                    '<div style="margin: -3px 10px;font-size: 30px; ">'+GioHang[i].TenSP+
+                    '<div style="font-size:10px; margin-top:5px  ;">Giá tiền:'+GioHang[i].GiaBan+' </div> '+
+                    '<div style="font-size: 10px ;margin-top:5px ;">Số Lượng'+GioHang[i].SoLuongMua+' </div>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>  '
+                )
+        </script>
+    </div>
+    <!-- <div class="giohang">
+<div id="the_san_pham">
+
+<div class="x">
+<div class="editsanpham"><input type="checkbox" name="solg" value="1" onclick="taohoadon()"> </div>
+                              </div>
+
+<div class="thong_tin_the">
+      <div class="hinhanh"> hinh anh</div>
+      <div style=" float: left;margin: -3px 10px;font-size: 30px; ">sasas
+        <div style="font-size:10px; margin:5px 5px  ;"> gia </div>
+        <div style="font-size: 10px ;margin:5px 5px ;"> so luong </div>
+                             </div>
+
+</div>
+</div>
+
+</div>     -->
+
+    <div class="hoa_don" > <div class="head_hoa_don"> HÓA ĐƠN</div>
+
+        <script>
+            var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+            var SL=GioHang.length;
+            for (var i=0;i<SL;i++)
+                document.write('<div class="the_San_Pham"  > <output id="sol'+i+'"></output> </div>');
+
+        </script>
+
+        <script>
+            var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+            if (GioHang.length!=0)
+            { document.write('<div style="float:right ;">'   +
                 '<div style="margin-right: 10px ;"> Tổng Tiền <output id="Tongtien"></output> VNĐ</div>'+
                 '<div> soluong <output id="soluongsp"></output>  </div>'+
                 '</div>'+
@@ -522,20 +529,21 @@
                 '<div >date</div>'+
                 '</div>'+
                 '<div class="thanhtoanbutton" onclick="kiemtrakho()" > Thanh toan</div>');}
-                else 
-               { document.write('<div class="the_404_sp"> không tồn tại sản phẩm nào trong giỏ hàng</div>');}
-                                          </script>
- <script src="./ThanhToan.js"> </script>
-  </div>
+            else
+            { document.write('<div class="the_404_sp"> không tồn tại sản phẩm nào trong giỏ hàng</div>');}
+        </script>
+        <script src="./ThanhToan.js"> </script>
+    </div>
 
 
 
-  
+
 
 
 </body>
 
 <div class="footer">
+
   <div class="footer-container">
       <div class="row">
           <div class="footer-col">
@@ -579,5 +587,6 @@
           </div>
       </div>
   </div>
+
 </div>
 </html>
