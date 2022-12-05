@@ -270,6 +270,7 @@ function checkDH(e) {
    localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
 }
 
+<<<<<<< Updated upstream
 function TimKiemDH() {
     var DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
     let input = document.getElementById('tkiem').value;
@@ -346,3 +347,39 @@ function TimKiemDH() {
     }
     document.getElementById('tkiem').value = "";
 } 
+=======
+function toggleSwitch(e) {
+    let row = e.parentElement.parentElement.parentElement;
+
+}
+
+function TimKiemDH() {
+    var DuyetDonHang = localStorage.getItem('DuyetDonHang') ? JSON.parse(localStorage.getItem('DuyetDonHang')) : [];
+    if(DuyetDonHang.l)
+    var s = document.getElementById("tkiem").value;
+    localStorage.removeItem('DSTKiem');
+    DSTKiem = new Array();
+    if (s != null || s != "") {
+        if (!isNaN(s) && s > 0) {
+            for (var i = 0; i < DSSP.length; i++) {
+                if (DSSP[i].GiaBan <= Number(s)) {
+                    DSTKiem.push(DSSP[i]);
+                    localStorage.setItem("DSTKiem", JSON.stringify(DSTKiem));
+                }
+            }
+        } else {
+            for (var i = 0; i < DSSP.length; i++) {
+                if (DSSP[i].MaSP.toLowerCase().search(s.toLowerCase()) != -1 || DSSP[i].TenSP.toLowerCase().search(s.toLowerCase()) != -1 || DSSP[i].LoaiSP.toLowerCase().search(s.toLowerCase()) != -1) {
+                    DSTKiem.push(DSSP[i]);
+                    localStorage.setItem("DSTKiem", JSON.stringify(DSTKiem));
+                }
+            }
+        }
+    } else {
+        document.write(
+            alert("Bạn chưa nhập nội dung tìm kiếm!")
+        );
+    }
+    document.getElementById('tkiem').value = "";
+}
+>>>>>>> Stashed changes
