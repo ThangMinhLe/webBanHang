@@ -9,9 +9,6 @@ function updata()
        {    
           giohangduyet[z]=GioHang[i];
           z++;
-         
-         
-          
        }
        for (var i = exits.length-1; i>=0; i--)  
        if (exits[i].checked)
