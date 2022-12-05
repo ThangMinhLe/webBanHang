@@ -1,12 +1,18 @@
 function updata()
 {  var z=0;
+    var x=0;
+    var key=false;
     var GioHang = JSON.parse(localStorage.getItem('GioHang'));
     var DuyetDonHangtam = JSON.parse(localStorage.getItem('DuyetDonHang'));
     giohangduyet =new Array();
     var exits= document.getElementsByName('solg');
     for (var i = 0; i < exits.length; i++)  
     if (exits[i].checked)
-       {    
+        key=true;
+    if (key){
+    for (var i = 0; i < exits.length; i++)  
+    if (exits[i].checked)
+       {  x=x+parseInt(GioHang[i].GiaBan)*GioHang[i].SoLuongMua;
           giohangduyet[z]=GioHang[i];
           z++;
         
@@ -19,9 +25,11 @@ function updata()
        alert("da duyet don hang");
        
        location.reload();
-   tam={maDonHang: randomkeyDH(),tenKH: 'Nguyễn Phú Thịnh',thoiGianDat: today(),trangThai: 'Chưa duyệt',chiTiet: giohangduyet,maKH: 'KHICY1000',tongTien: 150000,}
+   tam={maDonHang: randomkeyDH(),tenKH: 'Nguyễn Phú Thịnh',thoiGianDat: today(),trangThai: 'Chưa duyệt',chiTiet: giohangduyet,maKH: 'KHICY1000',tongTien:x,}
  DuyetDonHangtam.push(tam);
- localStorage.setItem("DuyetDonHang", JSON.stringify(DuyetDonHangtam));
+ localStorage.setItem("DuyetDonHang", JSON.stringify(DuyetDonHangtam));}
+ else 
+ alert("BẠN CHƯA CHỌN MÓN HÀNG NÀO !!")
 }
 function XoaSP(k){
     var ma;
@@ -55,9 +63,4 @@ function today() {
     return "${time}:${minute}:${second}, ${day}/${month}/${year}";
 
 }
-function thanku()
-{
-    
-    ;
 
-}
