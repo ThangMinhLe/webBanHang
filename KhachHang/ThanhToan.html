@@ -255,8 +255,98 @@
     background-color: rgba(85, 227, 15, 0.8);
 
   }
+  
+  .footer-container {
+    max-width: 1270px;
+
+    margin: auto;
+}
+
+.footer {
+    border-top: #FFD3B5 4px solid;
+    clear: both;
+    padding: 60px 0;
+    background-color: azure;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 0px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: bold;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
+    background-color: #e91e63;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #333;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    padding-left: 8px;
+    color: green;
+}
+
+.footer-col .social-link a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    background-color: gray;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.footer-col .social-link a:hover {
+    background-color: #3498db;
+}
+@media (max-width:767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media (max-width:574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
 </style>
-<html lang="en" id="background">
+<html lang="en" >
 
 <head>
   <meta charset="UTF-8">
@@ -265,7 +355,7 @@
   <title>Document</title>
 </head>
 
-<body>
+<body id="background">
   <div  class="header">
     <div class="logo">
       <a href="../TrangChu.html"><img src="../img/LOGO.png" style="width: 100%;height: 100% ;"></a>
@@ -282,7 +372,7 @@
     </div>
     
     <div class="icon">
-        <img class="icon__NguoiDung" src="../img/NguoiDung.png" alt="Người dùng" style="35px ;height: 35px;"> nguoidung
+        <img class="icon__NguoiDung" src="../img/NguoiDung.png" alt="Người dùng" style="width: 60px ;height: 35px;"> nguoidung
         <!-- SHOW LOGIN/LOGUP -->
     </div>
 </div>
@@ -419,4 +509,53 @@
 
 </body>
 
+<div class="footer">
+  <div class="footer-container">
+      <div class="row">
+          <div class="footer-col">
+              <h4>ICY store</h4>
+              <ul>
+                  <li><a href="">Về chúng tôi</a></li>
+                  <li><a href="">Dịch vụ</a></li>
+                  <li><a href="">Chính sách bảo mật</a></li>
+                  <li><a href="">Chính sách đổi trả</a></li>
+
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>Trợ giúp</h4>
+              <ul>
+                  <li><a href="">FAQ</a></li>
+                  <li><a href="">Giao hàng</a></li>
+                  <li><a href="">Trả hàng</a></li>
+                  <li><a href="">Đơn hàng</a></li>
+                  <li><a href="">Thanh toán</a></li>
+
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>Danh mục</h4>
+              <ul>
+                  <li><a href="index.html">Bán chạy</a></li>
+                  <li><a href="index.html">Chăm sóc da</a></li>
+                  <li><a href="index.html">Mỹ phẩm chức năng</a></li>
+                  <li><a href="index.html">Chống nắng</a></li>
+                  <li><a href="index.html">Làm sạch da</a></li>
+                  <li><a href="index.html">Trang điểm</a></li>
+
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>Theo dõi chúng tôi</h4>
+              <div class="social-link">
+                  <ul>
+                      <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                      <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                      <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 </html>
