@@ -136,6 +136,10 @@ function today() {
 // localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
 let DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
 function renderTable2() {
+    let tongTienDaDuyet = 0;
+    let demDaDuyet = 0;
+    let demChuaDuyet = 0;
+    let tongTienChuaDuyet = 0;
     let tongTienDH = 0;
     let tableContent = `
     <thead>
@@ -164,27 +168,45 @@ function renderTable2() {
         </td>
         <td>${tienVN(duyet.tongTien)}</td>`;
         if(duyet.trangThai == 'Chưa duyệt') {
+            
+            tongTienChuaDuyet += Number(duyet.tongTien);
             tableContent += `
             <td style="color: red"><b>${duyet.trangThai}</b></td>
             <td>
                 <label class="switch">
-                    <input onclick="checkDH(this)" type="checkbox">
+                    <input onclick="checkDH(this, 1)" type="checkbox">
                     <span class="slider round"></span>
                 </label>
             </td>`;
+            
         } else {
+            tongTienDaDuyet += Number(duyet.tongTien);
             tableContent += `
             <td style="color: blue"><b>${duyet.trangThai}</b></td>
             <td>
                 <label class="switch">
-                    <input onclick="checkDH(this)" type="checkbox" checked>
+                    <input onclick="checkDH(this, 1)" type="checkbox" checked>
                     <span class="slider round"></span>
                 </label>
-            </td>`;
+            </td>`;  
         }
     })
-    tableContent += `<tr> <td colspan="5">TỔNG TIỀN</td>`;
-    tableContent += `<td >${tienVN(tongTienDH)}</td> </tr>`;
+    tableContent += `
+        <tr id="tongTienDaDuyet"> 
+            <td style="color: blue" colspan="5"><b>TỔNG TIỀN ĐÃ DUYỆT</b></td>
+            <td style="color: blue"><b>${tienVN(tongTienDaDuyet)}</b></td> 
+        </tr>`;
+    tableContent += `
+        <tr id="tongTienChuaDuyet"> 
+            <td style="color: red" colspan="5"><b>TỔNG TIỀN CHƯA DUYỆT</b></td>
+            <td style="color: red" ><b>${tienVN(tongTienChuaDuyet)}</b></td> 
+        </tr>`;
+    tableContent += `
+        <tr> 
+            <td style="color: green" colspan="5"><b>TỔNG TIỀN</b></td>
+            <td style="color: green" ></b>${tienVN(tongTienDH)}</b></td> 
+        </tr>`;
+
     tableContent += `</tr></tbody>`;
     document.getElementById('myTable').innerHTML = tableContent;
     localStorage.setItem('DHTT', JSON.stringify(tongTienDH));
@@ -252,7 +274,11 @@ function tienVN(giaTri){
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(giaTri);
 }
 
-function checkDH(e) {
+function checkDH(e, t) {
+    if(t == 1) {
+
+        location.reload();
+    }
    let row = e.parentElement.parentElement.parentElement;
    let id =  row.cells[1].innerText;
    DuyetDonHang.forEach((dh) => {
@@ -269,13 +295,16 @@ function checkDH(e) {
    })
    localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
 }
-
 function TimKiemDH() {
     var DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
     let input = document.getElementById('tkiem').value;
     console.log(input);
     let index = 1;
     let tongTienHienTai = 0;
+    let tongTienDaDuyet = 0;
+    let demDaDuyet = 0;
+    let demChuaDuyet = 0;
+    let tongTienChuaDuyet = 0;
     let tableContent = `
     <thead>
         <tr>
@@ -310,15 +339,17 @@ function TimKiemDH() {
                 </td>
                 <td>${tienVN(duyet.tongTien)}</td>`;
                 if(duyet.trangThai == 'Chưa duyệt') {
+                    tongTienChuaDuyet += Number(duyet.tongTien);
                     tableContent += `
                     <td style="color: red"><b>${duyet.trangThai}</b></td>
                     <td>
                         <label class="switch">
-                            <input onclick="checkDH(this)" type="checkbox">
+                            <input onclick="checkDH(this, 0)" type="checkbox">
                             <span class="slider round"></span>
                         </label>
                     </td>`;
                 } else {
+                    tongTienDaDuyet += Number(duyet.tongTien);
                     tableContent += `
                     <td style="color: blue"><b>${duyet.trangThai}</b></td>
                     <td>
@@ -333,8 +364,21 @@ function TimKiemDH() {
                 
             }
         })   
-        tableContent += `<tr> <td colspan="5">TỔNG TIỀN</td>`;
-        tableContent += `<td >${tienVN(tongTienHienTai)}</td> </tr>`;
+        tableContent += `
+            <tr id="tongTienDaDuyet"> 
+                <td style="color: blue" colspan="5"><b>TỔNG TIỀN ĐÃ DUYỆT</b></td>
+                <td style="color: blue"><b>${tienVN(tongTienDaDuyet)}</b></td> 
+            </tr>`;
+        tableContent += `
+            <tr id="tongTienChuaDuyet"> 
+                <td style="color: red" colspan="5"><b>TỔNG TIỀN CHƯA DUYỆT</b></td>
+                <td style="color: red" ><b>${tienVN(tongTienChuaDuyet)}</b></td> 
+            </tr>`;
+        tableContent += `
+            <tr> 
+                <td style="color: green" colspan="5"><b>TỔNG TIỀN</b></td>
+                <td style="color: green" ></b>${tienVN(tongTienHienTai)}</b></td> 
+            </tr>`;
         tableContent += `</tr></tbody>`;
         document.getElementById('myTable').innerHTML = tableContent;
     }
