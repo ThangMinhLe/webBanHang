@@ -222,26 +222,57 @@ function changeSP(){
         clear();
     }
 }
-function search(){
+function search() {
+    let key = document.getElementById('selectSearch').value
+    let nameSearch;
     let valueSearchInput = document.getElementById('search').value;
-    let nameSearch = listDSSP.filter(value=>{
-        let arrName = value.TenSP.toUpperCase().includes(valueSearchInput.toUpperCase());
-        let arrID = value.MaSP.toUpperCase().includes(valueSearchInput.toUpperCase());
-        let arrGia = value.GiaBan.toUpperCase().includes(valueSearchInput.toUpperCase());
-        let arrPL = value.LoaiSP.toUpperCase().includes(valueSearchInput.toUpperCase());
-
-    })
-}
-function removeDuplicates(array1,array2){
-    let array=array2;
-    let count=[];
-    for (let i=0; i<array1.length;i++) {
-        for (let j = 0; j < array2.length; j++) {
-            if (array1[i] === array2[j])
-                count+=j;
-
-        }
+    if (key == 'TenSP') {
+        nameSearch = listDSSP.filter(value => {
+            return value.TenSP.toUpperCase().includes(valueSearchInput.toUpperCase());
+        });
+    } else if (key == 'MaSP') {
+        nameSearch = listDSSP.filter(value => {
+            return value.MaSP.toUpperCase().includes(valueSearchInput.toUpperCase());
+        });
+    } else if (key == 'LoaiSP') {
+        nameSearch = listDSSP.filter(value=>{
+            return value.LoaiSP.toUpperCase().includes(valueSearchInput.toUpperCase());
+        });
     }
+    let table=`<tr>
+            <th>STT</th>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Hình ảnh</th>
+            <th>Phân loại</th>
+            <th>Số lượng</th>
+            <th>Dung tích</th>
+            <th>Giá tiền</th>
+            <th>Tác vụ</th>
+        </tr>
+    `
+    var i;
+    for ( i=0; i < nameSearch.length ;i++) {
+        console.log(nameSearch[i]);
+        table += `<tr>
+            <td>${i+1}</td>
+            <td>${nameSearch [i].MaSP}</td>
+            <td>${nameSearch [i].TenSP}</td>
+            <td><img src="${fileInpToTextInp(nameSearch[i].HinhAnh)}" width="50px" height="50px"> </td>
+            <td>${nameSearch [i].LoaiSP}</td>
+            <td>${nameSearch [i].SoLuong}</td>
+            <td>${nameSearch [i].DonViTinh}</td>
+            <td>${new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(nameSearch[i].GiaBan)
+        }</td>
+            <td>
+                <a href="#form-id"><i class="fa-solid fa-pen-to-square" onclick="showSP('${nameSearch[i].MaSP}')" style="cursor: pointer;"></i></a>
+                <i class="fa-solid fa-xmark" onclick="removeSP('${nameSearch[i].MaSP}')" style="cursor: pointer;"></i>
+            </td>
+        </tr>
+    `
+    }
+    document.getElementById('myTable').innerHTML = table;
+
 }
 
 

@@ -64,3 +64,44 @@ a{
     background: #fcbe94;
     border-radius: 40px;
 }
+#icon-user{
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+.icon_user{
+    background-color:  rgb(247,217,239);
+    border: rgb(247,217,239);
+}
+.icon{
+    height: 100%;
+    margin-top: 1rem;
+    position: relative;
+}
+.icon__show {
+    border-radius: 1rem;
+    width: 90px;
+    margin-left: -20px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 5px;
+    position: absolute;
+    top: 100%;
+    display: none;
+    background-color: #f7d9ef;
+}
+
+.icon:hover .icon__show {
+    display: block;
+}
+
+.icon__show-login:hover,
+.icon__show-logup:hover {
+    color: rgba(111, 111, 111, 0.9);
+    cursor: pointer;
+}
+
+.icon__show-login,
+.icon__show-logup {
+    text-decoration: none;
+}

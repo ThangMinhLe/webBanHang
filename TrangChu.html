@@ -13,6 +13,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="./KhachHang/PageUser.css">
     <script src="./KhachHang/TrangChu.js"></script>
     <script src="./KhachHang/ChiTietSP.js"></script>
     <script src="./KhachHang/GioHang.js"></script>
@@ -35,9 +36,6 @@
                     </center>
                 </b></a>
         </div>
-        <a href=""><div class="icon">
-            <img src="./img/CaiDat.png">
-        </div></a>
         <div class="khungS">
             <input id="tkiem" type="text" class="S" placeholder="Nhập sản phẩm cần tìm">
         </div>
@@ -48,11 +46,19 @@
             <img src="./img/GioHang.png">
         </div></a>
         <div class="icon">
+            <div class="UserDir">
             <img class="icon__NguoiDung" src="./img/NguoiDung.png" alt="Người dùng">
+                <span id="NameUser" style="color: #333333; font-size: 1.2rem"></span>
+            </div>
             <!-- SHOW LOGIN/LOGUP -->
-            <div class="icon__show">
+            <div class="icon__show" id="icon__show-login">
                 <button onclick="showLogin()" class="icon__show-login" id="login-btn">Đăng nhập</button>
                 <button onclick="showRegister()" class="icon__show-logup" id="register-btn">Đăng ký</button>
+            </div>
+            <div class="icon__show" id="icon__show-logout" style="visibility: hidden">
+                <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
+                <button onclick="" class="icon__show-logup icon_user" id="Product-btn">Đơn hàng</button>
+                <button onclick="DangXuat()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
             </div>
         </div>
     </div>
@@ -174,7 +180,6 @@
                             <li><a href=""><i class="fab fa-facebook"></i></a></li>
                             <li><a href=""><i class="fab fa-instagram"></i></a></li>
                             <li><a href=""><i class="fab fa-twitter"></i></a></li>
-
                         </ul>
                     </div>
                 </div>
