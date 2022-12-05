@@ -147,9 +147,12 @@
     width: 35px;
     margin-top: 1rem;
 
-  }
-</style>
-<html lang="en" id="background">
+    
+}
+
+      </style>
+<html lang="en" id="background" >
+
 <style>
   #the_thonhtin_khach {
     border-style: solid;
@@ -273,7 +276,8 @@
 
 <body>
 
-  <div class="header">
+  <div  class="header">
+
     <div class="logo">
       <a href="../TrangChu.html"><img src="../img/LOGO.png" style="width: 100%;height: 100% ;"></a>
 
@@ -292,6 +296,134 @@
       <img class="icon__NguoiDung" src="../img/NguoiDung.png" alt="Người dùng" style="35px ;height: 35px;"> nguoidung
       <!-- SHOW LOGIN/LOGUP -->
     </div>
+
+</div>
+    
+      
+                                                   
+                                                                                          <script> 
+                                                                                           
+                                                                                          var a=0;  
+                                                                                            var x=0;  
+                                                                                                     
+                                                                                           function taohoadon()
+                                                                                                      {   var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+                                                                                                        var exits= document.getElementsByName('solg');
+                                                                                                         a=0;
+                                                                                                         x=0;
+                                                                                                         var pix=0;
+                                                                                                         
+                                                                                                      for (var i = 0; i < exits.length; i++)  
+                                                                                                      if (exits[i].checked)
+                                                                                                   {a++; 
+                                                                                                      
+                                                                                                    document.getElementById('sol'+exits[i].value).value=  GioHang[i].TenSP;
+                                                                                                            x=x+parseInt(GioHang[i].GiaBan)*GioHang[i].SoLuongMua;
+                                                                                                   }
+                                                                                                      else{
+                                                                                                      document.getElementById('sol'+exits[i].value).value=''; 
+                                                                                                       }
+                                                                                                      
+                                                                                                       
+                                                                                                       document.getElementById('soluongsp').value=a;
+                                                                                                       if (x!=0)
+                                                                                                       document.getElementById('Tongtien').value= x;
+                                                                                                       else document.getElementById('Tongtien').value=0;
+                                                                                                      }
+                                                                                                
+                                                                                                  
+                                                                                                   
+                                                                                                   
+                                                                                            
+                                                                                            
+                                                                                                 
+                                                                                          </script>
+        <title>Giỏ hàng </title>
+        <div id="header"> </div>
+      <div id="the_thonhtin_khach" > 
+            Đơn hàng
+      
+        </div>
+         <div > 
+        <div class="giohang">
+          <div class="head_hoa_don"><a href="GioHang.html">GIỎ HÀNG</a>
+          <script>
+             var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+             if(GioHang.length==0)
+             {
+              document.write('<div> hiện không có sản phẩm !</div>');
+             document.write('<div><a href="../TrangChu.html">Click vào đây để quay về trang chủ ! </a></div>');
+            document.write(' <div> <a href="../TrangChu.html"><img src="../img/meme1.png" style="padding-left: 40px ;"> </a> </div>')}
+          </script> </div>
+          
+             <script>
+                var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+                
+                  var SL=GioHang.length;
+                       for (var i=0;i<SL;i++)
+                       document.write('<div id="the_san_pham">'+
+        
+        '<div class="x"> '+
+        ' <div class="editsanpham"><input type="checkbox" name="solg" value="'+i+'" onclick="taohoadon()"> </div>'+
+      
+                                      '</div>'+
+        
+        '<div class="thong_tin_the">'+
+                '<div class="hinhanh"> <img src="'+'.'+GioHang[i].HinhAnh+'" style="width:80px;height:95px;"></div>'+ 
+                '<div style="margin: -3px 10px;font-size: 30px; ">'+GioHang[i].TenSP+
+                 '<div style="font-size:10px; margin-top:5px  ;">Giá tiền:'+GioHang[i].GiaBan+' </div> '+
+                 '<div style="font-size: 10px ;margin-top:5px ;">Số Lượng'+GioHang[i].SoLuongMua+' </div>'+
+                                     '</div>'+     
+        '</div>'+
+      '</div>  '
+        )
+            </script>   
+           </div>     
+                                                                                                            <!-- <div class="giohang">
+                                                                                         <div id="the_san_pham">
+                                                                                                        
+                                                                                                        <div class="x"> 
+                                                                                                        <div class="editsanpham"><input type="checkbox" name="solg" value="1" onclick="taohoadon()"> </div> 
+                                                                                                                                      </div>
+                                                                                                        
+                                                                                                        <div class="thong_tin_the"> 
+                                                                                                              <div class="hinhanh"> hinh anh</div> 
+                                                                                                              <div style=" float: left;margin: -3px 10px;font-size: 30px; ">sasas 
+                                                                                                                <div style="font-size:10px; margin:5px 5px  ;"> gia </div> 
+                                                                                                                <div style="font-size: 10px ;margin:5px 5px ;"> so luong </div>
+                                                                                                                                     </div>     
+                                                                                                              
+                                                                                                        </div>
+                                                                                                       </div>
+                                                                                                      
+                                                                                                      </div>     -->
+
+       <div class="hoa_don" > <div class="head_hoa_don"> HÓA ĐƠN</div>   
+            
+           <script>
+              var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+                  var SL=GioHang.length;
+                   for (var i=0;i<SL;i++)
+                    document.write('<div class="the_San_Pham"  > <output id="sol'+i+'"></output> </div>');
+                   
+           </script>
+
+           <script>
+            var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+             if (GioHang.length!=0)
+               { document.write('<div style="float:right ;">'   + 
+                '<div style="margin-right: 10px ;"> Tổng Tiền <output id="Tongtien"></output> VNĐ</div>'+
+                '<div> soluong <output id="soluongsp"></output>  </div>'+
+                '</div>'+
+                '<div style="margin-top: 50px;">' +
+                '<div > </div>'+
+                '<div >date</div>'+
+                '</div>'+
+                '<div class="thanhtoanbutton" onclick="updata()" > Thanh toan</div>');}
+                else 
+               { document.write('<div class="the_404_sp"> không tồn tại sản phẩm nào trong giỏ hàng</div>');}
+                                          </script>
+
   </div>
 
 
@@ -394,59 +526,6 @@
 
     </div> -->
 
-    <div class="hoa_don">
-      <div class="head_hoa_don">HÓA ĐƠN</div>
-
-      <script>
-        var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-        var SL = GioHang.length;
-        for (var i = 0; i < SL; i++)
-          document.write('<div class="the_San_Pham"  > <output id="sol' + i + '"></output> </div>')
-
-      </script>
-
-      <script>
-        if (GioHang.length != 0)
-          document.write('<div style="float:right ;">' +
-            '<div style="margin-right: 10px ;"> Tổng Tiền <output id="Tongtien"></output> VNĐ</div>' +
-            '<div> soluong <output id="soluongsp"></output>  </div>' +
-            '</div>' +
-            '<div style="margin-top: 50px;">' +
-            '<div > </div>' +
-            ' <div >date</div>' +
-            '</div>' +
-            '<div class="thanhtoanbutton" onclick="updata()" > Thanh toan</div>');
-        else
-          document.write('<div class="the_404_sp"> không tồn tại sản phẩm nào trong giỏ hàng</div>');
-      </script>
-    </div>
-  </div>
-  <script src="./ThanhToan.js"></script>
-
-
-
-  <div class="hoa_don">
-    <div class="head_hoa_don">HÓA ĐƠN</div>
-
-    <script>
-      var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-      var SL = GioHang.length;
-      for (var i = 0; i < SL; i++)
-        document.write('<div class="the_San_Pham"  > <output id="sol' + i + '"></output> </div>')
-
-    </script>
-    <div style="float:right ;">
-      <div style="margin-right: 10px ;"> Tổng Tiền <output id="Tongtien"></output> VNĐ</div>
-      <div> soluong <output id="soluongsp"></output> </div>
-    </div>
-    <div style="margin-top: 50px;">
-      <div> </div>
-      <div>date</div>
-    </div>
-    <div class="thanhtoanbutton" onclick="updata()"> Thanh toan</div>
-  </div>
-  </div>
-  <script src="./ThanhToan.js"></script>
 </body>
 
 </html>
