@@ -198,13 +198,13 @@ function renderTable2() {
         <tr id="tongTienDaDuyet"> 
             <td style="color: blue" colspan="5"><b>TỔNG TIỀN ĐÃ DUYỆT</b></td>
             <td style="color: blue"><b>${tienVN(tongTienDaDuyet)}</b></td> 
-            <td style="color: blue"><b>Đơn chưa duyệt: ${donChuaDuyet}</b></td> 
+            <td style="color: blue"><b>Đơn đã duyệt: ${donDaDuyet}</b></td> 
         </tr>`;
     tableContent += `
         <tr id="tongTienChuaDuyet"> 
             <td style="color: red" colspan="5"><b>TỔNG TIỀN CHƯA DUYỆT</b></td>
             <td style="color: red" ><b>${tienVN(tongTienChuaDuyet)}</b></td> 
-            <td style="color: red" ><b>Đơn đã duyệt: ${donDaDuyet}</b></td> 
+            <td style="color: red" ><b>Đơn chưa duyệt: ${donChuaDuyet}</b></td> 
         </tr>`;
     tableContent += `
         <tr> 
