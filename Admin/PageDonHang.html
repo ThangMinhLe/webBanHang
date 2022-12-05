@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="../css/toggleSwitch.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="../css/chiTietDH.css">
+    <link rel="stylesheet" href="../css/admin/tiemKiemDH.css">
 </head>
-
-
-
 <body onload="renderTable2()" >
 <div class="wrap">
     <div class="header">
@@ -29,26 +27,29 @@
                 </center>
             </b></a>
         </div>
-        <div href="#" class="icon">
-            <i class="fa-solid fa-user-gear"></i>
+        <div href="../admin.html" class="icon" style="margin-right: 1%">
+            <a href="../admin.html"><i class="fa-solid fa-user-gear"></i></a>
         </div>
-        <div href="#" class="icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="reload">
+            <i onclick="renderTable2()" title="Load lại" class="fa-solid fa-rotate-right"></i>
         </div>
-        <div href="#" class="icon">
-            <i class="fa-solid fa-cart-shopping"></i>
+        <div >
+            <input for="search" name="search" 
+            style="height: 40px; font-size: 20px;" id="tkiem" type="text" placeholder="Nhập nội dung cần tìm">
         </div>
-        <div href="#" class="icon" id="icon-user">
-            <div class="UserDir">
-                <i class="fa-solid fa-user"></i>
-                <span id="NameAdmin" style="color: #333333; font-size: 1.5rem; margin-left: 2px">Welcome Admin</span>
+            <img onclick="TimKiemDH()" class="timKiemDH" src="../img/TimKiem.png" title="Tìm kiếm">
+            <div href="#" class="icon" id="icon-user">
+                <div class="UserDir">
+                    <i class="fa-solid fa-user"></i>
+                    <span id="NameAdmin" style="color: #333333; font-size: 1.5rem; margin-left: 2px">Welcome Admin</span>
+                </div>
+    
+                <div class="icon__show" id="icon__show-logout" >
+                    <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
+                    <button onclick="DangXuatAdmin()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+                </div>
             </div>
-
-            <div class="icon__show" id="icon__show-logout" >
-                <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
-                <button onclick="DangXuatAdmin()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
             </div>
-        </div>
     </div>
     <div class="container">
         <div class="grid">
@@ -81,8 +82,6 @@
                     <div id="newScreen">
                         <table id="chiTietDonHang">
                         </table>
-                    </div>
-                    <div id="newScreen">
                     </div>
                 </div>
 
@@ -142,5 +141,7 @@
     </div> -->
 </div>
     <script src="../js/browseCart.js"></script>
+<script src="js/admin.js" ></script>
+
 </body>
 </html>
