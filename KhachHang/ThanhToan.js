@@ -64,7 +64,7 @@ function today() {
     let day = today.getDate();
     let month = today.getMonth();
     let year = today.getFullYear();
-    return "${time}:${minute}:${second}, ${day}/${month}/${year}";
+    return `${time}:${minute}:${second}, ${day}/${month}/${year}`;
 
 
 }
