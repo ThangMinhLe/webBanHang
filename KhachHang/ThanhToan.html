@@ -141,6 +141,7 @@
     margin-top: 1rem;
     
 }
+
       </style>
 <html lang="en" id="background" >
 <head>
@@ -280,18 +281,19 @@
            </script>
 
            <script>
+            var GioHang = JSON.parse(localStorage.getItem('GioHang'));
              if (GioHang.length!=0)
-                document.write('<div style="float:right ;">'   + 
+               { document.write('<div style="float:right ;">'   + 
                 '<div style="margin-right: 10px ;"> Tổng Tiền <output id="Tongtien"></output> VNĐ</div>'+
                 '<div> soluong <output id="soluongsp"></output>  </div>'+
                 '</div>'+
                 '<div style="margin-top: 50px;">' +
                 '<div > </div>'+
-               ' <div >date</div>'+
+                '<div >date</div>'+
                 '</div>'+
-                '<div class="thanhtoanbutton" onclick="updata()" > Thanh toan</div>');
+                '<div class="thanhtoanbutton" onclick="updata()" > Thanh toan</div>');}
                 else 
-                document.write('<div class="the_404_sp"> không tồn tại sản phẩm nào trong giỏ hàng</div>');
+               { document.write('<div class="the_404_sp"> không tồn tại sản phẩm nào trong giỏ hàng</div>');}
                                           </script>
           </div>
       </div>
@@ -299,4 +301,5 @@
 
      
 </body>
+
 </html>

@@ -9,7 +9,7 @@ function updata()
        {    
           giohangduyet[z]=GioHang[i];
           z++;
-         
+        
          
           
        }
@@ -17,6 +17,7 @@ function updata()
        if (exits[i].checked)
        XoaSP(i);
        alert("da duyet don hang");
+       
        location.reload();
    tam={maDonHang: randomkeyDH(),tenKH: 'Nguyễn Phú Thịnh',thoiGianDat: today(),trangThai: 'Chưa duyệt',chiTiet: giohangduyet,maKH: 'KHICY1000',tongTien: 150000,}
  DuyetDonHangtam.push(tam);
@@ -45,6 +46,18 @@ function randomkeyDH() {
 }
 function today() {
     var today = new Date();
-    window.year = today.getFullYear();
-    return today;
+    let time = today.getHours();
+    let minute = today.getMinutes();
+    let second = today.getSeconds();
+    let day = today.getDate();
+    let month = today.getMonth();
+    let year = today.getFullYear();
+    return "${time}:${minute}:${second}, ${day}/${month}/${year}";
+
+}
+function thanku()
+{
+    
+    ;
+
 }
