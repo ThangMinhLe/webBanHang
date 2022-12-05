@@ -43,12 +43,14 @@
         display: flex;
      width: 710px;
      height: 90px; 
+    
         
      }
      .x{
       float: left;
       height: 100px;
       width: 70px;
+      padding-bottom: 10px;
      /* border-style: solid;*/
      }
      .giohang
@@ -108,8 +110,37 @@
        background-color:rgba(85, 227, 15, 0.8);
        
      }
-
-     
+     .the_404_sp
+     { text-align: center ;
+       font-size: 50px;
+       font: icon;
+     }
+     .header {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    z-index: 1000;
+    background: #FFD3B5;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+}
+.logo {
+    height: 90px;
+    width: 150px;
+}
+.khungSLG {
+    width: 60%;
+}
+.icon {
+    height: 100%;
+    width: 35px;
+    margin-top: 1rem;
+    
+}
       </style>
 <html lang="en" id="background" >
 <head>
@@ -119,6 +150,26 @@
     <title>Document</title>
 </head>
 <body>
+  <div  class="header">
+    <div class="logo">
+      <a href="../TrangChu.html"><img src="../img/LOGO.png" style="width: 100%;height: 100% ;"></a>
+        
+    </div>
+    <div class="khungSLG">
+        <a class="SLG"><b>
+                <center>Yêu cái đẹp là thưởng thức
+                    <br> &emsp;&emsp; Tạo ra cái đẹp là nghệ thuật</br>
+                </center>
+            </b></a>
+    </div>
+    <div class="khungS">
+    </div>
+    
+    <div class="icon">
+        <img class="icon__NguoiDung" src="../img/NguoiDung.png" alt="Người dùng" style="35px ;height: 35px;"> nguoidung
+        <!-- SHOW LOGIN/LOGUP -->
+    </div>
+</div>
     
       
                                                    
@@ -133,7 +184,7 @@
                                                                                                          a=0;
                                                                                                          x=0;
                                                                                                          var pix=0;
-                                                                                                         alert(exits.length)
+                                                                                                         
                                                                                                       for (var i = 0; i < exits.length; i++)  
                                                                                                       if (exits[i].checked)
                                                                                                    {a++; 
@@ -167,6 +218,16 @@
         </div>
          <div > 
         <div class="giohang">
+          <div class="head_hoa_don"><a href="GioHang.html">GIỎ HÀNG</a>
+          <script>
+             var GioHang = JSON.parse(localStorage.getItem('GioHang'));
+             if(GioHang.length==0)
+             {
+              document.write('<div> hiện không có sản phẩm !</div>');
+             document.write('<div><a href="../TrangChu.html">Click vào đây để quay về trang chủ ! </a></div>');
+            document.write(' <div> <a href="../TrangChu.html"><img src="../img/meme1.png" style="padding-left: 40px ;"> </a> </div>')}
+          </script> </div>
+          
              <script>
                 var GioHang = JSON.parse(localStorage.getItem('GioHang'));
                 
@@ -217,17 +278,25 @@
                     document.write('<div class="the_San_Pham"  > <output id="sol'+i+'"></output> </div>')
                    
            </script>
-           <div style="float:right ;"> 
-            <div style="margin-right: 10px ;"> Tổng Tiền <output id="Tongtien"></output> VNĐ</div>
-            <div> soluong <output id="soluongsp"></output>  </div>
-            </div>
-            <div style="margin-top: 50px;"> 
-               <div > </div>
-               <div >date</div>
-            </div>
-            <div class="thanhtoanbutton" onclick="updata()" > Thanh toan</div>
+
+           <script>
+             if (GioHang.length!=0)
+                document.write('<div style="float:right ;">'   + 
+                '<div style="margin-right: 10px ;"> Tổng Tiền <output id="Tongtien"></output> VNĐ</div>'+
+                '<div> soluong <output id="soluongsp"></output>  </div>'+
+                '</div>'+
+                '<div style="margin-top: 50px;">' +
+                '<div > </div>'+
+               ' <div >date</div>'+
+                '</div>'+
+                '<div class="thanhtoanbutton" onclick="updata()" > Thanh toan</div>');
+                else 
+                document.write('<div class="the_404_sp"> không tồn tại sản phẩm nào trong giỏ hàng</div>');
+                                          </script>
           </div>
       </div>
      <script src="./ThanhToan.js"></script>
+
+     
 </body>
 </html>
