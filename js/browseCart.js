@@ -275,10 +275,6 @@ function tienVN(giaTri){
 }
 
 function checkDH(e, t) {
-    if(t == 1) {
-
-        location.reload();
-    }
    let row = e.parentElement.parentElement.parentElement;
    let id =  row.cells[1].innerText;
    DuyetDonHang.forEach((dh) => {
@@ -359,9 +355,7 @@ function TimKiemDH() {
                         </label>
                     </td>`;
                 }
-                
                 index++;
-                
             }
         })   
         tableContent += `
@@ -377,6 +371,7 @@ function TimKiemDH() {
         tableContent += `
             <tr> 
                 <td style="color: green" colspan="5"><b>TỔNG TIỀN</b></td>
+                <td style="color: yellow"><b></b></td>
                 <td style="color: green" ></b>${tienVN(tongTienHienTai)}</b></td> 
             </tr>`;
         tableContent += `</tr></tbody>`;
