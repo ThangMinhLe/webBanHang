@@ -282,7 +282,7 @@ function xemChiTiet(maDonHang){
 }
 function fileInpToTextInp(event) {
     let fileChuk = event.split("\\");
-    return '../img/' + fileChuk[fileChuk.length - 1];
+    return '.' + fileChuk[fileChuk.length - 1];
 }
 
 function tienVN(giaTri){
