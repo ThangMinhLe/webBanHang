@@ -354,14 +354,25 @@
             width: 100%;
         }
     }
+
+}
+.SLG {
+    font-size: 2.5rem;
+    color: black;
+    font-style: italic;
+
+}
+
 </style>
 <html lang="en" >
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đơn Thanh Toán</title>
+
 </head>
 
 <body>
@@ -383,14 +394,16 @@
     </div>
 
     <div class="icon">
-        <img class="icon__NguoiDung" src="../img/NguoiDung.png" alt="Người dùng" style="width: 60px ;height: 40px;">
-        <!-- SHOW LOGIN/LOGUP -->
-        <output id="NameUser" style="margin-left: 15px;"></output>
-        <script>
-            var user =JSON.parse(localStorage.getItem('UserLogin'));
-            var name=user.name
-            document.getElementById('NameUser').value=name;
-        </script>
+
+      <img class="icon__NguoiDung" src="../img/NguoiDung.png" alt="Người dùng" style="width: 50px ;height: 30px;"> 
+      <!-- SHOW LOGIN/LOGUP -->
+       <output id="NameUser" style="margin-left: 15px;"></output>
+       <script>
+        var user =JSON.parse(localStorage.getItem('UserLogin'));
+        var name=user.name
+        document.getElementById('NameUser').value=name;
+</script>
+
     </div>
 
 </div>
@@ -530,52 +543,50 @@
 </body>
 
 <div class="footer">
-    <div class="footer-container">
-        <div class="row">
-            <div class="footer-col">
-                <h4>ICY store</h4>
-                <ul>
-                    <li><a href="">Về chúng tôi</a></li>
-                    <li><a href="">Dịch vụ</a></li>
-                    <li><a href="">Chính sách bảo mật</a></li>
-                    <li><a href="">Chính sách đổi trả</a></li>
 
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Trợ giúp</h4>
-                <ul>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="">Giao hàng</a></li>
-                    <li><a href="">Trả hàng</a></li>
-                    <li><a href="">Đơn hàng</a></li>
-                    <li><a href="">Thanh toán</a></li>
+  <div class="footer-container">
+      <div class="row">
+          <div class="footer-col">
+              <h4>ICY store</h4>
+              <ul>
+                  <li><a href="">Về chúng tôi</a></li>
+                  <li><a href="">Dịch vụ</a></li>
+                  <li><a href="">Chính sách bảo mật</a></li>
+                  <li><a href="">Chính sách đổi trả</a></li>
 
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Danh mục</h4>
-                <ul>
-                    <li><a href="index.html">Bán chạy</a></li>
-                    <li><a href="index.html">Chăm sóc da</a></li>
-                    <li><a href="index.html">Mỹ phẩm chức năng</a></li>
-                    <li><a href="index.html">Chống nắng</a></li>
-                    <li><a href="index.html">Làm sạch da</a></li>
-                    <li><a href="index.html">Trang điểm</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>Trợ giúp</h4>
+              <ul>
+                  <li><a href="">FAQ</a></li>
+                  <li><a href="">Giao hàng</a></li>
+                  <li><a href="">Trả hàng</a></li>
+                  <li><a href="">Đơn hàng</a></li>
+                  <li><a href="">Thanh toán</a></li>
 
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Theo dõi chúng tôi</h4>
-                <div class="social-link">
-                    <ul>
-                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                        <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>Danh mục</h4>
+              <ul>
+                  <li><a href="index.html">Bán chạy</a></li>
+                  <li><a href="index.html">Chăm sóc da</a></li>
+                  <li><a href="index.html">Mỹ phẩm chức năng</a></li>
+                  <li><a href="index.html">Chống nắng</a></li>
+                  <li><a href="index.html">Làm sạch da</a></li>
+                  <li><a href="index.html">Trang điểm</a></li>
+
+              </ul>
+          </div>
+          <div class="footer-col">
+              
+                  <img src="../img/good1.png" style="width:100%;height:100%;">
+                  <div style="font-size: 20px; margin-left :100px; ;"> Always good !</div>
+             
+          </div>
+      </div>
+  </div>
+
 </div>
 </html>
