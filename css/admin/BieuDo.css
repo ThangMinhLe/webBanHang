@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&dislay=swap");
+
+.circular__progress--value, .circular__progress--value-2{
+    font-size: 50px;
+    font-weight: 700;
+    color: #339af0;
+}
+.flexbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid__col-mid-1, .grid__col-mid-2{
+    height: 85vh;
+    background-color: #F5F5F5;
+    border-radius: 100%;
+}
+.circular__progress--mid-1, .circular__progress--mid-2{
+    width: 30rem;
+    height: 30rem;
+    background-color: #f1f3f5;
+    border-radius: 100%;
+}
+.circular__progress--bar, .circular__progress--bar-2{
+    width: 25rem;
+    height: 25rem;
+    background-image: conic-gradient(#74c0fc, #e9ecef 0);
+    border-radius: 100%;
+}
+.circular__progress--value, .circular__progress--value-2{
+    width: 20rem;
+    height: 20rem;
+    background-color: #f1f3f5;
+    border-radius: 100%;
+}
+.grid__col-mid-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tenbieudo{
+    font-size: 2rem;
+}

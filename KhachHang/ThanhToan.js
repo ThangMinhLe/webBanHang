@@ -7,6 +7,7 @@ function updata()
     giohangduyet =new Array();
     var exits= document.getElementsByName('solg');
     for (var i = 0; i < exits.length; i++)  
+
     if (exits[i].checked)
         key=true;
     if (key){
@@ -30,6 +31,7 @@ function updata()
  localStorage.setItem("DuyetDonHang", JSON.stringify(DuyetDonHangtam));}
  else 
  alert("BẠN CHƯA CHỌN MÓN HÀNG NÀO !!")
+
 }
 function XoaSP(k){
     var ma;
@@ -54,6 +56,7 @@ function randomkeyDH() {
 }
 function today() {
     var today = new Date();
+
     let time = today.getHours();
     let minute = today.getMinutes();
     let second = today.getSeconds();
@@ -61,6 +64,7 @@ function today() {
     let month = today.getMonth();
     let year = today.getFullYear();
     return "${time}:${minute}:${second}, ${day}/${month}/${year}";
+
 
 }
 

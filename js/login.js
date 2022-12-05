@@ -1,13 +1,6 @@
 var Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
 var UserLogin = localStorage.getItem('UserLogin') ? JSON.parse(localStorage.getItem('UserLogin')) : [];
-if (UserLogin !== null){
-    let chunk = UserLogin.name.split(' ');
-    console.log(chunk);
-    document.getElementById('NameUser').innerText= 'Welcome  ' + chunk[chunk.length-1];
-    document.getElementById('icon__show-login').style.visibility= 'hidden';
-    document.getElementById('icon__show-logout').style.visibility= 'visible';
-    document.getElementById('icon__show-logout').style.zIndex=1;
-}
+
 function showLogin(){
     if(Accounts.length===0){
         let admin = new user('admin','admin','admin','admin','admin@gmail.com','admin','0974975656','admin');
@@ -67,6 +60,7 @@ function DangNhap(){
             if (username === Accounts[i].username && password === Accounts[i].password) {
                 localStorage.setItem('UserLogin',JSON.stringify(Accounts[i]));
                 if (username==='admin'){
+                    alert('Chào mừng bạn đến với trang ADMIN!!!!')
                     location.replace('admin.html');
                     return true;
                 }

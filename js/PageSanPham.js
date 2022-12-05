@@ -185,11 +185,11 @@ function showSP(iD){
 
                     let sanpham = new SanPham(MaSP,TenSP,HinhAnh,LoaiSP,SoLuong,DungTich,GiaBan,ThanhPhan,CongDung);
                     let chitietSP= new ChiTietSP(LoaiSP,CongDung,ThanhPhan);
-
+                    localStorage.setItem('DSSP',JSON.stringify(listDSSP));
+                    localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
                     render();
                     clear();
-                    // localStorage.setItem('DSSP',JSON.stringify(listDSSP));
-                    // localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
+
 
                 }
             });

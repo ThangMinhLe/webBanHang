@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ ICY</title>
     <link rel="stylesheet" href="./ChiTietSP.css">
+    <link rel="stylesheet" href="../css/NameUser.css">
+
     <!-- Link icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="./GioHang.js"></script>
     <style>
 
@@ -35,9 +38,22 @@
         <a href="../KhachHang/GioHang.html"><div class="icon">
             <img src="../img/GioHang.png">
         </div></a>
-        <a href=""><div class="icon">
-            <img src="../img/NguoiDung.png">
-        </div></a>
+        <div class="icon">
+            <div class="UserDir">
+                <img class="icon__NguoiDung" src="../img/NguoiDung.png" alt="Người dùng">
+                <span id="NameUser" style="color: #333333; font-size: 1.2rem"></span>
+            </div>
+            <!-- SHOW LOGIN/LOGUP -->
+            <div class="icon__show" id="icon__show-login">
+                <button onclick="showLogin()" class="icon__show-login" id="login-btn">Đăng nhập</button>
+                <button onclick="showRegister()" class="icon__show-logup" id="register-btn">Đăng ký</button>
+            </div>
+            <div class="icon__show" id="icon__show-logout" style="visibility: hidden">
+                <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
+                <button onclick="" class="icon__show-logup icon_user" id="Product-btn">Đơn hàng</button>
+                <button onclick="DangXuat()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+            </div>
+        </div>
 
     </div>
 
@@ -151,6 +167,7 @@
         </div>
     </div>
 </body>
+<script src="../js/ShowUser.js" ></script>
 
 
 

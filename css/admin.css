@@ -22,6 +22,14 @@ table, th, td,tr {
 .grid__col-mid{
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: space-evenly;
+    width: 92%;
+    margin: 5rem 3rem ;
+}
+.grid__col-mid-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
 }

@@ -50,92 +50,93 @@ function randomkeyDH() {
 }
 function today() {
     var today = new Date();
-    window.year = today.getFullYear();
-    return today;
+    let time = today.getHours();
+    let minute = today.getMinutes();
+    let second = today.getSeconds();
+    let day = today.getDate();
+    let month = today.getMonth();
+    let year = today.getFullYear();
+    return `${time}:${minute}:${second}, ${day}/${month}/${year}`;
 }
-let dsGioHang = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
-let DuyetDonHang = [
-    {
-        maDonHang: randomkeyDH(),
-        tenKH: 'Nguyễn An Thuận',
-        thoiGianDat: today(),
-        trangThai: 'Chưa duyệt',
-        chiTiet: dsGioHang,
-        maKH: 'KHICY1000',
-        tongTien: 150000,
-    },
-    {
-        maDonHang: randomkeyDH(),
-        tenKH: 'Nguyễn An Thuận',
-        thoiGianDat: today(),
-        trangThai: 'Đã duyệt',
-        chiTiet: dsGioHang,
-        maKH: 'KHICY1000',
-        tongTien: 200000,
-    },
-    {
-        maDonHang: randomkeyDH(),
-        tenKH: 'Nguyễn An Thuận',
-        thoiGianDat: today(),
-        trangThai: 'Đã duyệt',
-        chiTiet: dsGioHang,
-        maKH: 'KHICY1000',
-        tongTien: 1500000,
-    },
-    {
-        maDonHang: randomkeyDH(),
-        tenKH: 'Nguyễn An Thuận',
-        thoiGianDat: today(),
-        trangThai: 'Đã duyệt',
-        chiTiet: dsGioHang,
-        maKH: 'KHICY1000',
-        tongTien: 350000,
-    },
-    {
-        maDonHang: randomkeyDH(),
-        tenKH: 'Nguyễn An Thuận',
-        thoiGianDat: today(),
-        trangThai: 'Chưa duyệt',
-        chiTiet: dsGioHang,
-        maKH: 'KHICY1000',
-        tongTien: 300000,
-    },
-    {
-        maDonHang: randomkeyDH(),
-        tenKH: 'Nguyễn An Thuận',
-        thoiGianDat: today(),
-        trangThai: 'Chưa duyệt',
-        chiTiet: dsGioHang,
-        maKH: 'KHICY1000',
-        tongTien: 450000,
-    },
-    {
-        maDonHang: randomkeyDH(),
-        tenKH: 'Nguyễn An Thuận',
-        thoiGianDat: today(),
-        trangThai: 'Đã duyệt',
-        chiTiet: dsGioHang,
-        maKH: 'KHICY1000',
-        tongTien: 500000,
-    },
-    {
-        maDonHang: randomkeyDH(),
-        tenKH: 'Nguyễn An Thuận',
-        thoiGianDat: today(),
-        trangThai: 'Chưa duyệt',
-        chiTiet: dsGioHang,
-        maKH: 'KHICY1000',
-        tongTien: 150000,
-    },
-];
-localStorage.setItem('DuyetDonHang',JSON.stringify(DuyetDonHang));
+// let dsGioHang = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
+// let DuyetDonHang = [
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Chưa duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 150000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Đã duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 200000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Đã duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 1500000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Đã duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 350000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Chưa duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 300000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Chưa duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 450000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Đã duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 500000,
+//     },
+//     {
+//         maDonHang: randomkeyDH(),
+//         tenKH: 'Nguyễn An Thuận',
+//         thoiGianDat: today(),
+//         trangThai: 'Chưa duyệt',
+//         chiTiet: dsGioHang,
+//         maKH: 'KHICY1000',
+//         tongTien: 150000,
+//     },
+// ];
+// localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
+let DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
 function renderTable2() {
-    // let Carts = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
-    // if(Carts.length === 0) {
-    //     document.getElementById('myTable').style.display = 'none';
-    //     return false; 
-    // }
-    // document.getElementById('myTable').style.display = 'block';
+    let tongTienDH = 0;
     let tableContent = `
     <thead>
         <tr>
@@ -152,6 +153,7 @@ function renderTable2() {
     <tbody>`;
     DuyetDonHang.forEach((duyet, index) => {
         index++;
+        tongTienDH += Number(duyet.tongTien);
         tableContent += `<tr>
         <td>${index}</td>
         <td>${duyet.maDonHang}</td>
@@ -180,12 +182,12 @@ function renderTable2() {
                 </label>
             </td>`;
         }
-        tableContent += `</tr></tbody>`;
-        
-    document.getElementById('myTable').innerHTML = tableContent;
     })
-
-    console.log(tableContent);
+    tableContent += `<tr> <td colspan="5">TỔNG TIỀN</td>`;
+    tableContent += `<td >${tienVN(tongTienDH)}</td> </tr>`;
+    tableContent += `</tr></tbody>`;
+    document.getElementById('myTable').innerHTML = tableContent;
+    localStorage.setItem('DHTT', JSON.stringify(tongTienDH));
 }
 function xemChiTiet(maDonHang){
     let tongTien = 0;
@@ -220,7 +222,6 @@ function xemChiTiet(maDonHang){
         if(duyet.maDonHang === maDonHang) {
             (DuyetDonHang[index].chiTiet).forEach((ct, dem) => {
                 tongTien += Number(ct.GiaBan)*Number(ct.SoLuongMua);
-
                 tableContent += `<tr>
                 <td>${dem + 1}</td>
                 <td>${ct.MaSP}</td>
@@ -251,7 +252,6 @@ function tienVN(giaTri){
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(giaTri);
 }
 
-
 function checkDH(e) {
    let row = e.parentElement.parentElement.parentElement;
    let id =  row.cells[1].innerText;
@@ -267,10 +267,82 @@ function checkDH(e) {
             }
         }
    })
+   localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
 }
 
-function toggleSwitch(e) {
-    let row = e.parentElement.parentElement.parentElement;
-
-}
-
+function TimKiemDH() {
+    var DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
+    let input = document.getElementById('tkiem').value;
+    console.log(input);
+    let index = 1;
+    let tongTienHienTai = 0;
+    let tableContent = `
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Mã đơn hàng</th>
+            <th>Tên khách hàng</th>
+            <th>Thời gian đặt đơn</th>
+            <th>Xem chi tiết</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Tác vụ</th>
+        </tr>
+    </thead>
+    <tbody>`;
+    if (input != "") {
+        DuyetDonHang.forEach((duyet) => {
+            if ( 
+                Number(duyet.tongTien) <= Number(input) ||
+                duyet.maDonHang.toLowerCase().search(input.toLowerCase()) != -1 ||
+                duyet.maKH.toLowerCase().search(input.toLowerCase()) != -1 ||
+                duyet.tenKH.toLowerCase().search(input.toLowerCase()) != -1 ||
+                duyet.thoiGianDat.toLowerCase().search(input.toLowerCase()) != -1 ||
+                duyet.trangThai.toLowerCase().search(input.toLowerCase()) != -1 ) {
+                tongTienHienTai += Number(duyet.tongTien);
+                tableContent += `<tr>
+                <td>${index}</td>
+                <td>${duyet.maDonHang}</td>
+                <td>${duyet.tenKH}</td>
+                <td>${duyet.thoiGianDat}</td>
+                <td>
+                    <a style="color: blue;" href='#' onclick="xemChiTiet('${duyet.maDonHang}')">Xem chi tiet</a> 
+                </td>
+                <td>${tienVN(duyet.tongTien)}</td>`;
+                if(duyet.trangThai == 'Chưa duyệt') {
+                    tableContent += `
+                    <td style="color: red"><b>${duyet.trangThai}</b></td>
+                    <td>
+                        <label class="switch">
+                            <input onclick="checkDH(this)" type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </td>`;
+                } else {
+                    tableContent += `
+                    <td style="color: blue"><b>${duyet.trangThai}</b></td>
+                    <td>
+                        <label class="switch">
+                            <input onclick="checkDH(this)" type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>`;
+                }
+                
+                index++;
+                
+            }
+        })   
+        tableContent += `<tr> <td colspan="5">TỔNG TIỀN</td>`;
+        tableContent += `<td >${tienVN(tongTienHienTai)}</td> </tr>`;
+        tableContent += `</tr></tbody>`;
+        document.getElementById('myTable').innerHTML = tableContent;
+    }
+    else if (input == ""){
+        alert("Bạn chưa nhập nội dung tìm kiếm!");
+    }
+    else{
+        alert("Mục bạn muốn tìm không tồn tại!");
+    }
+    document.getElementById('tkiem').value = "";
+} 
