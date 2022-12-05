@@ -137,8 +137,9 @@ function today() {
 let DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
 function renderTable2() {
     let tongTienDaDuyet = 0;
-    let demDaDuyet = 0;
-    let demChuaDuyet = 0;
+    let donDaDuyet = 0;
+    let donChuaDuyet = 0;
+    let tongDonHang = 0;
     let tongTienChuaDuyet = 0;
     let tongTienDH = 0;
     let tableContent = `
@@ -157,6 +158,7 @@ function renderTable2() {
     <tbody>`;
     DuyetDonHang.forEach((duyet, index) => {
         index++;
+        tongDonHang++;
         tongTienDH += Number(duyet.tongTien);
         tableContent += `<tr>
         <td>${index}</td>
@@ -168,7 +170,7 @@ function renderTable2() {
         </td>
         <td>${tienVN(duyet.tongTien)}</td>`;
         if(duyet.trangThai == 'Chưa duyệt') {
-            
+            donChuaDuyet++;
             tongTienChuaDuyet += Number(duyet.tongTien);
             tableContent += `
             <td style="color: red"><b>${duyet.trangThai}</b></td>
@@ -180,6 +182,7 @@ function renderTable2() {
             </td>`;
             
         } else {
+            donDaDuyet++;
             tongTienDaDuyet += Number(duyet.tongTien);
             tableContent += `
             <td style="color: blue"><b>${duyet.trangThai}</b></td>
@@ -195,21 +198,33 @@ function renderTable2() {
         <tr id="tongTienDaDuyet"> 
             <td style="color: blue" colspan="5"><b>TỔNG TIỀN ĐÃ DUYỆT</b></td>
             <td style="color: blue"><b>${tienVN(tongTienDaDuyet)}</b></td> 
+            <td style="color: blue"><b>Đơn chưa duyệt: ${donChuaDuyet}</b></td> 
         </tr>`;
     tableContent += `
         <tr id="tongTienChuaDuyet"> 
             <td style="color: red" colspan="5"><b>TỔNG TIỀN CHƯA DUYỆT</b></td>
             <td style="color: red" ><b>${tienVN(tongTienChuaDuyet)}</b></td> 
+            <td style="color: red" ><b>Đơn đã duyệt: ${donDaDuyet}</b></td> 
         </tr>`;
     tableContent += `
         <tr> 
             <td style="color: green" colspan="5"><b>TỔNG TIỀN</b></td>
             <td style="color: green" ></b>${tienVN(tongTienDH)}</b></td> 
+            <td style="color: green" ></b>Tổng đơn hàng: ${tongDonHang}</b></td>
+            <td class="loadDuLieu" onclick="renderTable2()" ></b>LOAD LẠI DỮ LIỆU</b></td> 
         </tr>`;
 
     tableContent += `</tr></tbody>`;
     document.getElementById('myTable').innerHTML = tableContent;
-    localStorage.setItem('DHTT', JSON.stringify(tongTienDH));
+    let DHTT = {
+        tongTienDaDuyet: tongTienDaDuyet,
+        donDaDuyet: donDaDuyet,
+        donChuaDuyet: donChuaDuyet,
+        tongTienChuaDuyet: tongTienChuaDuyet,
+        tongTienDH: tongTienDH,
+        tongDonHang: tongDonHang,
+    }
+    localStorage.setItem('DHTT', JSON.stringify(DHTT));
 }
 function xemChiTiet(maDonHang){
     let tongTien = 0;
@@ -275,10 +290,6 @@ function tienVN(giaTri){
 }
 
 function checkDH(e, t) {
-    if(t == 1) {
-
-        location.reload();
-    }
    let row = e.parentElement.parentElement.parentElement;
    let id =  row.cells[1].innerText;
    DuyetDonHang.forEach((dh) => {
@@ -302,8 +313,8 @@ function TimKiemDH() {
     let index = 1;
     let tongTienHienTai = 0;
     let tongTienDaDuyet = 0;
-    let demDaDuyet = 0;
-    let demChuaDuyet = 0;
+    let donDaDuyet = 0;
+    let donChuaDuyet = 0;
     let tongTienChuaDuyet = 0;
     let tableContent = `
     <thead>
@@ -359,9 +370,7 @@ function TimKiemDH() {
                         </label>
                     </td>`;
                 }
-                
                 index++;
-                
             }
         })   
         tableContent += `
@@ -378,6 +387,7 @@ function TimKiemDH() {
             <tr> 
                 <td style="color: green" colspan="5"><b>TỔNG TIỀN</b></td>
                 <td style="color: green" ></b>${tienVN(tongTienHienTai)}</b></td> 
+                <td class="loadDuLieu" onclick="renderTable2()" ></b>LOAD LẠI DỮ LIỆU</b></td> 
             </tr>`;
         tableContent += `</tr></tbody>`;
         document.getElementById('myTable').innerHTML = tableContent;
