@@ -210,7 +210,8 @@ function renderTable2() {
         <tr> 
             <td style="color: green" colspan="5"><b>TỔNG TIỀN</b></td>
             <td style="color: green" ></b>${tienVN(tongTienDH)}</b></td> 
-            <td style="color: green" ></b>Tổng đơn hàng: ${tongDonHang}</b></td> 
+            <td style="color: green" ></b>Tổng đơn hàng: ${tongDonHang}</b></td>
+            <td class="loadDuLieu" onclick="renderTable2()" ></b>LOAD LẠI DỮ LIỆU</b></td> 
         </tr>`;
 
     tableContent += `</tr></tbody>`;
@@ -385,8 +386,8 @@ function TimKiemDH() {
         tableContent += `
             <tr> 
                 <td style="color: green" colspan="5"><b>TỔNG TIỀN</b></td>
-                <td style="color: yellow"><b></b></td>
                 <td style="color: green" ></b>${tienVN(tongTienHienTai)}</b></td> 
+                <td class="loadDuLieu" onclick="renderTable2()" ></b>LOAD LẠI DỮ LIỆU</b></td> 
             </tr>`;
         tableContent += `</tr></tbody>`;
         document.getElementById('myTable').innerHTML = tableContent;
