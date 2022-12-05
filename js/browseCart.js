@@ -270,84 +270,6 @@ function checkDH(e) {
    localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
 }
 
-<<<<<<< Updated upstream
-function TimKiemDH() {
-    var DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
-    let input = document.getElementById('tkiem').value;
-    console.log(input);
-    let index = 1;
-    let tongTienHienTai = 0;
-    let tableContent = `
-    <thead>
-        <tr>
-            <th>STT</th>
-            <th>Mã đơn hàng</th>
-            <th>Tên khách hàng</th>
-            <th>Thời gian đặt đơn</th>
-            <th>Xem chi tiết</th>
-            <th>Tổng tiền</th>
-            <th>Trạng thái</th>
-            <th>Tác vụ</th>
-        </tr>
-    </thead>
-    <tbody>`;
-    if (input != "") {
-        DuyetDonHang.forEach((duyet) => {
-            if ( 
-                Number(duyet.tongTien) <= Number(input) ||
-                duyet.maDonHang.toLowerCase().search(input.toLowerCase()) != -1 ||
-                duyet.maKH.toLowerCase().search(input.toLowerCase()) != -1 ||
-                duyet.tenKH.toLowerCase().search(input.toLowerCase()) != -1 ||
-                duyet.thoiGianDat.toLowerCase().search(input.toLowerCase()) != -1 ||
-                duyet.trangThai.toLowerCase().search(input.toLowerCase()) != -1 ) {
-                tongTienHienTai += Number(duyet.tongTien);
-                tableContent += `<tr>
-                <td>${index}</td>
-                <td>${duyet.maDonHang}</td>
-                <td>${duyet.tenKH}</td>
-                <td>${duyet.thoiGianDat}</td>
-                <td>
-                    <a style="color: blue;" href='#' onclick="xemChiTiet('${duyet.maDonHang}')">Xem chi tiet</a> 
-                </td>
-                <td>${tienVN(duyet.tongTien)}</td>`;
-                if(duyet.trangThai == 'Chưa duyệt') {
-                    tableContent += `
-                    <td style="color: red"><b>${duyet.trangThai}</b></td>
-                    <td>
-                        <label class="switch">
-                            <input onclick="checkDH(this)" type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
-                    </td>`;
-                } else {
-                    tableContent += `
-                    <td style="color: blue"><b>${duyet.trangThai}</b></td>
-                    <td>
-                        <label class="switch">
-                            <input onclick="checkDH(this)" type="checkbox" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </td>`;
-                }
-                
-                index++;
-                
-            }
-        })   
-        tableContent += `<tr> <td colspan="5">TỔNG TIỀN</td>`;
-        tableContent += `<td >${tienVN(tongTienHienTai)}</td> </tr>`;
-        tableContent += `</tr></tbody>`;
-        document.getElementById('myTable').innerHTML = tableContent;
-    }
-    else if (input == ""){
-        alert("Bạn chưa nhập nội dung tìm kiếm!");
-    }
-    else{
-        alert("Mục bạn muốn tìm không tồn tại!");
-    }
-    document.getElementById('tkiem').value = "";
-} 
-=======
 function toggleSwitch(e) {
     let row = e.parentElement.parentElement.parentElement;
 
@@ -382,4 +304,3 @@ function TimKiemDH() {
     }
     document.getElementById('tkiem').value = "";
 }
->>>>>>> Stashed changes
