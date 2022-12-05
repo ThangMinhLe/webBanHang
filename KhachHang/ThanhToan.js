@@ -4,6 +4,7 @@ function updata()
     var key=false;
     var GioHang = JSON.parse(localStorage.getItem('GioHang'));
     var DuyetDonHangtam = JSON.parse(localStorage.getItem('DuyetDonHang'));
+    var user =JSON.parse(localStorage.getItem('UserLogin'));
     giohangduyet =new Array();
     var exits= document.getElementsByName('solg');
     for (var i = 0; i < exits.length; i++)  
@@ -26,7 +27,7 @@ function updata()
        alert("da duyet don hang");
        
        location.reload();
-   tam={maDonHang: randomkeyDH(),tenKH: 'Nguyễn Phú Thịnh',thoiGianDat: today(),trangThai: 'Chưa duyệt',chiTiet: giohangduyet,maKH: 'KHICY1000',tongTien:x,}
+   tam={maDonHang: randomkeyDH(),tenKH: user[0].name,thoiGianDat: today(),trangThai: 'Chưa duyệt',chiTiet: giohangduyet,maKH:user[0].MaKH,tongTien:x,}
  DuyetDonHangtam.push(tam);
  localStorage.setItem("DuyetDonHang", JSON.stringify(DuyetDonHangtam));}
  else 
