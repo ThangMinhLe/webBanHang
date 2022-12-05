@@ -60,6 +60,7 @@ function DangNhap(){
             if (username === Accounts[i].username && password === Accounts[i].password) {
                 localStorage.setItem('UserLogin',JSON.stringify(Accounts[i]));
                 if (username==='admin'){
+                    alert('Chào mừng bạn đến với trang ADMIN!!!!')
                     location.replace('admin.html');
                     return true;
                 }
