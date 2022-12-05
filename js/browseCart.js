@@ -58,85 +58,83 @@ function today() {
     let year = today.getFullYear();
     return `${time}:${minute}:${second}, ${day}/${month}/${year}`;
 }
-// let dsGioHang = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
-// let DuyetDonHang = [
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Chưa duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 150000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Đã duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 200000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Đã duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 1500000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Đã duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 350000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Chưa duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 300000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Chưa duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 450000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Đã duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 500000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Chưa duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 150000,
-//     },
-// ];
-
-// console.log(DuyetDonHang);
+let dsGioHang = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
+let DuyetDonHang = [
+    {
+        maDonHang: randomkeyDH(),
+        tenKH: 'Nguyễn An Thuận',
+        thoiGianDat: today(),
+        trangThai: 'Chưa duyệt',
+        chiTiet: dsGioHang,
+        maKH: 'KHICY1000',
+        tongTien: 150000,
+    },
+    {
+        maDonHang: randomkeyDH(),
+        tenKH: 'Nguyễn An Thuận',
+        thoiGianDat: today(),
+        trangThai: 'Đã duyệt',
+        chiTiet: dsGioHang,
+        maKH: 'KHICY1000',
+        tongTien: 200000,
+    },
+    {
+        maDonHang: randomkeyDH(),
+        tenKH: 'Nguyễn An Thuận',
+        thoiGianDat: today(),
+        trangThai: 'Đã duyệt',
+        chiTiet: dsGioHang,
+        maKH: 'KHICY1000',
+        tongTien: 1500000,
+    },
+    {
+        maDonHang: randomkeyDH(),
+        tenKH: 'Nguyễn An Thuận',
+        thoiGianDat: today(),
+        trangThai: 'Đã duyệt',
+        chiTiet: dsGioHang,
+        maKH: 'KHICY1000',
+        tongTien: 350000,
+    },
+    {
+        maDonHang: randomkeyDH(),
+        tenKH: 'Nguyễn An Thuận',
+        thoiGianDat: today(),
+        trangThai: 'Chưa duyệt',
+        chiTiet: dsGioHang,
+        maKH: 'KHICY1000',
+        tongTien: 300000,
+    },
+    {
+        maDonHang: randomkeyDH(),
+        tenKH: 'Nguyễn An Thuận',
+        thoiGianDat: today(),
+        trangThai: 'Chưa duyệt',
+        chiTiet: dsGioHang,
+        maKH: 'KHICY1000',
+        tongTien: 450000,
+    },
+    {
+        maDonHang: randomkeyDH(),
+        tenKH: 'Nguyễn An Thuận',
+        thoiGianDat: today(),
+        trangThai: 'Đã duyệt',
+        chiTiet: dsGioHang,
+        maKH: 'KHICY1000',
+        tongTien: 500000,
+    },
+    {
+        maDonHang: randomkeyDH(),
+        tenKH: 'Nguyễn An Thuận',
+        thoiGianDat: today(),
+        trangThai: 'Chưa duyệt',
+        chiTiet: dsGioHang,
+        maKH: 'KHICY1000',
+        tongTien: 150000,
+    },
+];
 // localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
-let DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
+// let DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
 function renderTable2() {
     let tongTienDH = 0;
     let tableContent = `
