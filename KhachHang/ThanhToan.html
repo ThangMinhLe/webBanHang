@@ -388,8 +388,8 @@
        <output id="NameUser" style="margin-left: 15px;"></output>
        <script>
         var user =JSON.parse(localStorage.getItem('UserLogin'));
-        console.log(user.MaKH);
-        document.getElementById('NameUser').value=user.name;
+        var name=user.name
+        document.getElementById('NameUser').value=name;
 </script>
     </div>
 
@@ -515,11 +515,11 @@
                 '<div > </div>'+
                 '<div >date</div>'+
                 '</div>'+
-                '<div class="thanhtoanbutton" onclick="updata()" > Thanh toan</div>');}
+                '<div class="thanhtoanbutton" onclick="kiemtrakho()" > Thanh toan</div>');}
                 else 
                { document.write('<div class="the_404_sp"> không tồn tại sản phẩm nào trong giỏ hàng</div>');}
                                           </script>
-
+ <script src="./ThanhToan.js"> </script>
   </div>
 
 
