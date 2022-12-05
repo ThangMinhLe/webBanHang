@@ -1,6 +1,8 @@
 "use strict";
 var DonDuyet = localStorage.getItem('DuyetDonHang') ? JSON.parse(localStorage.getItem('DuyetDonHang')) : [];
 var listDSSP = localStorage.getItem('DSSP') ? JSON.parse(localStorage.getItem('DSSP')) : [];
+var DHTT = localStorage.getItem('DHTT') ? JSON.parse(localStorage.getItem('DHTT')) : [];
+
 
 let i;
 let j;
@@ -8,22 +10,15 @@ let DoanhThu=0;
 let TienBanHang=0;
 let SLSPDaBan=0;
 let TongSP=0;
-
+console.log(DonDuyet.length)
 for (i=0;i<DonDuyet.length;i++){
     // Tinh so luong sp da ban
     for (j=0;j < DonDuyet[i].chiTiet.length;j++){
-        if (typeof DonDuyet[i].chiTiet[j].SoLuongMua == "string")
             SLSPDaBan += Number(DonDuyet[i].chiTiet[j].SoLuongMua);
-        else if (typeof DonDuyet[i].chiTiet[j].SoLuongMua == "number")
-            SLSPDaBan += Number(DonDuyet[i].chiTiet[j].SoLuongMua);
+
     }
-    //Tinh Tien da ban
-    if (typeof DonDuyet[i].tongTien == "string" ) {
-        TienBanHang += Number(DonDuyet[i].tongTien);
-    }
-    else if ((typeof DonDuyet[i].tongTien) == "number" ) {
-        TienBanHang += DonDuyet[i].tongTien;
-    }
+    TienBanHang += Number(DonDuyet[i].tongTien);
+
 }
 
 
@@ -37,11 +32,13 @@ for (i=0;i<listDSSP.length;i++){
         DoanhThu += Number(listDSSP[i].SoLuong * listDSSP[i].GiaBan);
     }
 }
+console.log(SLSPDaBan)
+console.log(TongSP)
+let TileDT = DHTT.tongTienDaDuyet*100/DoanhThu;
 
-let TileDT = TienBanHang*100/DoanhThu;
 
 let TileSPban= SLSPDaBan*100/TongSP;
-
+console.log(TileSPban)
 
 const progressBar = document.querySelector(".circular__progress--bar");
 const progressValue=document.querySelector(".circular__progress--value");
