@@ -1,3 +1,5 @@
+
+
 function LuuThongTinSP_GioHang(i) {
     var DSSP = JSON.parse(localStorage.getItem('DSSP'));
     var GioHang = JSON.parse(localStorage.getItem('GioHang'));

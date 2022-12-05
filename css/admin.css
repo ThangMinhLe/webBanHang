@@ -1,0 +1,35 @@
+.grid__col-9{
+    display: flex;
+    flex-direction: column;
+
+}
+table, th, td,tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.grid__col-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    font-size: 3rem;
+}
+.grid__col-mid{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 92%;
+    margin: 5rem 3rem ;
+}
+.grid__col-mid-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}

@@ -45,6 +45,7 @@ function ChiTietSP(LoaiSP,CongDung,ThanhPhan){
 }
 function render(){
     let table=`<tr>
+            <th>STT</th>
             <th>Mã sản phẩm</th>
             <th>Tên sản phẩm</th>
             <th>Hình ảnh</th>
@@ -58,6 +59,7 @@ function render(){
     var i;
     for (i=0; i<listDSSP.length;i++)
         table += `<tr>
+            <td>${i+1}</td>
             <td>${listDSSP[i].MaSP}</td>
             <td>${listDSSP[i].TenSP}</td>
             <td><img src="${fileInpToTextInp(listDSSP[i].HinhAnh)}" width="50px" height="50px"> </td>
@@ -183,11 +185,11 @@ function showSP(iD){
 
                     let sanpham = new SanPham(MaSP,TenSP,HinhAnh,LoaiSP,SoLuong,DungTich,GiaBan,ThanhPhan,CongDung);
                     let chitietSP= new ChiTietSP(LoaiSP,CongDung,ThanhPhan);
-
+                    localStorage.setItem('DSSP',JSON.stringify(listDSSP));
+                    localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
                     render();
                     clear();
-                    // localStorage.setItem('DSSP',JSON.stringify(listDSSP));
-                    // localStorage.setItem('DSLoaiSP',JSON.stringify(listDSLoaiSP));
+
 
                 }
             });
@@ -238,6 +240,7 @@ function search() {
         });
     }
     let table=`<tr>
+            <th>STT</th>
             <th>Mã sản phẩm</th>
             <th>Tên sản phẩm</th>
             <th>Hình ảnh</th>
@@ -250,7 +253,9 @@ function search() {
     `
     var i;
     for ( i=0; i < nameSearch.length ;i++) {
+        console.log(nameSearch[i]);
         table += `<tr>
+            <td>${i+1}</td>
             <td>${nameSearch [i].MaSP}</td>
             <td>${nameSearch [i].TenSP}</td>
             <td><img src="${fileInpToTextInp(nameSearch[i].HinhAnh)}" width="50px" height="50px"> </td>
@@ -260,9 +265,8 @@ function search() {
             <td>${new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'VND'}).format(nameSearch[i].GiaBan)
         }</td>
             <td>
-                //Fix
-                <a href="#form-id"><i class="fa-solid fa-pen-to-square" onclick="showSP(nameSearch[i].MaSP)" style="cursor: pointer;"></i></a>
-                <i class="fa-solid fa-xmark" onclick="removeSP(nameSearch[i].MaSP)" style="cursor: pointer;"></i>
+                <a href="#form-id"><i class="fa-solid fa-pen-to-square" onclick="showSP('${nameSearch[i].MaSP}')" style="cursor: pointer;"></i></a>
+                <i class="fa-solid fa-xmark" onclick="removeSP('${nameSearch[i].MaSP}')" style="cursor: pointer;"></i>
             </td>
         </tr>
     `

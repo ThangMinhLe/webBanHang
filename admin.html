@@ -5,9 +5,15 @@
     <title>ADMIN</title>
     <link rel="stylesheet" href="..\css\admin\header.css">
     <link rel="stylesheet" href="..\css\admin\container.css">
+    <link rel="stylesheet" href="..\css\admin.css">
+    <link rel="stylesheet" href="..\css\admin\BieuDo.css">
     <link rel="stylesheet" href="..\css\admin\footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="fonts\fontawesome-free-6.2.0-web\css\all.css">
+    <script src="js/admin.js"></script>
+    <script>
+        alert('Chào mừng bạn đến với trang ADMIN');
+    </script>
 </head>
 
 <body>
@@ -15,7 +21,7 @@
     <div class="header">
         <nav class="header_navbar"></nav>
         <div class="logo">
-            <a href="..\TrangChu.html"><img src="..\img\LOGO.png"></a>
+            <a href="TrangChu.html"><img src="..\img\LOGO.png"></a>
         </div>
 
         <div class="khungSLG">
@@ -34,8 +40,16 @@
         <div href="#" class="icon">
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
-        <div href="#" class="icon">
-            <i class="fa-solid fa-user"></i>
+        <div href="#" class="icon" id="icon-user">
+            <div class="UserDir">
+                <i class="fa-solid fa-user"></i>
+                <span id="NameAdmin" style="color: #333333; font-size: 1.5rem; margin-left: 2px">Welcome Admin</span>
+            </div>
+
+            <div class="icon__show" id="icon__show-logout" >
+                <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
+                <button onclick="DangXuatAdmin()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -56,12 +70,47 @@
                     </nav>
                 </div>
                 <div class="grid__col-9">
+                    <div class="grid__col-top"></div>
+                    <div class="grid__col-mid">
+                        <div class="grid__col-mid-1 flexbox">
+                            <span class="tenbieudo"><h4>Biểu đô tỉ lệ sản phẩm đã bán</h4></span>
+<!--                            <div id="example-element" style="background: conic-gradient(red, orange, yellow, green, blue);"></div>-->
+                            <div class="circular__progress--mid-1 flexbox">
+                                <div class="circular__progress--bar flexbox">
+                                    <div class="circular__progress--value flexbox">
+                                        0%
+                                    </div>
 
-                </div>
+                                </div>
+
+                            </div>
+                            <span class="tenbieudo" id="sanphamdaban"></span>
+                        </div>
+                            <div class="grid__col-mid-2 ">
+                                <div class="grid__col-mid-2 flexbox">
+                                    <span class="tenbieudo"><h4> Biểu đồ tỉ lệ doanh thu của shop </h4></span>
+
+                                    <!--                            <div id="example-element" style="background: conic-gradient(red, orange, yellow, green, blue);"></div>-->
+                                    <div class="circular__progress--mid-2 flexbox">
+                                        <div class="circular__progress--bar-2 flexbox">
+                                            <div class="circular__progress--value-2 flexbox">
+                                                0%
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <span class="tenbieudo" id="doanhthu"></span>
+                        </div>
+                        </div>
+                    </div>
             </div>
 
         </div>
+
     </div>
+
     <div class="footer">
         <div class="footer-container">
             <div class="row">
@@ -115,5 +164,6 @@
 
 </div>
 </body>
-
+<script src="js/BieuDo.js"></script>
+<script src="js/ShowUser.js" ></script>
 </html>

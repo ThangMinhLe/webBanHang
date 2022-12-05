@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/admin/NewScrAdd.css">
     <link rel="stylesheet" href="../css/admin/header.css">
     <link rel="stylesheet" href="../css/admin/container.css">
-    <link rel="stylesheet" href="../css/admin/QuanLiThongTin.css">
+    <link rel="stylesheet" href="../css/admin/QuanLiSanPham.css">
     <link rel="stylesheet" href="../css/admin/footer.css">
     <link rel="stylesheet" href="../fonts/fontawesome-free-6.2.0-web/css/all.css">
 </head>
@@ -42,8 +42,16 @@
         <div href="#" class="icon">
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
-        <div href="#" class="icon">
-            <i class="fa-solid fa-user"></i>
+        <div href="#" class="icon" id="icon-user">
+            <div class="UserDir">
+                <i class="fa-solid fa-user"></i>
+                <span id="NameAdmin" style="color: #333333; font-size: 1.5rem; margin-left: 2px">Welcome Admin</span>
+            </div>
+
+            <div class="icon__show" id="icon__show-logout" >
+                <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
+                <button onclick="DangXuatAdmin()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -141,8 +149,15 @@
                                     </form>
 
                                 </div>
-<!--                            </div>-->
-<!--                        </div>-->
+                        <div class="SearchBox" id="SearchBox">
+                            <select class="SelectBox" style="height: 5rem" id="selectSearch">
+                                <option value="MaSP">Mã sản phẩm</option>
+                                <option value="TenSP">Tên sản phẩm</option>
+                                <option value="LoaiSP">Phân Loại</option>
+                            </select>
+                            <label for="search"></label>
+                            <input type="text" oninput="search()" placeholder="Tìm kiếm" class="search Input" id="search" style="width: 30%">
+                        </div>
                     </div>
                     <div class="grid__col-9--bottom">
                         <table id="myTable">
@@ -155,8 +170,6 @@
                                 <th>Phân loại</th>
                                 <th>Số lượng</th>
                                 <th>Dung tích</th>
-                                <th>Thành phần</th>
-                                <th>Công dụng</th>
                                 <th>Giá tiền</th>
                                 <th>Tác vụ</th>
                             </tr>
@@ -242,5 +255,6 @@
     </script>
 </div>
 </body>
+    <script src="js/ShowUser.js" ></script>
 
 </html>

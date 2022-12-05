@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,F initial-scale=1.0">
-    <title>Trang chủ ICY - USER</title>
+    <title>Tài khoản</title>
     <link rel="stylesheet" href="./KhachHang/TrangChu.css">
-    <link rel="stylesheet" href="./KhachHang/PageUser.css">
     <!-- Link icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="./KhachHang/PageUser.css">
     <script src="./KhachHang/TrangChu.js"></script>
     <script src="./KhachHang/ChiTietSP.js"></script>
     <script src="./KhachHang/GioHang.js"></script>
@@ -24,171 +24,172 @@
 </head>
 
 <body>
-    <!-------HEADER-------->
-    <div id="hea" class="header">
-        <div class="logo">
-            <img src="./img/LOGO.png">
-        </div>
-        <div class="khungSLG">
-            <a class="SLG"><b>
-                    <center>Yêu cái đẹp là thưởng thức
-                        <br> &emsp;&emsp; Tạo ra cái đẹp là nghệ thuật</br>
-                    </center>
-                </b></a>
-        </div>
-        <a href=""><div class="icon">
-            <img src="./img/CaiDat.png">
-        </div></a>
-        <div class="khungS">
-            <input id="tkiem" type="text" class="S" placeholder="Nhập sản phẩm cần tìm">
-        </div>
-        <a class="icon" href="./KhachHang/ShowTimKiem.html" onclick="TimKiem()">
-            <img src="./img/TimKiem.png">
-        </a>
-        <a href="./KhachHang/GioHang.html"><div class="icon">
-            <img src="./img/GioHang.png">
-        </div></a>
-        <div class="icon">
+<!-------HEADER-------->
+<div id="hea" class="header">
+    <div class="logo">
+        <img src="./img/LOGO.png">
+    </div>
+    <div class="khungSLG">
+        <a class="SLG"><b>
+            <center>Yêu cái đẹp là thưởng thức
+                <br> &emsp;&emsp; Tạo ra cái đẹp là nghệ thuật</br>
+            </center>
+        </b></a>
+    </div>
+    <div class="khungS">
+        <input id="tkiem" type="text" class="S" placeholder="Nhập sản phẩm cần tìm">
+    </div>
+    <a class="icon" href="./KhachHang/ShowTimKiem.html" onclick="TimKiem()">
+        <img src="./img/TimKiem.png">
+    </a>
+    <a href="./KhachHang/GioHang.html"><div class="icon">
+        <img src="./img/GioHang.png">
+    </div></a>
+    <div class="icon">
+        <div class="UserDir">
             <img class="icon__NguoiDung" src="./img/NguoiDung.png" alt="Người dùng">
-            <span class="userIsLoginedIn" id="userIsLoginedIn" style="color: #333333;"></span>
-            <!-- SHOW LOGIN/LOGUP -->
-            <div class="icon__show" id="icon_show" style="z-index: 4;">
-                <button onclick="showLogin()" class="icon__show-login icon_user" id="InfTK-btn">Tài khoản</button>
-                <button onclick="showRegister()" class="icon__show-logup icon_user" id="Product-btn">Đơn hàng</button>
-                <button onclick="showRegister()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+            <span id="NameUser" style="color: #333333; font-size: 1.2rem"></span>
+        </div>
+        <!-- SHOW LOGIN/LOGUP -->
+        <div class="icon__show" id="icon__show-login">
+            <button onclick="showLogin()" class="icon__show-login" id="login-btn">Đăng nhập</button>
+            <button onclick="showRegister()" class="icon__show-logup" id="register-btn">Đăng ký</button>
+        </div>
+        <div class="icon__show" id="icon__show-logout" style="visibility: hidden">
+            <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
+            <button onclick="" class="icon__show-logup icon_user" id="Product-btn">Đơn hàng</button>
+            <button onclick="DangXuat()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+        </div>
+    </div>
+</div>
 
+
+<!--------BANNER CHUYỂN ĐỘNG-------->
+<div class="slider">
+    <div class="banners">
+        <div>
+            <img src="./img/QuanCao.png">
+        </div>
+    </div>
+</div>
+<!------------ BANNER DANH MỤC -------------->
+<div class="khungBannerDanhMuc">
+    <a href="#csd">
+        <img class="bannerDanhMuc" src="./img/bannerCSD.png">
+    </a>
+    <a href="#cn">
+        <img class="bannerDanhMuc" src="./img/bannerCN.png">
+    </a>
+    <a href="#lsd">
+        <img class="bannerDanhMuc" src="./img/bannerLSD.png">
+    </a>
+    <a href="#td">
+        <img class="bannerDanhMuc" src="./img/bannerTD.png">
+    </a>
+    <a href="#mpcn">
+        <img class="bannerDanhMuc" src="./img/bannerMPCN.png">
+    </a>
+</div>
+<!-------CONTENT-------->
+<div class="content">
+    <div class="khungLoai">
+        <div id="csd" class="TieuDeLoai"><b>Chăm sóc da</b></div>
+        <!-- Sản phẩm -->
+        <!-- <div class="khungphantrang">
+            <button id="1" class="phantrang" onclick="phantrang('Chăm sóc da')">1</button>
+            <button id="2" class="phantrang" onclick="phantrang('Chăm sóc da')">2</button>
+        </div> -->
+        <script>
+            hienthi_sp("Chăm sóc da");
+        </script>
+
+    </div>
+    <div class="khungLoai">
+        <div id="cn" class="TieuDeLoai"><b>Chống nắng</b></div>
+        <!-- Sản phẩm -->
+        <script>
+            hienthi_sp("Chống nắng");
+        </script>
+    </div>
+    <div class="khungLoai">
+        <div id="lsd" class="TieuDeLoai"><b>Làm sạch da</b></div>
+        <!-- Sản phẩm -->
+        <script>
+            hienthi_sp("Làm sạch da");
+        </script>
+    </div>
+    <div class="khungLoai">
+        <div id="td" class="TieuDeLoai"><b>Trang điểm</b></div>
+        <!-- Sản phẩm -->
+        <script>
+            hienthi_sp("Trang điểm");
+        </script>
+    </div>
+    <div class="khungLoai">
+        <div id="mpcn" class="TieuDeLoai"><b>Mỹ phẩm chức năng</b></div>
+        <!-- Sản phẩm -->
+        <script>
+            hienthi_sp("Mỹ phẩm chức năng");
+        </script>
+    </div>
+    <div style="height: 340px;">
+        <a href="#hea" style="float: right;margin-right: 10px;margin-top: 300px;font-size: 0.5cm;font-style: italic;"><b>Lên đầu trang</b></a>
+    </div>
+</div>
+<!-------FOOTER-------->
+<div class="footer">
+    <div class="footer-container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>ICY store</h4>
+                <ul>
+                    <li><a href="">Về chúng tôi</a></li>
+                    <li><a href="">Dịch vụ</a></li>
+                    <li><a href="">Chính sách bảo mật</a></li>
+                    <li><a href="">Chính sách đổi trả</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Trợ giúp</h4>
+                <ul>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Giao hàng</a></li>
+                    <li><a href="">Trả hàng</a></li>
+                    <li><a href="">Đơn hàng</a></li>
+                    <li><a href="">Thanh toán</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Danh mục</h4>
+                <ul>
+                    <li><a href="index.html">Bán chạy</a></li>
+                    <li><a href="index.html">Chăm sóc da</a></li>
+                    <li><a href="index.html">Mỹ phẩm chức năng</a></li>
+                    <li><a href="index.html">Chống nắng</a></li>
+                    <li><a href="index.html">Làm sạch da</a></li>
+                    <li><a href="index.html">Trang điểm</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Theo dõi chúng tôi</h4>
+                <div class="social-link">
+                    <ul>
+                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                        <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-    
-
-    <!--------BANNER CHUYỂN ĐỘNG-------->
-    <div class="slider">
-        <div class="banners">
-            <div>
-                <img src="./img/QuanCao.png">
-            </div>
-        </div>
-    </div>
-    <!------------ BANNER DANH MỤC -------------->
-    <div class="khungBannerDanhMuc">
-        <a href="#csd">
-            <img class="bannerDanhMuc" src="./img/bannerCSD.png">
-        </a>
-        <a href="#cn">
-            <img class="bannerDanhMuc" src="./img/bannerCN.png">
-        </a>
-        <a href="#lsd">
-            <img class="bannerDanhMuc" src="./img/bannerLSD.png">
-        </a>
-        <a href="#td">
-            <img class="bannerDanhMuc" src="./img/bannerTD.png">
-        </a>
-        <a href="#mpcn">
-            <img class="bannerDanhMuc" src="./img/bannerMPCN.png">
-        </a>
-    </div>
-    <!-------CONTENT-------->
-    <div class="content">
-        <div class="khungLoai">
-            <div id="csd" class="TieuDeLoai"><b>Chăm sóc da</b></div>
-            <!-- Sản phẩm -->
-            <!-- <div class="khungphantrang">
-                <button id="1" class="phantrang" onclick="phantrang('Chăm sóc da')">1</button>
-                <button id="2" class="phantrang" onclick="phantrang('Chăm sóc da')">2</button>
-            </div> -->
-            <script>
-                hienthi_sp("Chăm sóc da");
-            </script>
-            
-        </div>
-        <div class="khungLoai">
-            <div id="cn" class="TieuDeLoai"><b>Chống nắng</b></div>
-            <!-- Sản phẩm -->
-            <script>
-                hienthi_sp("Chống nắng");
-            </script>
-        </div>
-        <div class="khungLoai">
-            <div id="lsd" class="TieuDeLoai"><b>Làm sạch da</b></div>
-            <!-- Sản phẩm -->
-            <script>
-                hienthi_sp("Làm sạch da");
-            </script>
-        </div>
-        <div class="khungLoai">
-            <div id="td" class="TieuDeLoai"><b>Trang điểm</b></div>
-            <!-- Sản phẩm -->
-            <script>
-                hienthi_sp("Trang điểm");
-            </script>
-        </div>
-        <div class="khungLoai">
-            <div id="mpcn" class="TieuDeLoai"><b>Mỹ phẩm chức năng</b></div>
-            <!-- Sản phẩm -->
-            <script>
-                hienthi_sp("Mỹ phẩm chức năng");
-            </script>
-        </div>
-        <div style="height: 340px;">
-            <a href="#hea" style="float: right;margin-right: 10px;margin-top: 300px;font-size: 0.5cm;font-style: italic;"><b>Lên đầu trang</b></a>
-        </div>
-    </div>
-    <!-------FOOTER-------->
-    <div class="footer">
-        <div class="footer-container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>ICY store</h4>
-                    <ul>
-                        <li><a href="">Về chúng tôi</a></li>
-                        <li><a href="">Dịch vụ</a></li>
-                        <li><a href="">Chính sách bảo mật</a></li>
-                        <li><a href="">Chính sách đổi trả</a></li>
-
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Trợ giúp</h4>
-                    <ul>
-                        <li><a href="">FAQ</a></li>
-                        <li><a href="">Giao hàng</a></li>
-                        <li><a href="">Trả hàng</a></li>
-                        <li><a href="">Đơn hàng</a></li>
-                        <li><a href="">Thanh toán</a></li>
-
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Danh mục</h4>
-                    <ul>
-                        <li><a href="index.html">Bán chạy</a></li>
-                        <li><a href="index.html">Chăm sóc da</a></li>
-                        <li><a href="index.html">Mỹ phẩm chức năng</a></li>
-                        <li><a href="index.html">Chống nắng</a></li>
-                        <li><a href="index.html">Làm sạch da</a></li>
-                        <li><a href="index.html">Trang điểm</a></li>
-
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Theo dõi chúng tôi</h4>
-                    <div class="social-link">
-                        <ul>
-                            <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="formLoginRegister"></div>
+</div>
+<div id="formLoginRegister"></div>
 </body>
-    <script src="js/login.js" ></script>
-    <script src="js/logup.js" ></script>
-    <script src="js/account.js"></script>
+<script src="js/login.js" ></script>
+<script src="js/logup.js" ></script>
+<script src="js/account.js"></script>
 
 </html>

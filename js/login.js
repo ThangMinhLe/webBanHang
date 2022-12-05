@@ -1,5 +1,12 @@
 var Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
+var UserLogin = localStorage.getItem('UserLogin') ? JSON.parse(localStorage.getItem('UserLogin')) : [];
+
 function showLogin(){
+    if(Accounts.length===0){
+        let admin = new user('admin','admin','admin','admin','admin@gmail.com','admin','0974975656','admin');
+        Accounts.push(admin);
+        localStorage.setItem('Accounts',JSON.stringify(Accounts));
+    }
     document.getElementById('formLoginRegister').innerHTML= `
     <div class="background-color-login" id="background-color-login">
         <div class="background-login" id="background-login">
@@ -52,8 +59,15 @@ function DangNhap(){
         for (let i = 0; i < Accounts.length; i++) {
             if (username === Accounts[i].username && password === Accounts[i].password) {
                 localStorage.setItem('UserLogin',JSON.stringify(Accounts[i]));
+                if (username==='admin'){
+                    location.replace('admin.html');
+                    return true;
+                }
+                else {
+                    location.reload();
+                    return true;
+                }
 
-                return true;
             } else if (username === Accounts[i].username && password !== Accounts[i].password) {
                 document.getElementById('incorectPass').innerHTML =
                     'Mật khẩu không đúng yêu cầu nhập lại!';
@@ -68,3 +82,10 @@ function DangNhap(){
     else
         return false;
 }
+function DangXuat(){
+    UserLogin = [];
+    localStorage.setItem('UserLogin',JSON.stringify(UserLogin));
+    location.reload();
+}
+
+

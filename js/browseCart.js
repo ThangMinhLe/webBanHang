@@ -58,6 +58,7 @@ function today() {
     let year = today.getFullYear();
     return `${time}:${minute}:${second}, ${day}/${month}/${year}`;
 }
+
 // let dsGioHang = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
 // let DuyetDonHang = [
 //     {

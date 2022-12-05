@@ -1,6 +1,6 @@
 var Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
 
-function user(MaKH,name,username,password,email,dayRegi,telephone,DHang){
+function user(MaKH,name,username,password,email,dayRegi,telephone){
     this.MaKH= MaKH;
     this.name= name;
     this.username = username;

@@ -5,6 +5,7 @@ function updata()
     giohangduyet =new Array();
     var exits= document.getElementsByName('solg');
     for (var i = 0; i < exits.length; i++)  
+
     if (exits[i].checked) {    
           giohangduyet[z]=GioHang[i];
           z++;  
@@ -44,3 +45,4 @@ function today() {
     window.year = today.getTimezoneOffset();
     return today;
 }
+
