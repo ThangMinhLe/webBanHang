@@ -3,7 +3,7 @@ function updata()
     var x=0;
     var key=false;
     var GioHang = JSON.parse(localStorage.getItem('GioHang'));
-    var DuyetDonHangtam = JSON.parse(localStorage.getItem('DuyetDonHang'));
+    var DuyetDonHangtam =  localStorage.getItem('DuyetDonHang') ? JSON.parse(localStorage.getItem('DuyetDonHang')) : [];
     var user =JSON.parse(localStorage.getItem('UserLogin'));
     giohangduyet =new Array();
     var exits= document.getElementsByName('solg');
