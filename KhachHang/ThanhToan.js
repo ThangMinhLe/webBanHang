@@ -5,19 +5,19 @@ function updata()
     giohangduyet =new Array();
     var exits= document.getElementsByName('solg');
     for (var i = 0; i < exits.length; i++)  
-    if (exits[i].checked)
-       {    
+
+    if (exits[i].checked) {    
           giohangduyet[z]=GioHang[i];
-          z++;
-       }
-       for (var i = exits.length-1; i>=0; i--)  
-       if (exits[i].checked)
-       XoaSP(i);
-       alert("da duyet don hang");
-       location.reload();
-   tam={maDonHang: randomkeyDH(),tenKH: 'Nguyễn Phú Thịnh',thoiGianDat: today(),trangThai: 'Chưa duyệt',chiTiet: giohangduyet,maKH: 'KHICY1000',tongTien: 150000,}
- DuyetDonHangtam.push(tam);
- localStorage.setItem("DuyetDonHang", JSON.stringify(DuyetDonHangtam));
+          z++;  
+    }
+    for (var i = exits.length-1; i>=0; i--)  
+    if (exits[i].checked)
+    XoaSP(i);
+    alert("da duyet don hang");
+    location.reload();
+    tam={maDonHang: randomkeyDH(),tenKH: 'Nguyễn Phú Thịnh',thoiGianDat: today(),trangThai: 'Chưa duyệt',chiTiet: giohangduyet,maKH: 'KHICY1000',tongTien: 150000,}
+    DuyetDonHangtam.push(tam);
+    localStorage.setItem("DuyetDonHang", JSON.stringify(DuyetDonHangtam));
 }
 function XoaSP(k){
     var ma;
@@ -42,6 +42,7 @@ function randomkeyDH() {
 }
 function today() {
     var today = new Date();
-    window.year = today.getFullYear();
+    window.year = today.getTimezoneOffset();
     return today;
 }
+

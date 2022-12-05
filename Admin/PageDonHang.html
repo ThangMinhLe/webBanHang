@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="../css/toggleSwitch.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="../css/chiTietDH.css">
+    <link rel="stylesheet" href="../css/admin/tiemKiemDH.css">
 </head>
-
-
-
 <body onload="renderTable2()" >
 <div class="wrap">
     <div class="header">
@@ -29,15 +27,16 @@
                 </center>
             </b></a>
         </div>
-        <div href="#" class="icon">
-            <i class="fa-solid fa-user-gear"></i>
+        <div class="reload">
+            <i onclick="renderTable2()" title="Load lại" class="fa-solid fa-rotate-right"></i>
         </div>
-        <div href="#" class="icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
+        <div >
+            <input for="search" name="search" 
+            style="height: 40px; font-size: 20px;" id="tkiem" type="text" placeholder="Nhập nội dung cần tìm">
         </div>
-        <div href="#" class="icon">
-            <i class="fa-solid fa-cart-shopping"></i>
-        </div>
+            <img onclick="TimKiemDH()" class="timKiemDH" src="../img/TimKiem.png" title="Tìm kiếm">
+        <div class="icon">
+            <i class="fa-solid fa-user"></i>
         <div href="#" class="icon" id="icon-user">
             <div class="UserDir">
                 <i class="fa-solid fa-user"></i>
