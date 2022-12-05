@@ -174,7 +174,7 @@ function renderTable2() {
             <td style="color: red"><b>${duyet.trangThai}</b></td>
             <td>
                 <label class="switch">
-                    <input onclick="checkDH(this)" type="checkbox">
+                    <input onclick="checkDH(this, 1)" type="checkbox">
                     <span class="slider round"></span>
                 </label>
             </td>`;
@@ -185,7 +185,7 @@ function renderTable2() {
             <td style="color: blue"><b>${duyet.trangThai}</b></td>
             <td>
                 <label class="switch">
-                    <input onclick="checkDH(this)" type="checkbox" checked>
+                    <input onclick="checkDH(this, 1)" type="checkbox" checked>
                     <span class="slider round"></span>
                 </label>
             </td>`;  
@@ -274,8 +274,11 @@ function tienVN(giaTri){
     return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(giaTri);
 }
 
-function checkDH(e) {
-    location.reload();
+function checkDH(e, t) {
+    if(t == 1) {
+
+        location.reload();
+    }
    let row = e.parentElement.parentElement.parentElement;
    let id =  row.cells[1].innerText;
    DuyetDonHang.forEach((dh) => {
@@ -341,7 +344,7 @@ function TimKiemDH() {
                     <td style="color: red"><b>${duyet.trangThai}</b></td>
                     <td>
                         <label class="switch">
-                            <input onclick="checkDH(this)" type="checkbox">
+                            <input onclick="checkDH(this, 0)" type="checkbox">
                             <span class="slider round"></span>
                         </label>
                     </td>`;
