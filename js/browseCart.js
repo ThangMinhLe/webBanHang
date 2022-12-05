@@ -138,6 +138,7 @@ function today() {
 // localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
 let DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
 function renderTable2() {
+    let tongTienDH = 0;
     let tableContent = `
     <thead>
         <tr>
@@ -154,6 +155,7 @@ function renderTable2() {
     <tbody>`;
     DuyetDonHang.forEach((duyet, index) => {
         index++;
+        tongTienDH += Number(duyet.tongTien);
         tableContent += `<tr>
         <td>${index}</td>
         <td>${duyet.maDonHang}</td>
@@ -182,10 +184,12 @@ function renderTable2() {
                 </label>
             </td>`;
         }
-        tableContent += `</tr></tbody>`;
-        
-    document.getElementById('myTable').innerHTML = tableContent;
     })
+    tableContent += `<tr> <td colspan="5">TỔNG TIỀN</td>`;
+    tableContent += `<td >${tienVN(tongTienDH)}</td> </tr>`;
+    tableContent += `</tr></tbody>`;
+    document.getElementById('myTable').innerHTML = tableContent;
+    localStorage.setItem('DHTT', JSON.stringify(tongTienDH));
 }
 function xemChiTiet(maDonHang){
     let tongTien = 0;
@@ -273,6 +277,7 @@ function TimKiemDH() {
     let input = document.getElementById('tkiem').value;
     console.log(input);
     let index = 1;
+    let tongTienHienTai = 0;
     let tableContent = `
     <thead>
         <tr>
@@ -296,6 +301,7 @@ function TimKiemDH() {
                 duyet.tenKH.toLowerCase().search(input.toLowerCase()) != -1 ||
                 duyet.thoiGianDat.toLowerCase().search(input.toLowerCase()) != -1 ||
                 duyet.trangThai.toLowerCase().search(input.toLowerCase()) != -1 ) {
+                tongTienHienTai += Number(duyet.tongTien);
                 tableContent += `<tr>
                 <td>${index}</td>
                 <td>${duyet.maDonHang}</td>
@@ -324,11 +330,15 @@ function TimKiemDH() {
                         </label>
                     </td>`;
                 }
-                tableContent += `</tr></tbody>`;
+                
                 index++;
-                document.getElementById('myTable').innerHTML = tableContent;
+                
             }
         })   
+        tableContent += `<tr> <td colspan="5">TỔNG TIỀN</td>`;
+        tableContent += `<td >${tienVN(tongTienHienTai)}</td> </tr>`;
+        tableContent += `</tr></tbody>`;
+        document.getElementById('myTable').innerHTML = tableContent;
     }
     else if (input == ""){
         alert("Bạn chưa nhập nội dung tìm kiếm!");
