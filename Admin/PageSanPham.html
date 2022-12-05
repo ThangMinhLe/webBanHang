@@ -42,8 +42,16 @@
         <div href="#" class="icon">
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
-        <div href="#" class="icon">
-            <i class="fa-solid fa-user"></i>
+        <div href="#" class="icon" id="icon-user">
+            <div class="UserDir">
+                <i class="fa-solid fa-user"></i>
+                <span id="NameAdmin" style="color: #333333; font-size: 1.5rem; margin-left: 2px">Welcome Admin</span>
+            </div>
+
+            <div class="icon__show" id="icon__show-logout" >
+                <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
+                <button onclick="DangXuatAdmin()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -155,6 +163,7 @@
                         <table id="myTable">
                             <thead>
                             <tr>
+                                <th>STT</th>
                                 <th>Mã sản phẩm</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Hình ảnh</th>

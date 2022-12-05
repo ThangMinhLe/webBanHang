@@ -167,3 +167,7 @@ span {
 .heading-space{
   width: 50%;
 }
+.UserDir{
+  display: flex;
+  align-items: center;
+}

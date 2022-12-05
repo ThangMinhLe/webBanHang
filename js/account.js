@@ -10,11 +10,7 @@ function user(MaKH,name,username,password,email,dayRegi,telephone,DHang){
     this.telephone=telephone;
     this.DHang= DHang;
 }
-if(Accounts.length===0){
-    let admin = new user('admin','admin','admin','admin','admin@gmail.com','admin','0974975656','admin');
-    Accounts.push(admin);
-    localStorage.setItem('Accounts',JSON.stringify(Accounts));
-}
+
 function getiD(){
     return Math.floor(Math.random() * 1000000) + 1;
 }
