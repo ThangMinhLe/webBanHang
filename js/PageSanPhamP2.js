@@ -33,7 +33,7 @@ function render(){
         </tr>
     `
     var i;
-    for (let i = 0; i < listDSSP.length && i<10; i++)
+    for (i=10; i<listDSSP.length && i<20;i++)
         table += `<tr>
             <td>${i+1}</td>
             <td>${listDSSP[i].MaSP}</td>
@@ -112,7 +112,7 @@ function addSP(){
 }
 function removeSP(iD) {
     if (confirm('Bạn có muốn xoá không?')) {
-        for (let i = 0; i < listDSSP.length && i<10; i++)
+        for (i=10; i<listDSSP.length && i<20;i++)
             if (listDSSP[i].MaSP === iD) {
                 listDSSP.splice(i, 1);
                 localStorage.setItem('DSSP',JSON.stringify(listDSSP));
@@ -123,7 +123,7 @@ function removeSP(iD) {
 }
 function showSP(iD){
     var i;
-    for (let i = 0; i < listDSSP.length && i<10; i++){
+    for (i=10; i<listDSSP.length && i<20;i++){
         if (listDSSP[i].MaSP === iD) {
 
             document.getElementById('masp').value=listDSSP[i].MaSP;
