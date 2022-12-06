@@ -30,4 +30,12 @@ table, th, td,tr {
 }
 .content{
     display: flex;
+    flex-direction: column;
+}
+#table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
 }
