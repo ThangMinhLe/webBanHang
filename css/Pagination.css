@@ -1,0 +1,61 @@
+/*thiết lập style cho màu sắc, vị trí, độ cao... cho pagination*/
+.flex {
+    width: 400px;
+    height: 80px;
+    line-height: 80px;
+    background-color: #eeeeee;
+    margin: 2%;
+}
+/*Thiết lập style cho thẻ ul*/
+.tagul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 10px 20px 0 #cccccc;
+}
+/*thiết lập style cho thẻ li*/
+.tagli {
+    flex: 1;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+/*tạo hiệu ứng hover cho thẻ li */
+.tagli:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #65bcc9;
+}
+/*chuyển đổi vị trí của class bar khi người dùng hover vào các con số*/
+.tagli:hover:nth-of-type(2) ~ .bar {
+    left: 20%;
+}
+.tagli:hover:nth-of-type(3) ~ .bar {
+    left: 40%;
+}
+.tagli:hover:nth-of-type(4) ~ .bar {
+    left: 60%;
+}
+.tagli:hover:nth-of-type(5) ~ .bar {
+    left: 80%;
+}
+/*thiết lập style cho class bar*/
+.active {
+    width: 20%;
+    background-color: #1e80ff;
+    /*height: 5px;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s ease;
+}
+.tagli>a{
+    width: 100%;
+}

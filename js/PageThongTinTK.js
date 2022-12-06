@@ -1,5 +1,15 @@
 var Accounts = localStorage.getItem('Accounts') ? JSON.parse(localStorage.getItem('Accounts')) : [];
-
+var DuyetDonHang = localStorage.getItem('DuyetDonHang') ? JSON.parse(localStorage.getItem('DuyetDonHang')) : [];
+for (let i=0;i<Accounts.length;i++){
+    let temp=0;
+    for (let j=0;j<DuyetDonHang.length;j++)
+        if (Accounts[i].MaKH === DuyetDonHang[j].maKH) {
+            console.log('duyet');
+            temp++;
+        }
+    Accounts[i].DHang=temp;
+}
+localStorage.setItem('Accounts',JSON.stringify(Accounts));
 function user(MaKH,name,username,password,email,dayRegi,telephone){
     this.MaKH= MaKH;
     this.name= name;

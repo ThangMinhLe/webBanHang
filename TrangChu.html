@@ -35,6 +35,11 @@
                     </center>
                 </b></a>
         </div>
+        <div href="admin.html" id="nutadmin" class="icon" style="margin-right: 1%; visibility: hidden">
+            <a href="admin.html" style="color: #333333;">
+                <img src="./img/CaiDat.png">
+            </a>
+        </div>
         <div class="khungS">
             <input id="tkiem" type="text" class="S" placeholder="Nhập sản phẩm cần tìm">
         </div>
@@ -192,6 +197,13 @@
     <script src="js/account.js"></script>
     <script src="../js/checkThanhToan.js" ></script>
     <script src="js/ShowUser.js" ></script>
+    <script>
+        if(UserLogin.username === 'admin')
+            document.getElementById('nutadmin').style.visibility="visible";
+        else
+            document.getElementById('nutadmin').style.visibility="hidden";
 
+
+    </script>
 
 </html>

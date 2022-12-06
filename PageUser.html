@@ -13,6 +13,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="css/PageUser.css">
     <link rel="stylesheet" href="./KhachHang/PageUser.css">
     <link rel="stylesheet" href="css/chiTietDH.css">
     <script src="./KhachHang/TrangChu.js"></script>
@@ -52,46 +53,15 @@
             <span id="NameUser" style="color: #333333; font-size: 1.2rem"></span>
         </div>
         <!-- SHOW LOGIN/LOGUP -->
-        <div class="icon__show" id="icon__show-login">
-            <button onclick="showLogin()" class="icon__show-login" id="login-btn">Đăng nhập</button>
-            <button onclick="showRegister()" class="icon__show-logup" id="register-btn">Đăng ký</button>
-        </div>
-        <div class="icon__show" id="icon__show-logout" style="visibility: hidden">
+        <div class="icon__show" id="icon__show-logout" style="">
             <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
             <button onclick="" class="icon__show-logup icon_user" id="Product-btn">Đơn hàng</button>
-            <button onclick="DangXuat()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+            <button onclick="DangXuatUser()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
         </div>
     </div>
 </div>
 
 
-<!--------BANNER CHUYỂN ĐỘNG-------->
-<div class="slider">
-    <div class="banners">
-        <div>
-            <img src="./img/QuanCao.png">
-        </div>
-    </div>
-</div>
-<!------------ BANNER DANH MỤC -------------->
-<div class="khungBannerDanhMuc">
-    <a href="#csd">
-        <img class="bannerDanhMuc" src="./img/bannerCSD.png">
-    </a>
-    <a href="#cn">
-        <img class="bannerDanhMuc" src="./img/bannerCN.png">
-    </a>
-    <a href="#lsd">
-        <img class="bannerDanhMuc" src="./img/bannerLSD.png">
-    </a>
-    <a href="#td">
-        <img class="bannerDanhMuc" src="./img/bannerTD.png">
-    </a>
-    <a href="#mpcn">
-        <img class="bannerDanhMuc" src="./img/bannerMPCN.png">
-    </a>
-</div>
-<!-------CONTENT-------->
 <div class="content">
     <div class="heading"><h1 style="font-size: 4rem">Đơn đặt hàng</h1></div>
     <div id="table">
@@ -100,7 +70,6 @@
     </div>
     
 </div>
-<!-------FOOTER-------->
 <div class="footer">
     <div class="footer-container">
         <div class="row">
@@ -158,6 +127,8 @@
 </body>
 <script src="js/login.js" ></script>
 <script src="js/logup.js" ></script>
+<script src="js/ShowUser.js" ></script>
+
 <script src="js/account.js"></script>
 <script src="js/PageUser.js"></script>
 </html>
