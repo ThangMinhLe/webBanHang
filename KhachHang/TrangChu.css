@@ -263,7 +263,7 @@ li {
 }
 
 .SP:hover .card__data {
-    transform: translateY(4rem);
+    /*transform: translateY(4rem);*/
 }
 
 .SP:hover .TenSP {
