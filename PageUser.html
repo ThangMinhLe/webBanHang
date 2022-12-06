@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/signin.css">
     <link rel="stylesheet" href="css/PageUser.css">
     <link rel="stylesheet" href="./KhachHang/PageUser.css">
+    <link rel="stylesheet" href="css/chiTietDH.css">
     <script src="./KhachHang/TrangChu.js"></script>
     <script src="./KhachHang/ChiTietSP.js"></script>
     <script src="./KhachHang/GioHang.js"></script>
@@ -24,7 +25,7 @@
     </style>
 </head>
 
-<body>
+<body onload="renderTable2()">
 <!-------HEADER-------->
 <div id="hea" class="header">
     <div class="logo">
@@ -63,19 +64,11 @@
 
 <div class="content">
     <div class="heading"><h1 style="font-size: 4rem">Đơn đặt hàng</h1></div>
-    <table id="myTable-order">
-        <thead>
-        <tr>
-            <th>STT</th>
-            <th>Mã đơn hàng</th>
-            <th>Họ và tên</th>
-            <th>Thời gian đặt</th>
-            <th>Thời gian</th>
-            <th>Tổng tiền</th>
-            <th>Trạng thái</th>
-        </tr>
-        </thead>
-    </table>
+    <div id="table">
+        <table id="myTable" width="1250">
+        </table> 
+    </div>
+    
 </div>
 <div class="footer">
     <div class="footer-container">
@@ -126,6 +119,10 @@
         </div>
     </div>
 </div>
+<div id="newScreen">
+    <table id="chiTietDonHang">
+    </table>
+</div>
 <div id="formLoginRegister"></div>
 </body>
 <script src="js/login.js" ></script>
@@ -133,5 +130,5 @@
 <script src="js/ShowUser.js" ></script>
 
 <script src="js/account.js"></script>
-
+<script src="js/PageUser.js"></script>
 </html>

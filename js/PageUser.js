@@ -1,139 +1,4 @@
-function renderTable() {
-    let Carts = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
-    if(Carts.length === 0) {
-        document.getElementById('myTable').style.display = 'none';
-        return false;
-    }
-    document.getElementById('myTable').style.display = 'block';
-    let tableContent = `
-    <thead>
-        <tr>
-            <th>STT</th>
-            <th>Mã đơn hàng</th>
-            <th>Tên khách hàng</th>
-            <th>Thời gian đặt đơn</th>
-            <th>Trạng thái</th>
-            <th>Xem chi tiết</th>
-            <th>Tổng tiền</th>
-            <th>Tác vụ</th>
-        </tr>
-    </thead>
-    <tbody>`;
-    Carts.forEach((Cart, index) => {
-        index++;
-        let tongTien = Cart.GiaBan*Cart.SoLuongMua;
-        let SoLuong = Cart.SoLuongMua;
-        tableContent += `
-        <tr>
-            <td>${index}</td>
-            <td>${Cart.LoaiSP}</td>
-            <td>${Cart.MaSP}</td>
-            <td>${SoLuong}</td>
-            <td>${Cart.TenSP}</td>
-            <td>${Cart.GiaBan}</td>
-            <td>${`${tongTien}`+" VNĐ"}</td>
-            <td>
-                <label class="switch">
-                <input onclick="acceptCart()" type="checkbox">
-                <span class="slider round"></span>
-                </label>
-            </td>
-        </tr>`;
-    })
-    tableContent +=`</tbody>`;
-    document.getElementById('myTable').innerHTML = tableContent;
-}
-function randomkeyDH() {
-    const random = Math.random() * (9999 - 1000);
-    let key = 'DHICY' + Math.round(random);
-    return key;
-}
-function today() {
-    var today = new Date();
-    let time = today.getHours();
-    let minute = today.getMinutes();
-    let second = today.getSeconds();
-    let day = today.getDate();
-    let month = today.getMonth();
-    let year = today.getFullYear();
-    return `${time}:${minute}:${second}, ${day}/${month}/${year}`;
-}
-// let dsGioHang = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
-// let DuyetDonHang = [
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Chưa duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 150000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Đã duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 200000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Đã duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 1500000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Đã duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 350000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Chưa duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 300000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Chưa duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 450000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Đã duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 500000,
-//     },
-//     {
-//         maDonHang: randomkeyDH(),
-//         tenKH: 'Nguyễn An Thuận',
-//         thoiGianDat: today(),
-//         trangThai: 'Chưa duyệt',
-//         chiTiet: dsGioHang,
-//         maKH: 'KHICY1000',
-//         tongTien: 150000,
-//     },
-// ];
-// localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
+let UserLogin2 = localStorage.getItem('UserLogin') ? JSON.parse(localStorage.getItem('UserLogin')) : [];
 let DuyetDonHang = localStorage.getItem('DuyetDonHang') ? JSON.parse(localStorage.getItem('DuyetDonHang')) : [];
 function renderTable2() {
     let tongTienDaDuyet = 0;
@@ -142,6 +7,7 @@ function renderTable2() {
     let tongDonHang = 0;
     let tongTienChuaDuyet = 0;
     let tongTienDH = 0;
+    let index = 0;
     let tableContent = `
     <thead>
         <tr>
@@ -152,46 +18,34 @@ function renderTable2() {
             <th>Xem chi tiết</th>
             <th>Tổng tiền</th>
             <th>Trạng thái</th>
-            <th>Tác vụ</th>
         </tr>
     </thead>
     <tbody>`;
-    DuyetDonHang.forEach((duyet, index) => {
-        index++;
-        tongDonHang++;
-        tongTienDH += Number(duyet.tongTien);
-        tableContent += `<tr>
-        <td>${index}</td>
-        <td>${duyet.maDonHang}</td>
-        <td>${duyet.tenKH}</td>
-        <td>${duyet.thoiGianDat}</td>
-        <td>
-            <a style="color: blue;" href='#' onclick="xemChiTiet('${duyet.maDonHang}')">Xem chi tiet</a> 
-        </td>
-        <td>${tienVN(duyet.tongTien)}</td>`;
-        if(duyet.trangThai == 'Chưa duyệt') {
-            donChuaDuyet++;
-            tongTienChuaDuyet += Number(duyet.tongTien);
-            tableContent += `
-            <td style="color: red"><b>${duyet.trangThai}</b></td>
+    DuyetDonHang.forEach((duyet) => {
+        if(duyet.maKH === UserLogin2.MaKH) {
+            tongDonHang++;
+            index++;
+            tongTienDH += Number(duyet.tongTien);
+            tableContent += `<tr>
+            <td>${index}</td>
+            <td>${duyet.maDonHang}</td>
+            <td>${duyet.tenKH}</td>
+            <td>${duyet.thoiGianDat}</td>
             <td>
-                <label class="switch">
-                    <input onclick="checkDH(this, 1)" type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </td>`;
-
-        } else {
-            donDaDuyet++;
-            tongTienDaDuyet += Number(duyet.tongTien);
-            tableContent += `
-            <td style="color: blue"><b>${duyet.trangThai}</b></td>
-            <td>
-                <label class="switch">
-                    <input onclick="checkDH(this, 1)" type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
-            </td>`;
+                <a style="color: blue;" href='#' onclick="xemChiTiet('${duyet.maDonHang}')">Xem chi tiet</a> 
+            </td>
+            <td>${tienVN(duyet.tongTien)}</td>`;
+            if(duyet.trangThai == 'Chưa duyệt') {
+                donChuaDuyet++;
+                tongTienChuaDuyet += Number(duyet.tongTien);
+                tableContent += `
+                <td style="color: red"><b>${duyet.trangThai}</b></td>`;
+            } else {
+                donDaDuyet++;
+                tongTienDaDuyet += Number(duyet.tongTien);
+                tableContent += `
+                <td style="color: blue"><b>${duyet.trangThai}</b></td>`;
+            }
         }
     })
     tableContent += `
@@ -211,9 +65,7 @@ function renderTable2() {
             <td style="color: green" colspan="5"><b>TỔNG TIỀN</b></td>
             <td style="color: green" ></b>${tienVN(tongTienDH)}</b></td> 
             <td style="color: green" ></b>Tổng đơn hàng: ${tongDonHang}</b></td>
-            <td class="loadDuLieu" onclick="renderTable2()" ></b>LƯU DỮ LIỆU</b></td> 
         </tr>`;
-
     tableContent += `</tr></tbody>`;
     document.getElementById('myTable').innerHTML = tableContent;
     let DHTT = {
