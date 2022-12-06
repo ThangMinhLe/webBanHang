@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/signin.css">
     <link rel="stylesheet" href="./KhachHang/PageUser.css">
+    <link rel="stylesheet" href="css/chiTietDH.css">
     <script src="./KhachHang/TrangChu.js"></script>
     <script src="./KhachHang/ChiTietSP.js"></script>
     <script src="./KhachHang/GioHang.js"></script>
@@ -23,7 +24,7 @@
     </style>
 </head>
 
-<body>
+<body onload="renderTable2()">
 <!-------HEADER-------->
 <div id="hea" class="header">
     <div class="logo">
@@ -92,6 +93,7 @@
 </div>
 <!-------CONTENT-------->
 <div class="content">
+<<<<<<< Updated upstream
     <div class="khungLoai">
         <div id="csd" class="TieuDeLoai"><b>Chăm sóc da</b></div>
         <!-- Sản phẩm -->
@@ -135,6 +137,14 @@
     <div style="height: 340px;">
         <a href="#hea" style="float: right;margin-right: 10px;margin-top: 300px;font-size: 0.5cm;font-style: italic;"><b>Lên đầu trang</b></a>
     </div>
+=======
+    <div class="heading"><h1 style="font-size: 4rem">Đơn đặt hàng</h1></div>
+    <div id="table">
+        <table id="myTable" width="1250">
+        </table> 
+    </div>
+    
+>>>>>>> Stashed changes
 </div>
 <!-------FOOTER-------->
 <div class="footer">
@@ -186,10 +196,14 @@
         </div>
     </div>
 </div>
+<div id="newScreen">
+    <table id="chiTietDonHang">
+    </table>
+</div>
 <div id="formLoginRegister"></div>
 </body>
 <script src="js/login.js" ></script>
 <script src="js/logup.js" ></script>
 <script src="js/account.js"></script>
-
+<script src="js/PageUser.js"></script>
 </html>
