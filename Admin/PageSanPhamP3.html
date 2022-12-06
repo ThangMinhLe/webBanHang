@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lí sản phẩm</title>
+  <link rel="stylesheet" href="../css/admin/NewScrAdd.css">
+  <link rel="stylesheet" href="../css/admin/header.css">
+  <link rel="stylesheet" href="../css/admin/container.css">
+  <link rel="stylesheet" href="../css/admin/QuanLiSanPham.css">
+  <link rel="stylesheet" href="../css/admin/footer.css">
+  <link rel="stylesheet" href="../css/Pagination.css">
+
+  <link rel="stylesheet" href="../fonts/fontawesome-free-6.2.0-web/css/all.css">
+</head>
+
+<script>
+  function handleHA(event) {
+    let haElem = document.getElementById('hinhanh');
+    haElem.value = event.target.value;
+  }
+</script>
+
+<body>
+<div class="wrap">
+  <div class="header">
+    <nav class="header_navbar"></nav>
+    <div class="logo">
+      <a href="..\TrangChu.html"><img src="..\img\LOGO.png"></a>
+    </div>
+
+    <div class="khungSLG">
+      <a class="SLG"><b>
+        <center>Yêu cái đẹp là thưởng thức
+          <br> &emsp;&emsp; Tạo ra cái đẹp là nghệ thuật</br>
+        </center>
+      </b></a>
+    </div>
+    <div href="../admin.html" class="icon" style="margin-right: 1%">
+      <a href="../admin.html"><i class="fa-solid fa-user-gear"></i></a>
+    </div>
+    <div href="#" class="icon">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div href="#" class="icon">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div href="#" class="icon" id="icon-user">
+      <div class="UserDir">
+        <i class="fa-solid fa-user"></i>
+        <span id="NameAdmin" style="color: #333333; font-size: 1.5rem; margin-left: 2px">Welcome Admin</span>
+      </div>
+
+      <div class="icon__show" id="icon__show-logout" >
+        <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
+        <button onclick="DangXuatAdmin()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="grid">
+      <div class="grid__row">
+        <div class="grid__col-3">
+          <nav class="category">
+            <h2 class="category__heading">
+              <i class="fa-solid fa-list"></i>
+              Danh mục</h2>
+            <ul class="category__list">
+              <li class="category-item"><a class="category-item-link" href="../admin.html">Trang chủ admin</a></li>
+              <li class="category-item category-item-active"><a class="category-item-link" href="PageSanPham.html" >Quản lí sản phẩm</a></li>
+              <li class="category-item"><a class="category-item-link" href="PageThongTin.html">Quản lí thông tin</a></li>
+              <li class="category-item"><a class="category-item-link" href="PageDonHang.html">Quản lí đơn hàng</a></li>
+              <li class="category-item"><a class="category-item-link" href="PageLienHe.html">Chỉnh sửa thông tin liên hệ</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="grid__col-9">
+          <div class="grid__col-9--header">
+            <h2>Sản phẩm</h2>
+          </div>
+          <div class="grid__col-9--mid">
+            <!--                        <div id="background-color-themsanpham">-->
+            <!--                            <div style="border-radius: 20px;" id="background-themsanpham">-->
+            <div class="ThemSanPhamBox" id="ThemSanPhamnBox">
+              <form action="" id="form-id" class="form" onsubmit="return false">
+                <div class="Title" style="margin-left: 0">Thêm sản phẩm</div>
+                <div class="form-group">
+                  <label for="masp">Mã sản phẩm</label>
+                  <input placeholder="Mã sản phẩm" id="masp" class="Input" type="text">
+                  <span class="form-massage"></span>
+                </div>
+                <div class="form-group">
+                  <label for="tensanpham">Tên sản phẩm</label>
+                  <input class="Input" type="text" id="tensanpham" name="tensanpham"
+                         placeholder="Tên sản phẩm">
+                  <span class="form-massage"></span>
+                </div>
+
+                <div class="form-group" id="form-img">
+                  <label for="hinhanh">Hình ảnh </label>
+                  <input class="InputIMG Input" type="text" id="hinhanh">
+                  <label for="hinhanhDỉr" style="font-size: 2rem">...</label>
+                  <input class="InputIMG" type="file"
+                         id="hinhanhDỉr" name="hinhanh" style="visibility: hidden"
+                         accept="image/gif, image/png, image/jpeg" onchange="handleHA(event)">
+                  <span class="form-massage"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="phanloai">Phân loại</label>
+                  <select class="SelectBox" name="phanLoai" id="phanloai">
+                    <option value="Chăm sóc da">Chăm sóc da</option>
+                    <option value="Chống nắng">Chống nắng</option>
+                    <option value="Làm sạch da">Làm sạch da</option>
+                    <option value="Trang điểm">Trang điểm</option>
+                    <option value="Mỹ phẩm chức năng">Mỹ phẩm chức năng</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="soluong">Số lượng </label>
+                  <input class="Input inputNumber" type="number" id="soluong" name="soluong" placeholder="Só lượng">
+                  <span class="form-massage"></span>
+
+                </div>
+                <div class="form-group">
+                  <label for="dungtich" >Dung tích (ML) </label>
+                  <input class="Input inputNumber" type="text" id="dungtich" name="dungtich" placeholder=" Dung tích" >
+                  <span class="form-massage"></span>
+                </div>
+                <div class="form-group">
+                  <label for="congdung">Công dụng</label>
+                  <input class="Input" type="text" id="congdung" name="condung" placeholder="Công dụng">
+                  <span class="form-massage"></span>
+                </div>
+                <div class="form-group">
+                  <label for="thanhphan">Thành Phần</label>
+                  <input class="Input" type="text" id="thanhphan" name="thanhphan" placeholder="Thành phần">
+                  <span class="form-massage"></span>
+                </div>
+                <div class="form-group">
+                  <label for="giatien">Giá tiền</label>
+                  <input type="text" id="giatien" name="giatien" placeholder="Giá tiền" class="Input">
+                  <span class="form-massage"></span>
+                </div>
+                <div class="form-group">
+                  <input type="text" id="index" style="display: none">
+                </div>
+                <div id="div_buttonThemSP"  class="form-group" style="justify-content: center; margin-left: 0;">
+                  <input type="submit"  onclick='addSP()' id="buttonThemSP" class="ThemSPButton" value="Thêm sản phẩm">
+                  <input type="submit" style="display: none"  onclick='changeSP()' id="buttonCapNhap" class="ThemSPButton" value="Cập nhập">
+                </div>
+              </form>
+
+            </div>
+            <div class="SearchBox" id="SearchBox">
+              <select class="SelectBox" style="height: 5rem" id="selectSearch">
+                <option value="MaSP">Mã sản phẩm</option>
+                <option value="TenSP">Tên sản phẩm</option>
+                <option value="LoaiSP">Phân Loại</option>
+              </select>
+              <label for="search"></label>
+              <input type="text" oninput="search()" placeholder="Tìm kiếm" class="search Input" id="search" style="width: 30%">
+            </div>
+          </div>
+          <div class="grid__col-9--bottom">
+            <table id="myTable">
+              <thead>
+              <tr>
+                <th>STT</th>
+                <th>Mã sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Hình ảnh</th>
+                <th>Phân loại</th>
+                <th>Số lượng</th>
+                <th>Dung tích</th>
+                <th>Giá tiền</th>
+                <th>Tác vụ</th>
+              </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="flex">
+            <ul class="tagul">
+              <li class="tagli "><a href="PageSanPham.html">1</a></li>
+              <li class="tagli "><a href="PageSanPhamP2.html">2</a></li>
+              <li class="tagli active"><a href="PageSanPhamP3.html">3</a></li>
+              <li class="tagli"><a href="PageSanPhamP4.html">4</a></li>
+              <li class="tagli"><a href="PageSanPhamP5.html">5</a></li>
+              <div class="bar"></div>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>ICY store</h4>
+          <ul>
+            <li><a href="">Về chúng tôi</a></li>
+            <li><a href="">Dịch vụ</a></li>
+            <li><a href="">Chính sách bảo mật</a></li>
+            <li><a href="">Chính sách đổi trả</a></li>
+
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Trợ giúp</h4>
+          <ul>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Giao hàng</a></li>
+            <li><a href="">Trả hàng</a></li>
+            <li><a href="">Đơn hàng</a></li>
+            <li><a href="">Thanh toán</a></li>
+
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Danh mục</h4>
+          <ul>
+            <li><a href="index.html">Bán chạy</a></li>
+            <li><a href="index.html">Chăm sóc da</a></li>
+            <li><a href="index.html">Mỹ phẩm chức năng</a></li>
+            <li><a href="index.html">Chống nắng</a></li>
+            <li><a href="index.html">Làm sạch da</a></li>
+            <li><a href="index.html">Trang điểm</a></li>
+
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Theo dõi chúng tôi</h4>
+          <div class="social-link">
+            <ul>
+              <li><a href=""><i class="fab fa-facebook"></i></a></li>
+              <li><a href=""><i class="fab fa-instagram"></i></a></li>
+              <li><a href=""><i class="fab fa-twitter"></i></a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/Validator.js" ></script>
+  <script src="../js/PageSanPhamP3.js" ></script>
+  <script>
+    Validator({
+      form: '#form-id',
+      formGroupSelector: '.form-group',
+      errorSelector: '.form-massage',
+      rules: [
+        Validator.isRequired('#masp','Vui lòng nhập mã sản phẩm' ),
+        Validator.isRequired('#tensanpham','Vui lòng nhập tên sản phẩm'),
+        Validator.isRequired('#giatien', 'Vui lòng nhập giá tiền'),
+        Validator.isRequired('#soluong',' Vui lòng nhập số lượng'),
+        Validator.isRequired('#dungtich',' Vui lòng nhập dung tích'),
+        Validator.isRequired('#congdung','Vui lòng nhập công dụng'),
+        Validator.isRequired('#thanhphan','Vui lòng nhập những thành phần'),
+      ]
+    });
+  </script>
+</div>
+</body>
+<script src="../js/ShowUser.js" ></script>
+<script src="../js/admin.js" ></script>
+<script src="../js/Pagination.js" ></script>
+
+
+</html>

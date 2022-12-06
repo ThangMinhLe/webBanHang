@@ -2,7 +2,7 @@ function renderTable() {
     let Carts = localStorage.getItem('GioHang') ? JSON.parse(localStorage.getItem('GioHang')) : [];
     if(Carts.length === 0) {
         document.getElementById('myTable').style.display = 'none';
-        return false; 
+        return false;
     }
     document.getElementById('myTable').style.display = 'block';
     let tableContent = `
@@ -180,7 +180,7 @@ function renderTable2() {
                     <span class="slider round"></span>
                 </label>
             </td>`;
-            
+
         } else {
             donDaDuyet++;
             tongTienDaDuyet += Number(duyet.tongTien);
@@ -191,7 +191,7 @@ function renderTable2() {
                     <input onclick="checkDH(this, 1)" type="checkbox" checked>
                     <span class="slider round"></span>
                 </label>
-            </td>`;  
+            </td>`;
         }
     })
     tableContent += `
@@ -290,9 +290,9 @@ function tienVN(giaTri){
 }
 
 function checkDH(e, t) {
-   let row = e.parentElement.parentElement.parentElement;
-   let id =  row.cells[1].innerText;
-   DuyetDonHang.forEach((dh) => {
+    let row = e.parentElement.parentElement.parentElement;
+    let id =  row.cells[1].innerText;
+    DuyetDonHang.forEach((dh) => {
         if(dh.maDonHang === id) {
             if(dh.trangThai === "Đã duyệt")
             {
@@ -303,8 +303,8 @@ function checkDH(e, t) {
                 row.cells[6].innerHTML = `<p style="color: blue;"><b>Đã duyệt</b></p>`;
             }
         }
-   })
-   localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
+    })
+    localStorage.setItem('DuyetDonHang', JSON.stringify(DuyetDonHang));
 }
 function TimKiemDH() {
     var DuyetDonHang = JSON.parse(localStorage.getItem('DuyetDonHang'));
@@ -332,7 +332,7 @@ function TimKiemDH() {
     <tbody>`;
     if (input != "") {
         DuyetDonHang.forEach((duyet) => {
-            if ( 
+            if (
                 Number(duyet.tongTien) <= Number(input) ||
                 duyet.maDonHang.toLowerCase().search(input.toLowerCase()) != -1 ||
                 duyet.maKH.toLowerCase().search(input.toLowerCase()) != -1 ||
@@ -372,7 +372,7 @@ function TimKiemDH() {
                 }
                 index++;
             }
-        })   
+        })
         tableContent += `
             <tr id="tongTienDaDuyet"> 
                 <td style="color: blue" colspan="5"><b>TỔNG TIỀN ĐÃ DUYỆT</b></td>
