@@ -10,7 +10,6 @@ let DoanhThu=0;
 let TienBanHang=0;
 let SLSPDaBan=0;
 let TongSP=0;
-console.log(DonDuyet.length)
 for (i=0;i<DonDuyet.length;i++){
     // Tinh so luong sp da ban
     for (j=0;j < DonDuyet[i].chiTiet.length;j++){
@@ -32,21 +31,15 @@ for (i=0;i<listDSSP.length;i++){
         DoanhThu += Number(listDSSP[i].SoLuong * listDSSP[i].GiaBan);
     }
 }
-console.log(SLSPDaBan)
-console.log(TongSP)
 let TileDT = DHTT.tongTienDaDuyet*100/DoanhThu;
 
 
 let TileSPban= SLSPDaBan*100/TongSP;
-console.log(TileSPban)
-
 const progressBar = document.querySelector(".circular__progress--bar");
 const progressValue=document.querySelector(".circular__progress--value");
 
 let initValue = 0;
 let finalValue = Number(TileSPban.toFixed(0));
-console.log(finalValue);
-
 const updateValue = function (){
     if(initValue!== finalValue){
         initValue++;
