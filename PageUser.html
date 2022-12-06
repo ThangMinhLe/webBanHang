@@ -13,6 +13,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="css/PageUser.css">
     <link rel="stylesheet" href="./KhachHang/PageUser.css">
     <script src="./KhachHang/TrangChu.js"></script>
     <script src="./KhachHang/ChiTietSP.js"></script>
@@ -51,92 +52,31 @@
             <span id="NameUser" style="color: #333333; font-size: 1.2rem"></span>
         </div>
         <!-- SHOW LOGIN/LOGUP -->
-        <div class="icon__show" id="icon__show-login">
-            <button onclick="showLogin()" class="icon__show-login" id="login-btn">Đăng nhập</button>
-            <button onclick="showRegister()" class="icon__show-logup" id="register-btn">Đăng ký</button>
-        </div>
-        <div class="icon__show" id="icon__show-logout" style="visibility: hidden">
+        <div class="icon__show" id="icon__show-logout" style="">
             <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
             <button onclick="" class="icon__show-logup icon_user" id="Product-btn">Đơn hàng</button>
-            <button onclick="DangXuat()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+            <button onclick="DangXuatUser()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
         </div>
     </div>
 </div>
 
 
-<!--------BANNER CHUYỂN ĐỘNG-------->
-<div class="slider">
-    <div class="banners">
-        <div>
-            <img src="./img/QuanCao.png">
-        </div>
-    </div>
-</div>
-<!------------ BANNER DANH MỤC -------------->
-<div class="khungBannerDanhMuc">
-    <a href="#csd">
-        <img class="bannerDanhMuc" src="./img/bannerCSD.png">
-    </a>
-    <a href="#cn">
-        <img class="bannerDanhMuc" src="./img/bannerCN.png">
-    </a>
-    <a href="#lsd">
-        <img class="bannerDanhMuc" src="./img/bannerLSD.png">
-    </a>
-    <a href="#td">
-        <img class="bannerDanhMuc" src="./img/bannerTD.png">
-    </a>
-    <a href="#mpcn">
-        <img class="bannerDanhMuc" src="./img/bannerMPCN.png">
-    </a>
-</div>
-<!-------CONTENT-------->
 <div class="content">
-    <div class="khungLoai">
-        <div id="csd" class="TieuDeLoai"><b>Chăm sóc da</b></div>
-        <!-- Sản phẩm -->
-        <!-- <div class="khungphantrang">
-            <button id="1" class="phantrang" onclick="phantrang('Chăm sóc da')">1</button>
-            <button id="2" class="phantrang" onclick="phantrang('Chăm sóc da')">2</button>
-        </div> -->
-        <script>
-            hienthi_sp("Chăm sóc da");
-        </script>
-
-    </div>
-    <div class="khungLoai">
-        <div id="cn" class="TieuDeLoai"><b>Chống nắng</b></div>
-        <!-- Sản phẩm -->
-        <script>
-            hienthi_sp("Chống nắng");
-        </script>
-    </div>
-    <div class="khungLoai">
-        <div id="lsd" class="TieuDeLoai"><b>Làm sạch da</b></div>
-        <!-- Sản phẩm -->
-        <script>
-            hienthi_sp("Làm sạch da");
-        </script>
-    </div>
-    <div class="khungLoai">
-        <div id="td" class="TieuDeLoai"><b>Trang điểm</b></div>
-        <!-- Sản phẩm -->
-        <script>
-            hienthi_sp("Trang điểm");
-        </script>
-    </div>
-    <div class="khungLoai">
-        <div id="mpcn" class="TieuDeLoai"><b>Mỹ phẩm chức năng</b></div>
-        <!-- Sản phẩm -->
-        <script>
-            hienthi_sp("Mỹ phẩm chức năng");
-        </script>
-    </div>
-    <div style="height: 340px;">
-        <a href="#hea" style="float: right;margin-right: 10px;margin-top: 300px;font-size: 0.5cm;font-style: italic;"><b>Lên đầu trang</b></a>
-    </div>
+    <div class="heading"><h1 style="font-size: 4rem">Đơn đặt hàng</h1></div>
+    <table id="myTable-order">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>Mã đơn hàng</th>
+            <th>Họ và tên</th>
+            <th>Thời gian đặt</th>
+            <th>Thời gian</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+        </tr>
+        </thead>
+    </table>
 </div>
-<!-------FOOTER-------->
 <div class="footer">
     <div class="footer-container">
         <div class="row">
@@ -190,6 +130,8 @@
 </body>
 <script src="js/login.js" ></script>
 <script src="js/logup.js" ></script>
+<script src="js/ShowUser.js" ></script>
+
 <script src="js/account.js"></script>
 
 </html>

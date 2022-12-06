@@ -88,5 +88,11 @@ function DangXuat(){
     localStorage.setItem('UserLogin',JSON.stringify(UserLogin));
     location.reload();
 }
+function DangXuatUser() {
+    UserLogin = [];
+    localStorage.setItem('UserLogin', JSON.stringify(UserLogin));
+    location.replace('TrangChu.html');
+}
+
 
 
