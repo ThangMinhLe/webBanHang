@@ -55,7 +55,7 @@ function render(){
 }
 function fileInpToTextInp(event) {
     let fileChuk = event.split("\\");
-    return '../img/' + fileChuk[fileChuk.length - 1];
+    return '.' + fileChuk[fileChuk.length - 1];
 }
 function clear(){
     let MaSP = document.getElementById('masp').value='';

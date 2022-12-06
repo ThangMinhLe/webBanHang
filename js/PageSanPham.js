@@ -38,7 +38,7 @@ function render(){
             <td>${i+1}</td>
             <td>${listDSSP[i].MaSP}</td>
             <td>${listDSSP[i].TenSP}</td>
-            <td><img src="${fileInpToTextInp(listDSSP[i].HinhAnh)}" width="50px" height="50px"> </td>
+            <td><img src="${fileInpToTextInp2(listDSSP[i].HinhAnh)}" width="50px" height="50px"> </td>
             <td>${listDSSP[i].LoaiSP}</td>
             <td>${listDSSP[i].SoLuong}</td>
             <td>${listDSSP[i].DonViTinh}</td>
@@ -53,9 +53,9 @@ function render(){
     document.getElementById('myTable').innerHTML = table;
 
 }
-function fileInpToTextInp(event) {
+function fileInpToTextInp2(event) {
     let fileChuk = event.split("\\");
-    return '../img/' + fileChuk[fileChuk.length - 1];
+    return '.' + fileChuk[fileChuk.length - 1];
 }
 function clear(){
     let MaSP = document.getElementById('masp').value='';
@@ -77,7 +77,7 @@ function addSP(){
         let SoLuong = document.getElementById('soluong').value;
         let DungTich = document.getElementById('dungtich').value;
         let event = document.getElementById('hinhanh').value;
-        let HinhAnh = fileInpToTextInp(event);
+        let HinhAnh = fileInpToTextInp2(event);
         let CongDung = document.getElementById('congdung').value;
         let ThanhPhan = document.getElementById('thanhphan').value;
         Validator({
@@ -137,7 +137,7 @@ function showSP(iD){
             document.getElementById('thanhphan').value = listDSSP[i].ThanhPhan;
             document.getElementById('hinhanh').value = listDSSP[i].HinhAnh;
             let event = document.getElementById('hinhanh').value;
-            let HinhAnh = fileInpToTextInp(event);
+            let HinhAnh = fileInpToTextInp2(event);
             document.getElementById('buttonThemSP').style.display="none";
             document.getElementById('buttonCapNhap').style.display="inline-block";
             console.log(listDSSP[i]);
@@ -180,7 +180,7 @@ function changeSP(){
     if (confirm('Bạn có muốn cập nhập sản phẩm này không?')) {
         let index = document.getElementById('index').value;
         let event = document.getElementById('hinhanh').value;
-        let HinhAnh = fileInpToTextInp(event);
+        let HinhAnh = fileInpToTextInp2(event);
         listDSSP[index] = {
             MaSP: document.getElementById('masp').value,
             TenSP: document.getElementById('tensanpham').value,
@@ -234,7 +234,7 @@ function search() {
             <td>${i+1}</td>
             <td>${nameSearch [i].MaSP}</td>
             <td>${nameSearch [i].TenSP}</td>
-            <td><img src="${fileInpToTextInp(nameSearch[i].HinhAnh)}" width="50px" height="50px"> </td>
+            <td><img src="${fileInpToTextInp2(nameSearch[i].HinhAnh)}" width="50px" height="50px"> </td>
             <td>${nameSearch [i].LoaiSP}</td>
             <td>${nameSearch [i].SoLuong}</td>
             <td>${nameSearch [i].DonViTinh}</td>

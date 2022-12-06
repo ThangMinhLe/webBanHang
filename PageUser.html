@@ -29,7 +29,7 @@
 <!-------HEADER-------->
 <div id="hea" class="header">
     <div class="logo">
-        <img src="./img/LOGO.png">
+        <a href="TrangChu.html"><img src="./img/LOGO.png"></a>
     </div>
     <div class="khungSLG">
         <a class="SLG"><b>
@@ -38,12 +38,6 @@
             </center>
         </b></a>
     </div>
-    <div class="khungS">
-        <input id="tkiem" type="text" class="S" placeholder="Nhập sản phẩm cần tìm">
-    </div>
-    <a class="icon" href="./KhachHang/ShowTimKiem.html" onclick="TimKiem()">
-        <img src="./img/TimKiem.png">
-    </a>
     <a href="./KhachHang/GioHang.html"><div class="icon">
         <img src="./img/GioHang.png">
     </div></a>
@@ -53,10 +47,10 @@
             <span id="NameUser" style="color: #333333; font-size: 1.2rem"></span>
         </div>
         <!-- SHOW LOGIN/LOGUP -->
-        <div class="icon__show" id="icon__show-logout" style="">
+        <div class="icon__show" id="icon__show-logout" style="height: 3rem">
             <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
-            <button onclick="" class="icon__show-logup icon_user" id="Product-btn">Đơn hàng</button>
-            <button onclick="DangXuatUser()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+            <a href="PageUser.html"><button class="icon__show-logup icon_user" id="Product-btn">Đơn hàng</button></a>
+            <button onclick="DangXuatUser()" class="icon__show-logup icon_user" id="LogOut-btn" style="color: black;background-color: rgb(247,217,239)">Đăng xuất</button>
         </div>
     </div>
 </div>
